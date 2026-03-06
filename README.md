@@ -14,7 +14,7 @@ From a compact input form, the app generates:
 - 10 short-form video scripts with hook, body, and CTA
 - Hashtags for each post
 - Optional image prompts for design generation
-- Downloadable markdown, JSON, HTML, and print-friendly report outputs
+- Downloadable markdown, JSON, HTML, Google Docs, and print-friendly report outputs
 
 ## Why This Matters
 
@@ -35,7 +35,7 @@ This project demonstrates a practical AI workflow instead of a thin prompt wrapp
 - Results workspace with tabs, filters, and copy-to-clipboard actions
 - Local history page powered by saved JSON runs
 - Architecture page that explains the workflow in business language
-- Export support for markdown, JSON, HTML, and browser PDF via print view
+- Export support for markdown, JSON, HTML, Google Docs, and browser PDF via print view
 
 ## Architecture Overview
 
@@ -123,6 +123,10 @@ The app reads these variables from [.env.example](./.env.example):
 AI_PROVIDER=demo
 CLAUDE_API_KEY=
 CLAUDE_MODEL=
+GOOGLE_DOCS_SHARE_MODE=anyone_with_link
+GOOGLE_DOCS_SHARE_EMAIL=
+GOOGLE_DOCS_CLIENT_EMAIL=
+GOOGLE_DOCS_PRIVATE_KEY=
 ```
 
 ## Demo Mode vs Claude Mode
@@ -158,6 +162,38 @@ How it works:
 
 If Claude mode is selected but the configuration is incomplete, the UI surfaces the issue clearly and generation fails safely.
 
+## Google Docs Export
+
+The Google Docs export creates a brand-new Google Doc for a generated run, formats it with headings and section grouping, and returns the document URL to the UI so the user can open it immediately.
+
+Included sections:
+
+- Project summary / brief
+- Monthly content calendar
+- Captions grouped by day/post
+- Carousel outlines
+- Video scripts
+- Hashtag recommendations
+- Image prompts
+
+Required setup:
+
+- Enable the Google Docs API
+- Enable the Google Drive API
+- Create a service account
+- Add the service account email and private key to `.env.local`
+- Choose a share mode
+
+Recommended demo setup:
+
+- `GOOGLE_DOCS_SHARE_MODE=anyone_with_link` for the fastest open-link demo
+- `GOOGLE_DOCS_SHARE_MODE=share_with_email` plus `GOOGLE_DOCS_SHARE_EMAIL=you@example.com` if you want the created doc shared directly to one account
+
+Fallback behavior:
+
+- If Google credentials are not configured, the Google Docs export button stays disabled and explains why
+- Markdown, HTML, JSON, and print exports still work normally
+
 ## Export Features
 
 Each completed run can be exported as:
@@ -165,12 +201,14 @@ Each completed run can be exported as:
 - Markdown for readable documentation and internal handoff
 - JSON for structured reuse or downstream automation
 - HTML report for polished presentation
+- Google Docs for an editable cloud document with returned open link
 - Print-friendly view for browser PDF export
 
 Export builders:
 
 - [lib/export/markdown.ts](./lib/export/markdown.ts)
 - [lib/export/html.ts](./lib/export/html.ts)
+- [lib/integrations/google-docs.ts](./lib/integrations/google-docs.ts)
 
 ## Documentation Assets
 
@@ -179,6 +217,8 @@ Export builders:
 - [docs/SCREENSHOT_CHECKLIST.md](./docs/SCREENSHOT_CHECKLIST.md)
 - [docs/SHIP_READINESS_REPORT.md](./docs/SHIP_READINESS_REPORT.md)
 - [docs/CASE_STUDY_BLURB.md](./docs/CASE_STUDY_BLURB.md)
+- [docs/GOOGLE_DOCS_SETUP.md](./docs/GOOGLE_DOCS_SETUP.md)
+- [docs/INTEGRATIONS.md](./docs/INTEGRATIONS.md)
 
 ## Future Enhancements
 

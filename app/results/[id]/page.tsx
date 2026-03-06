@@ -5,6 +5,7 @@ import { ResultsTabs } from "@/components/results/results-tabs";
 import { Badge } from "@/components/ui/badge";
 import { buttonStyles } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { getGoogleDocsIntegrationStatus } from "@/lib/integrations/google-docs";
 import { getContentPlan } from "@/lib/storage/runs";
 import { formatDateTime } from "@/lib/utils";
 
@@ -16,7 +17,10 @@ export default async function ResultsPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const plan = await getContentPlan(id);
+  const [plan, googleDocsStatus] = await Promise.all([
+    getContentPlan(id),
+    getGoogleDocsIntegrationStatus(),
+  ]);
 
   if (!plan) {
     notFound();
@@ -97,7 +101,7 @@ export default async function ResultsPage({
         </Card>
       </section>
 
-      <ResultsTabs plan={plan} />
+      <ResultsTabs plan={plan} googleDocsStatus={googleDocsStatus} />
     </div>
   );
 }

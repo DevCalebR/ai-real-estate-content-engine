@@ -1,8 +1,15 @@
+"use client";
+
 import Link from "next/link";
-import { FileCode2, FileJson2, FileText, Printer } from "lucide-react";
+import { FileCode2, FileJson2, FileText, LoaderCircle, NotebookPen, Printer } from "lucide-react";
+import { useState } from "react";
 
 import { Card } from "@/components/ui/card";
 import { buttonStyles } from "@/components/ui/button";
+import type {
+  GoogleDocsExportResult,
+  GoogleDocsIntegrationStatus,
+} from "@/lib/types/integrations";
 
 const exportOptions = [
   {
@@ -31,9 +38,52 @@ const exportOptions = [
   },
 ] as const;
 
-export function ExportButtons({ id }: { id: string }) {
+export function ExportButtons({
+  id,
+  googleDocsStatus,
+}: {
+  id: string;
+  googleDocsStatus: GoogleDocsIntegrationStatus;
+}) {
+  const [isExportingGoogleDoc, setIsExportingGoogleDoc] = useState(false);
+  const [googleDocsError, setGoogleDocsError] = useState<string | null>(null);
+  const [googleDocsResult, setGoogleDocsResult] =
+    useState<GoogleDocsExportResult | null>(null);
+
+  async function handleGoogleDocsExport() {
+    setGoogleDocsError(null);
+    setGoogleDocsResult(null);
+    setIsExportingGoogleDoc(true);
+
+    try {
+      const response = await fetch(`/api/runs/${id}/export/google-docs`, {
+        method: "POST",
+      });
+
+      const payload = (await response.json()) as
+        | { error?: string; result?: GoogleDocsExportResult }
+        | undefined;
+
+      if (!response.ok || !payload?.result) {
+        throw new Error(
+          payload?.error ?? "Google Docs export could not be completed.",
+        );
+      }
+
+      setGoogleDocsResult(payload.result);
+    } catch (error) {
+      setGoogleDocsError(
+        error instanceof Error
+          ? error.message
+          : "Google Docs export could not be completed.",
+      );
+    } finally {
+      setIsExportingGoogleDoc(false);
+    }
+  }
+
   return (
-    <div className="grid gap-4 md:grid-cols-2">
+    <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
       {exportOptions.map((option) => {
         const Icon = option.icon;
 
@@ -58,6 +108,64 @@ export function ExportButtons({ id }: { id: string }) {
           </Card>
         );
       })}
+
+      <Card className="flex flex-col gap-4 md:col-span-2 xl:col-span-1">
+        <div className="flex items-center gap-3">
+          <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-teal-50 text-teal-700">
+            <NotebookPen className="h-5 w-5" />
+          </div>
+          <div>
+            <h3 className="text-lg font-semibold text-[var(--ink)]">Export to Google Docs</h3>
+            <p className="text-sm text-[var(--ink-soft)]">
+              Create a new Google Doc with clean headings, sections, and an openable document URL.
+            </p>
+          </div>
+        </div>
+
+        <div className="rounded-[22px] bg-white/80 p-4 text-sm leading-7 text-[var(--ink-soft)]">
+          <p>{googleDocsStatus.message}</p>
+        </div>
+
+        <button
+          type="button"
+          onClick={handleGoogleDocsExport}
+          disabled={!googleDocsStatus.configured || isExportingGoogleDoc}
+          className={buttonStyles({
+            variant: googleDocsStatus.configured ? "primary" : "secondary",
+            className: "w-full disabled:opacity-60",
+          })}
+        >
+          {isExportingGoogleDoc ? (
+            <>
+              <LoaderCircle className="mr-2 h-4 w-4 animate-spin" />
+              Creating Google Doc
+            </>
+          ) : (
+            "Export to Google Docs"
+          )}
+        </button>
+
+        {googleDocsResult ? (
+          <div className="space-y-3 rounded-[22px] border border-emerald-200 bg-emerald-50 p-4 text-sm text-emerald-900">
+            <p className="font-semibold">Google Doc created successfully.</p>
+            <p>{googleDocsResult.title}</p>
+            <Link
+              href={googleDocsResult.documentUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={buttonStyles({ variant: "outline", className: "w-full" })}
+            >
+              Open Doc
+            </Link>
+          </div>
+        ) : null}
+
+        {googleDocsError ? (
+          <div className="rounded-[22px] border border-red-200 bg-red-50 p-4 text-sm text-red-700">
+            {googleDocsError}
+          </div>
+        ) : null}
+      </Card>
     </div>
   );
 }

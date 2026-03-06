@@ -6,6 +6,7 @@ import { CopyButton } from "@/components/ui/copy-button";
 import { Card } from "@/components/ui/card";
 import { ExportButtons } from "@/components/results/export-buttons";
 import type { ContentType, GeneratedContentPlan } from "@/lib/types/content";
+import type { GoogleDocsIntegrationStatus } from "@/lib/types/integrations";
 import { cn, formatDate } from "@/lib/utils";
 
 const tabs = [
@@ -27,7 +28,13 @@ const calendarFilters: Array<ContentType | "All"> = [
 
 type TabKey = (typeof tabs)[number]["key"];
 
-export function ResultsTabs({ plan }: { plan: GeneratedContentPlan }) {
+export function ResultsTabs({
+  plan,
+  googleDocsStatus,
+}: {
+  plan: GeneratedContentPlan;
+  googleDocsStatus: GoogleDocsIntegrationStatus;
+}) {
   const [activeTab, setActiveTab] = useState<TabKey>("calendar");
   const [calendarFilter, setCalendarFilter] = useState<ContentType | "All">("All");
   const tabCounts: Record<TabKey, number> = {
@@ -321,7 +328,7 @@ export function ResultsTabs({ plan }: { plan: GeneratedContentPlan }) {
               standalone report, and the print view when you want to save a browser PDF during a demo.
             </p>
           </Card>
-          <ExportButtons id={plan.id} />
+          <ExportButtons id={plan.id} googleDocsStatus={googleDocsStatus} />
         </section>
       ) : null}
     </div>
