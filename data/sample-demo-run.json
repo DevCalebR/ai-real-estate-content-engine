@@ -1,0 +1,2053 @@
+{
+  "id": "sample-demo-run",
+  "createdAt": "2026-03-06T14:30:00.000Z",
+  "modeUsed": "demo",
+  "input": {
+    "agentName": "Avery Nolan Properties",
+    "city": "Charleston, SC",
+    "niche": "Relocation clients and luxury coastal homes",
+    "targetAudience": "High-income professionals moving from the Northeast who want a polished local expert",
+    "tone": "Luxury editorial with warm concierge energy",
+    "primaryCta": "Book a relocation strategy call",
+    "listingHighlights": "Waterfront homes, walkable historic neighborhoods, turnkey interiors, private outdoor space",
+    "platforms": [
+      "Instagram",
+      "LinkedIn",
+      "Facebook"
+    ]
+  },
+  "summary": {
+    "campaignTitle": "Avery Nolan Properties Monthly Growth Engine",
+    "positioning": "Avery Nolan Properties is positioned as the Charleston, SC advisor who turns relocation clients and luxury coastal questions into clear next steps for high-income professionals moving from the northeast.",
+    "narrative": "The month balances trust-building education, local market fluency, and polished lifestyle storytelling so every post reinforces luxury editorial with warm concierge energy while moving prospects toward \"Book a relocation strategy call\"."
+  },
+  "stats": {
+    "totalPosts": 30,
+    "carouselCount": 10,
+    "videoCount": 10,
+    "primaryPlatforms": [
+      "Instagram",
+      "LinkedIn",
+      "Facebook"
+    ]
+  },
+  "deliverables": {
+    "monthlyContentCalendar": [
+      {
+        "day": 1,
+        "contentType": "Single image",
+        "theme": "Market shift insight: Charleston, SC",
+        "angle": "Translate the local market into a calm, trusted takeaway for buyers. Keep the advice grounded in relocation clients and luxury coastal decisions for this market.",
+        "caption": "If you want the local signal, start here. Day 1 focuses on market shift insight: charleston, sc in Charleston, SC. Translate the local market into a calm, trusted takeaway for buyers. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call.",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day01Content"
+        ],
+        "cta": "Book a relocation strategy call",
+        "platformFocus": [
+          "Instagram",
+          "LinkedIn"
+        ],
+        "imagePrompt": "Market shift insight: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; high-end property marketing still, natural textures, tasteful composition; tone is luxury editorial with warm concierge energy; subtle cues for high-income…",
+        "postId": "d01-market-shift-insight",
+        "publishDate": "2026-03-06T14:30:00.000Z"
+      },
+      {
+        "day": 2,
+        "contentType": "Carousel",
+        "theme": "Client win: Charleston, SC",
+        "angle": "Show behind-the-scenes expertise that reinforces advisory authority. Keep the advice grounded in relocation clients and luxury coastal decisions for this market.",
+        "caption": "Save this for the point when the search needs sharper strategy. Day 2 focuses on client win: charleston, sc in Charleston, SC. Show behind-the-scenes expertise that reinforces advisory authority. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call.",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day02Content"
+        ],
+        "cta": "Book a relocation strategy call",
+        "platformFocus": [
+          "LinkedIn",
+          "Facebook"
+        ],
+        "imagePrompt": "Client win: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; editorial social carousel, refined grid layout, muted luxury palette; tone is luxury editorial with warm concierge energy; subtle cues for high-income professionals …",
+        "postId": "d02-client-win-charlesto",
+        "publishDate": "2026-03-07T14:30:00.000Z"
+      },
+      {
+        "day": 3,
+        "contentType": "Short-form video",
+        "theme": "Neighborhood spotlight: Charleston, SC",
+        "angle": "Use neighborhood lifestyle cues to make the market feel tangible. Keep the advice grounded in relocation clients and luxury coastal decisions for this market.",
+        "caption": "Stop scrolling if you want the clearer read on this market. Day 3 focuses on neighborhood spotlight: charleston, sc in Charleston, SC. Use neighborhood lifestyle cues to make the market feel tangible. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call.",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day03Content"
+        ],
+        "cta": "Book a relocation strategy call",
+        "platformFocus": [
+          "Facebook",
+          "Instagram"
+        ],
+        "imagePrompt": "Neighborhood spotlight: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; vertical video storyboard frame, cinematic natural light, polished real estate branding; tone is luxury editorial with warm concierge energy; subtle cues…",
+        "postId": "d03-neighborhood-spotlig",
+        "publishDate": "2026-03-08T13:30:00.000Z"
+      },
+      {
+        "day": 4,
+        "contentType": "Single image",
+        "theme": "Listing story: Charleston, SC",
+        "angle": "Turn a common client question into practical guidance with momentum. Keep the advice grounded in relocation clients and luxury coastal decisions for this market.",
+        "caption": "If you want the local signal, start here. Day 4 focuses on listing story: charleston, sc in Charleston, SC. Turn a common client question into practical guidance with momentum. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call.",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day04Content"
+        ],
+        "cta": "Book a relocation strategy call",
+        "platformFocus": [
+          "Instagram",
+          "LinkedIn"
+        ],
+        "imagePrompt": "Listing story: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; high-end property marketing still, natural textures, tasteful composition; tone is luxury editorial with warm concierge energy; subtle cues for high-income profes…",
+        "postId": "d04-listing-story-charle",
+        "publishDate": "2026-03-09T13:30:00.000Z"
+      },
+      {
+        "day": 5,
+        "contentType": "Carousel",
+        "theme": "Buyer myth reset: Charleston, SC",
+        "angle": "Anchor the content in current decision-making, not generic inspiration. Keep the advice grounded in relocation clients and luxury coastal decisions for this market.",
+        "caption": "Save this for the point when the search needs sharper strategy. Day 5 focuses on buyer myth reset: charleston, sc in Charleston, SC. Anchor the content in current decision-making, not generic inspiration. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call.",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day05Content"
+        ],
+        "cta": "Book a relocation strategy call",
+        "platformFocus": [
+          "LinkedIn",
+          "Facebook"
+        ],
+        "imagePrompt": "Buyer myth reset: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; editorial social carousel, refined grid layout, muted luxury palette; tone is luxury editorial with warm concierge energy; subtle cues for high-income professi…",
+        "postId": "d05-buyer-myth-reset-cha",
+        "publishDate": "2026-03-10T13:30:00.000Z"
+      },
+      {
+        "day": 6,
+        "contentType": "Short-form video",
+        "theme": "Seller strategy: Charleston, SC",
+        "angle": "Translate the local market into a calm, trusted takeaway for buyers. Keep the advice grounded in relocation clients and luxury coastal decisions for this market.",
+        "caption": "Stop scrolling if you want the clearer read on this market. Day 6 focuses on seller strategy: charleston, sc in Charleston, SC. Translate the local market into a calm, trusted takeaway for buyers. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call.",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day06Content"
+        ],
+        "cta": "Book a relocation strategy call",
+        "platformFocus": [
+          "Facebook",
+          "Instagram"
+        ],
+        "imagePrompt": "Seller strategy: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; vertical video storyboard frame, cinematic natural light, polished real estate branding; tone is luxury editorial with warm concierge energy; subtle cues for hi…",
+        "postId": "d06-seller-strategy-char",
+        "publishDate": "2026-03-11T13:30:00.000Z"
+      },
+      {
+        "day": 7,
+        "contentType": "Single image",
+        "theme": "Relocation guide: Charleston, SC",
+        "angle": "Show behind-the-scenes expertise that reinforces advisory authority. Keep the advice grounded in relocation clients and luxury coastal decisions for this market.",
+        "caption": "If you want the local signal, start here. Day 7 focuses on relocation guide: charleston, sc in Charleston, SC. Show behind-the-scenes expertise that reinforces advisory authority. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call.",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day07Content"
+        ],
+        "cta": "Book a relocation strategy call",
+        "platformFocus": [
+          "Instagram",
+          "LinkedIn"
+        ],
+        "imagePrompt": "Relocation guide: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; high-end property marketing still, natural textures, tasteful composition; tone is luxury editorial with warm concierge energy; subtle cues for high-income pro…",
+        "postId": "d07-relocation-guide-cha",
+        "publishDate": "2026-03-12T13:30:00.000Z"
+      },
+      {
+        "day": 8,
+        "contentType": "Carousel",
+        "theme": "Lifestyle cue: Charleston, SC",
+        "angle": "Use neighborhood lifestyle cues to make the market feel tangible. Keep the advice grounded in relocation clients and luxury coastal decisions for this market.",
+        "caption": "Save this for the point when the search needs sharper strategy. Day 8 focuses on lifestyle cue: charleston, sc in Charleston, SC. Use neighborhood lifestyle cues to make the market feel tangible. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call.",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day08Content"
+        ],
+        "cta": "Book a relocation strategy call",
+        "platformFocus": [
+          "LinkedIn",
+          "Facebook"
+        ],
+        "imagePrompt": "Lifestyle cue: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; editorial social carousel, refined grid layout, muted luxury palette; tone is luxury editorial with warm concierge energy; subtle cues for high-income professiona…",
+        "postId": "d08-lifestyle-cue-charle",
+        "publishDate": "2026-03-13T13:30:00.000Z"
+      },
+      {
+        "day": 9,
+        "contentType": "Short-form video",
+        "theme": "Pricing perspective: Charleston, SC",
+        "angle": "Turn a common client question into practical guidance with momentum. Keep the advice grounded in relocation clients and luxury coastal decisions for this market.",
+        "caption": "Stop scrolling if you want the clearer read on this market. Day 9 focuses on pricing perspective: charleston, sc in Charleston, SC. Turn a common client question into practical guidance with momentum. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call.",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day09Content"
+        ],
+        "cta": "Book a relocation strategy call",
+        "platformFocus": [
+          "Facebook",
+          "Instagram"
+        ],
+        "imagePrompt": "Pricing perspective: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; vertical video storyboard frame, cinematic natural light, polished real estate branding; tone is luxury editorial with warm concierge energy; subtle cues fo…",
+        "postId": "d09-pricing-perspective-",
+        "publishDate": "2026-03-14T13:30:00.000Z"
+      },
+      {
+        "day": 10,
+        "contentType": "Single image",
+        "theme": "Home prep tip: Charleston, SC",
+        "angle": "Anchor the content in current decision-making, not generic inspiration. Keep the advice grounded in relocation clients and luxury coastal decisions for this market.",
+        "caption": "If you want the local signal, start here. Day 10 focuses on home prep tip: charleston, sc in Charleston, SC. Anchor the content in current decision-making, not generic inspiration. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call.",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day10Content"
+        ],
+        "cta": "Book a relocation strategy call",
+        "platformFocus": [
+          "Instagram",
+          "LinkedIn"
+        ],
+        "imagePrompt": "Home prep tip: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; high-end property marketing still, natural textures, tasteful composition; tone is luxury editorial with warm concierge energy; subtle cues for high-income profes…",
+        "postId": "d10-home-prep-tip-charle",
+        "publishDate": "2026-03-15T13:30:00.000Z"
+      },
+      {
+        "day": 11,
+        "contentType": "Carousel",
+        "theme": "Market shift insight: Charleston, SC",
+        "angle": "Translate the local market into a calm, trusted takeaway for buyers. Keep the advice grounded in relocation clients and luxury coastal decisions for this market.",
+        "caption": "Save this for the point when the search needs sharper strategy. Day 11 focuses on market shift insight: charleston, sc in Charleston, SC. Translate the local market into a calm, trusted takeaway for buyers. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call.",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day11Content"
+        ],
+        "cta": "Book a relocation strategy call",
+        "platformFocus": [
+          "LinkedIn",
+          "Facebook"
+        ],
+        "imagePrompt": "Market shift insight: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; editorial social carousel, refined grid layout, muted luxury palette; tone is luxury editorial with warm concierge energy; subtle cues for high-income prof…",
+        "postId": "d11-market-shift-insight",
+        "publishDate": "2026-03-16T13:30:00.000Z"
+      },
+      {
+        "day": 12,
+        "contentType": "Short-form video",
+        "theme": "Client win: Charleston, SC",
+        "angle": "Show behind-the-scenes expertise that reinforces advisory authority. Keep the advice grounded in relocation clients and luxury coastal decisions for this market.",
+        "caption": "Stop scrolling if you want the clearer read on this market. Day 12 focuses on client win: charleston, sc in Charleston, SC. Show behind-the-scenes expertise that reinforces advisory authority. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call.",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day12Content"
+        ],
+        "cta": "Book a relocation strategy call",
+        "platformFocus": [
+          "Facebook",
+          "Instagram"
+        ],
+        "imagePrompt": "Client win: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; vertical video storyboard frame, cinematic natural light, polished real estate branding; tone is luxury editorial with warm concierge energy; subtle cues for high-in…",
+        "postId": "d12-client-win-charlesto",
+        "publishDate": "2026-03-17T13:30:00.000Z"
+      },
+      {
+        "day": 13,
+        "contentType": "Single image",
+        "theme": "Neighborhood spotlight: Charleston, SC",
+        "angle": "Use neighborhood lifestyle cues to make the market feel tangible. Keep the advice grounded in relocation clients and luxury coastal decisions for this market.",
+        "caption": "If you want the local signal, start here. Day 13 focuses on neighborhood spotlight: charleston, sc in Charleston, SC. Use neighborhood lifestyle cues to make the market feel tangible. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call.",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day13Content"
+        ],
+        "cta": "Book a relocation strategy call",
+        "platformFocus": [
+          "Instagram",
+          "LinkedIn"
+        ],
+        "imagePrompt": "Neighborhood spotlight: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; high-end property marketing still, natural textures, tasteful composition; tone is luxury editorial with warm concierge energy; subtle cues for high-inco…",
+        "postId": "d13-neighborhood-spotlig",
+        "publishDate": "2026-03-18T13:30:00.000Z"
+      },
+      {
+        "day": 14,
+        "contentType": "Carousel",
+        "theme": "Listing story: Charleston, SC",
+        "angle": "Turn a common client question into practical guidance with momentum. Keep the advice grounded in relocation clients and luxury coastal decisions for this market.",
+        "caption": "Save this for the point when the search needs sharper strategy. Day 14 focuses on listing story: charleston, sc in Charleston, SC. Turn a common client question into practical guidance with momentum. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call.",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day14Content"
+        ],
+        "cta": "Book a relocation strategy call",
+        "platformFocus": [
+          "LinkedIn",
+          "Facebook"
+        ],
+        "imagePrompt": "Listing story: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; editorial social carousel, refined grid layout, muted luxury palette; tone is luxury editorial with warm concierge energy; subtle cues for high-income professiona…",
+        "postId": "d14-listing-story-charle",
+        "publishDate": "2026-03-19T13:30:00.000Z"
+      },
+      {
+        "day": 15,
+        "contentType": "Short-form video",
+        "theme": "Buyer myth reset: Charleston, SC",
+        "angle": "Anchor the content in current decision-making, not generic inspiration. Keep the advice grounded in relocation clients and luxury coastal decisions for this market.",
+        "caption": "Stop scrolling if you want the clearer read on this market. Day 15 focuses on buyer myth reset: charleston, sc in Charleston, SC. Anchor the content in current decision-making, not generic inspiration. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call.",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day15Content"
+        ],
+        "cta": "Book a relocation strategy call",
+        "platformFocus": [
+          "Facebook",
+          "Instagram"
+        ],
+        "imagePrompt": "Buyer myth reset: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; vertical video storyboard frame, cinematic natural light, polished real estate branding; tone is luxury editorial with warm concierge energy; subtle cues for h…",
+        "postId": "d15-buyer-myth-reset-cha",
+        "publishDate": "2026-03-20T13:30:00.000Z"
+      },
+      {
+        "day": 16,
+        "contentType": "Single image",
+        "theme": "Seller strategy: Charleston, SC",
+        "angle": "Translate the local market into a calm, trusted takeaway for buyers. Keep the advice grounded in relocation clients and luxury coastal decisions for this market.",
+        "caption": "If you want the local signal, start here. Day 16 focuses on seller strategy: charleston, sc in Charleston, SC. Translate the local market into a calm, trusted takeaway for buyers. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call.",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day16Content"
+        ],
+        "cta": "Book a relocation strategy call",
+        "platformFocus": [
+          "Instagram",
+          "LinkedIn"
+        ],
+        "imagePrompt": "Seller strategy: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; high-end property marketing still, natural textures, tasteful composition; tone is luxury editorial with warm concierge energy; subtle cues for high-income prof…",
+        "postId": "d16-seller-strategy-char",
+        "publishDate": "2026-03-21T13:30:00.000Z"
+      },
+      {
+        "day": 17,
+        "contentType": "Carousel",
+        "theme": "Relocation guide: Charleston, SC",
+        "angle": "Show behind-the-scenes expertise that reinforces advisory authority. Keep the advice grounded in relocation clients and luxury coastal decisions for this market.",
+        "caption": "Save this for the point when the search needs sharper strategy. Day 17 focuses on relocation guide: charleston, sc in Charleston, SC. Show behind-the-scenes expertise that reinforces advisory authority. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call.",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day17Content"
+        ],
+        "cta": "Book a relocation strategy call",
+        "platformFocus": [
+          "LinkedIn",
+          "Facebook"
+        ],
+        "imagePrompt": "Relocation guide: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; editorial social carousel, refined grid layout, muted luxury palette; tone is luxury editorial with warm concierge energy; subtle cues for high-income professi…",
+        "postId": "d17-relocation-guide-cha",
+        "publishDate": "2026-03-22T13:30:00.000Z"
+      },
+      {
+        "day": 18,
+        "contentType": "Short-form video",
+        "theme": "Lifestyle cue: Charleston, SC",
+        "angle": "Use neighborhood lifestyle cues to make the market feel tangible. Keep the advice grounded in relocation clients and luxury coastal decisions for this market.",
+        "caption": "Stop scrolling if you want the clearer read on this market. Day 18 focuses on lifestyle cue: charleston, sc in Charleston, SC. Use neighborhood lifestyle cues to make the market feel tangible. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call.",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day18Content"
+        ],
+        "cta": "Book a relocation strategy call",
+        "platformFocus": [
+          "Facebook",
+          "Instagram"
+        ],
+        "imagePrompt": "Lifestyle cue: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; vertical video storyboard frame, cinematic natural light, polished real estate branding; tone is luxury editorial with warm concierge energy; subtle cues for high…",
+        "postId": "d18-lifestyle-cue-charle",
+        "publishDate": "2026-03-23T13:30:00.000Z"
+      },
+      {
+        "day": 19,
+        "contentType": "Single image",
+        "theme": "Pricing perspective: Charleston, SC",
+        "angle": "Turn a common client question into practical guidance with momentum. Keep the advice grounded in relocation clients and luxury coastal decisions for this market.",
+        "caption": "If you want the local signal, start here. Day 19 focuses on pricing perspective: charleston, sc in Charleston, SC. Turn a common client question into practical guidance with momentum. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call.",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day19Content"
+        ],
+        "cta": "Book a relocation strategy call",
+        "platformFocus": [
+          "Instagram",
+          "LinkedIn"
+        ],
+        "imagePrompt": "Pricing perspective: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; high-end property marketing still, natural textures, tasteful composition; tone is luxury editorial with warm concierge energy; subtle cues for high-income …",
+        "postId": "d19-pricing-perspective-",
+        "publishDate": "2026-03-24T13:30:00.000Z"
+      },
+      {
+        "day": 20,
+        "contentType": "Carousel",
+        "theme": "Home prep tip: Charleston, SC",
+        "angle": "Anchor the content in current decision-making, not generic inspiration. Keep the advice grounded in relocation clients and luxury coastal decisions for this market.",
+        "caption": "Save this for the point when the search needs sharper strategy. Day 20 focuses on home prep tip: charleston, sc in Charleston, SC. Anchor the content in current decision-making, not generic inspiration. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call.",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day20Content"
+        ],
+        "cta": "Book a relocation strategy call",
+        "platformFocus": [
+          "LinkedIn",
+          "Facebook"
+        ],
+        "imagePrompt": "Home prep tip: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; editorial social carousel, refined grid layout, muted luxury palette; tone is luxury editorial with warm concierge energy; subtle cues for high-income professiona…",
+        "postId": "d20-home-prep-tip-charle",
+        "publishDate": "2026-03-25T13:30:00.000Z"
+      },
+      {
+        "day": 21,
+        "contentType": "Short-form video",
+        "theme": "Market shift insight: Charleston, SC",
+        "angle": "Translate the local market into a calm, trusted takeaway for buyers. Keep the advice grounded in relocation clients and luxury coastal decisions for this market.",
+        "caption": "Stop scrolling if you want the clearer read on this market. Day 21 focuses on market shift insight: charleston, sc in Charleston, SC. Translate the local market into a calm, trusted takeaway for buyers. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call.",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day21Content"
+        ],
+        "cta": "Book a relocation strategy call",
+        "platformFocus": [
+          "Facebook",
+          "Instagram"
+        ],
+        "imagePrompt": "Market shift insight: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; vertical video storyboard frame, cinematic natural light, polished real estate branding; tone is luxury editorial with warm concierge energy; subtle cues f…",
+        "postId": "d21-market-shift-insight",
+        "publishDate": "2026-03-26T13:30:00.000Z"
+      },
+      {
+        "day": 22,
+        "contentType": "Single image",
+        "theme": "Client win: Charleston, SC",
+        "angle": "Show behind-the-scenes expertise that reinforces advisory authority. Keep the advice grounded in relocation clients and luxury coastal decisions for this market.",
+        "caption": "If you want the local signal, start here. Day 22 focuses on client win: charleston, sc in Charleston, SC. Show behind-the-scenes expertise that reinforces advisory authority. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call.",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day22Content"
+        ],
+        "cta": "Book a relocation strategy call",
+        "platformFocus": [
+          "Instagram",
+          "LinkedIn"
+        ],
+        "imagePrompt": "Client win: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; high-end property marketing still, natural textures, tasteful composition; tone is luxury editorial with warm concierge energy; subtle cues for high-income professio…",
+        "postId": "d22-client-win-charlesto",
+        "publishDate": "2026-03-27T13:30:00.000Z"
+      },
+      {
+        "day": 23,
+        "contentType": "Carousel",
+        "theme": "Neighborhood spotlight: Charleston, SC",
+        "angle": "Use neighborhood lifestyle cues to make the market feel tangible. Keep the advice grounded in relocation clients and luxury coastal decisions for this market.",
+        "caption": "Save this for the point when the search needs sharper strategy. Day 23 focuses on neighborhood spotlight: charleston, sc in Charleston, SC. Use neighborhood lifestyle cues to make the market feel tangible. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call.",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day23Content"
+        ],
+        "cta": "Book a relocation strategy call",
+        "platformFocus": [
+          "LinkedIn",
+          "Facebook"
+        ],
+        "imagePrompt": "Neighborhood spotlight: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; editorial social carousel, refined grid layout, muted luxury palette; tone is luxury editorial with warm concierge energy; subtle cues for high-income pr…",
+        "postId": "d23-neighborhood-spotlig",
+        "publishDate": "2026-03-28T13:30:00.000Z"
+      },
+      {
+        "day": 24,
+        "contentType": "Short-form video",
+        "theme": "Listing story: Charleston, SC",
+        "angle": "Turn a common client question into practical guidance with momentum. Keep the advice grounded in relocation clients and luxury coastal decisions for this market.",
+        "caption": "Stop scrolling if you want the clearer read on this market. Day 24 focuses on listing story: charleston, sc in Charleston, SC. Turn a common client question into practical guidance with momentum. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call.",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day24Content"
+        ],
+        "cta": "Book a relocation strategy call",
+        "platformFocus": [
+          "Facebook",
+          "Instagram"
+        ],
+        "imagePrompt": "Listing story: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; vertical video storyboard frame, cinematic natural light, polished real estate branding; tone is luxury editorial with warm concierge energy; subtle cues for high…",
+        "postId": "d24-listing-story-charle",
+        "publishDate": "2026-03-29T13:30:00.000Z"
+      },
+      {
+        "day": 25,
+        "contentType": "Single image",
+        "theme": "Buyer myth reset: Charleston, SC",
+        "angle": "Anchor the content in current decision-making, not generic inspiration. Keep the advice grounded in relocation clients and luxury coastal decisions for this market.",
+        "caption": "If you want the local signal, start here. Day 25 focuses on buyer myth reset: charleston, sc in Charleston, SC. Anchor the content in current decision-making, not generic inspiration. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call.",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day25Content"
+        ],
+        "cta": "Book a relocation strategy call",
+        "platformFocus": [
+          "Instagram",
+          "LinkedIn"
+        ],
+        "imagePrompt": "Buyer myth reset: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; high-end property marketing still, natural textures, tasteful composition; tone is luxury editorial with warm concierge energy; subtle cues for high-income pro…",
+        "postId": "d25-buyer-myth-reset-cha",
+        "publishDate": "2026-03-30T13:30:00.000Z"
+      },
+      {
+        "day": 26,
+        "contentType": "Carousel",
+        "theme": "Seller strategy: Charleston, SC",
+        "angle": "Translate the local market into a calm, trusted takeaway for buyers. Keep the advice grounded in relocation clients and luxury coastal decisions for this market.",
+        "caption": "Save this for the point when the search needs sharper strategy. Day 26 focuses on seller strategy: charleston, sc in Charleston, SC. Translate the local market into a calm, trusted takeaway for buyers. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call.",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day26Content"
+        ],
+        "cta": "Book a relocation strategy call",
+        "platformFocus": [
+          "LinkedIn",
+          "Facebook"
+        ],
+        "imagePrompt": "Seller strategy: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; editorial social carousel, refined grid layout, muted luxury palette; tone is luxury editorial with warm concierge energy; subtle cues for high-income professio…",
+        "postId": "d26-seller-strategy-char",
+        "publishDate": "2026-03-31T13:30:00.000Z"
+      },
+      {
+        "day": 27,
+        "contentType": "Short-form video",
+        "theme": "Relocation guide: Charleston, SC",
+        "angle": "Show behind-the-scenes expertise that reinforces advisory authority. Keep the advice grounded in relocation clients and luxury coastal decisions for this market.",
+        "caption": "Stop scrolling if you want the clearer read on this market. Day 27 focuses on relocation guide: charleston, sc in Charleston, SC. Show behind-the-scenes expertise that reinforces advisory authority. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call.",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day27Content"
+        ],
+        "cta": "Book a relocation strategy call",
+        "platformFocus": [
+          "Facebook",
+          "Instagram"
+        ],
+        "imagePrompt": "Relocation guide: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; vertical video storyboard frame, cinematic natural light, polished real estate branding; tone is luxury editorial with warm concierge energy; subtle cues for h…",
+        "postId": "d27-relocation-guide-cha",
+        "publishDate": "2026-04-01T13:30:00.000Z"
+      },
+      {
+        "day": 28,
+        "contentType": "Single image",
+        "theme": "Lifestyle cue: Charleston, SC",
+        "angle": "Use neighborhood lifestyle cues to make the market feel tangible. Keep the advice grounded in relocation clients and luxury coastal decisions for this market.",
+        "caption": "If you want the local signal, start here. Day 28 focuses on lifestyle cue: charleston, sc in Charleston, SC. Use neighborhood lifestyle cues to make the market feel tangible. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call.",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day28Content"
+        ],
+        "cta": "Book a relocation strategy call",
+        "platformFocus": [
+          "Instagram",
+          "LinkedIn"
+        ],
+        "imagePrompt": "Lifestyle cue: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; high-end property marketing still, natural textures, tasteful composition; tone is luxury editorial with warm concierge energy; subtle cues for high-income profes…",
+        "postId": "d28-lifestyle-cue-charle",
+        "publishDate": "2026-04-02T13:30:00.000Z"
+      },
+      {
+        "day": 29,
+        "contentType": "Carousel",
+        "theme": "Pricing perspective: Charleston, SC",
+        "angle": "Turn a common client question into practical guidance with momentum. Keep the advice grounded in relocation clients and luxury coastal decisions for this market.",
+        "caption": "Save this for the point when the search needs sharper strategy. Day 29 focuses on pricing perspective: charleston, sc in Charleston, SC. Turn a common client question into practical guidance with momentum. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call.",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day29Content"
+        ],
+        "cta": "Book a relocation strategy call",
+        "platformFocus": [
+          "LinkedIn",
+          "Facebook"
+        ],
+        "imagePrompt": "Pricing perspective: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; editorial social carousel, refined grid layout, muted luxury palette; tone is luxury editorial with warm concierge energy; subtle cues for high-income profe…",
+        "postId": "d29-pricing-perspective-",
+        "publishDate": "2026-04-03T13:30:00.000Z"
+      },
+      {
+        "day": 30,
+        "contentType": "Short-form video",
+        "theme": "Home prep tip: Charleston, SC",
+        "angle": "Anchor the content in current decision-making, not generic inspiration. Keep the advice grounded in relocation clients and luxury coastal decisions for this market.",
+        "caption": "Stop scrolling if you want the clearer read on this market. Day 30 focuses on home prep tip: charleston, sc in Charleston, SC. Anchor the content in current decision-making, not generic inspiration. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call.",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day30Content"
+        ],
+        "cta": "Book a relocation strategy call",
+        "platformFocus": [
+          "Facebook",
+          "Instagram"
+        ],
+        "imagePrompt": "Home prep tip: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; vertical video storyboard frame, cinematic natural light, polished real estate branding; tone is luxury editorial with warm concierge energy; subtle cues for high…",
+        "postId": "d30-home-prep-tip-charle",
+        "publishDate": "2026-04-04T13:30:00.000Z"
+      }
+    ],
+    "captions": [
+      {
+        "postId": "d01-market-shift-insight",
+        "day": 1,
+        "contentType": "Single image",
+        "theme": "Market shift insight: Charleston, SC",
+        "caption": "If you want the local signal, start here. Day 1 focuses on market shift insight: charleston, sc in Charleston, SC. Translate the local market into a calm, trusted takeaway for buyers. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call."
+      },
+      {
+        "postId": "d02-client-win-charlesto",
+        "day": 2,
+        "contentType": "Carousel",
+        "theme": "Client win: Charleston, SC",
+        "caption": "Save this for the point when the search needs sharper strategy. Day 2 focuses on client win: charleston, sc in Charleston, SC. Show behind-the-scenes expertise that reinforces advisory authority. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call."
+      },
+      {
+        "postId": "d03-neighborhood-spotlig",
+        "day": 3,
+        "contentType": "Short-form video",
+        "theme": "Neighborhood spotlight: Charleston, SC",
+        "caption": "Stop scrolling if you want the clearer read on this market. Day 3 focuses on neighborhood spotlight: charleston, sc in Charleston, SC. Use neighborhood lifestyle cues to make the market feel tangible. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call."
+      },
+      {
+        "postId": "d04-listing-story-charle",
+        "day": 4,
+        "contentType": "Single image",
+        "theme": "Listing story: Charleston, SC",
+        "caption": "If you want the local signal, start here. Day 4 focuses on listing story: charleston, sc in Charleston, SC. Turn a common client question into practical guidance with momentum. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call."
+      },
+      {
+        "postId": "d05-buyer-myth-reset-cha",
+        "day": 5,
+        "contentType": "Carousel",
+        "theme": "Buyer myth reset: Charleston, SC",
+        "caption": "Save this for the point when the search needs sharper strategy. Day 5 focuses on buyer myth reset: charleston, sc in Charleston, SC. Anchor the content in current decision-making, not generic inspiration. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call."
+      },
+      {
+        "postId": "d06-seller-strategy-char",
+        "day": 6,
+        "contentType": "Short-form video",
+        "theme": "Seller strategy: Charleston, SC",
+        "caption": "Stop scrolling if you want the clearer read on this market. Day 6 focuses on seller strategy: charleston, sc in Charleston, SC. Translate the local market into a calm, trusted takeaway for buyers. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call."
+      },
+      {
+        "postId": "d07-relocation-guide-cha",
+        "day": 7,
+        "contentType": "Single image",
+        "theme": "Relocation guide: Charleston, SC",
+        "caption": "If you want the local signal, start here. Day 7 focuses on relocation guide: charleston, sc in Charleston, SC. Show behind-the-scenes expertise that reinforces advisory authority. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call."
+      },
+      {
+        "postId": "d08-lifestyle-cue-charle",
+        "day": 8,
+        "contentType": "Carousel",
+        "theme": "Lifestyle cue: Charleston, SC",
+        "caption": "Save this for the point when the search needs sharper strategy. Day 8 focuses on lifestyle cue: charleston, sc in Charleston, SC. Use neighborhood lifestyle cues to make the market feel tangible. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call."
+      },
+      {
+        "postId": "d09-pricing-perspective-",
+        "day": 9,
+        "contentType": "Short-form video",
+        "theme": "Pricing perspective: Charleston, SC",
+        "caption": "Stop scrolling if you want the clearer read on this market. Day 9 focuses on pricing perspective: charleston, sc in Charleston, SC. Turn a common client question into practical guidance with momentum. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call."
+      },
+      {
+        "postId": "d10-home-prep-tip-charle",
+        "day": 10,
+        "contentType": "Single image",
+        "theme": "Home prep tip: Charleston, SC",
+        "caption": "If you want the local signal, start here. Day 10 focuses on home prep tip: charleston, sc in Charleston, SC. Anchor the content in current decision-making, not generic inspiration. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call."
+      },
+      {
+        "postId": "d11-market-shift-insight",
+        "day": 11,
+        "contentType": "Carousel",
+        "theme": "Market shift insight: Charleston, SC",
+        "caption": "Save this for the point when the search needs sharper strategy. Day 11 focuses on market shift insight: charleston, sc in Charleston, SC. Translate the local market into a calm, trusted takeaway for buyers. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call."
+      },
+      {
+        "postId": "d12-client-win-charlesto",
+        "day": 12,
+        "contentType": "Short-form video",
+        "theme": "Client win: Charleston, SC",
+        "caption": "Stop scrolling if you want the clearer read on this market. Day 12 focuses on client win: charleston, sc in Charleston, SC. Show behind-the-scenes expertise that reinforces advisory authority. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call."
+      },
+      {
+        "postId": "d13-neighborhood-spotlig",
+        "day": 13,
+        "contentType": "Single image",
+        "theme": "Neighborhood spotlight: Charleston, SC",
+        "caption": "If you want the local signal, start here. Day 13 focuses on neighborhood spotlight: charleston, sc in Charleston, SC. Use neighborhood lifestyle cues to make the market feel tangible. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call."
+      },
+      {
+        "postId": "d14-listing-story-charle",
+        "day": 14,
+        "contentType": "Carousel",
+        "theme": "Listing story: Charleston, SC",
+        "caption": "Save this for the point when the search needs sharper strategy. Day 14 focuses on listing story: charleston, sc in Charleston, SC. Turn a common client question into practical guidance with momentum. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call."
+      },
+      {
+        "postId": "d15-buyer-myth-reset-cha",
+        "day": 15,
+        "contentType": "Short-form video",
+        "theme": "Buyer myth reset: Charleston, SC",
+        "caption": "Stop scrolling if you want the clearer read on this market. Day 15 focuses on buyer myth reset: charleston, sc in Charleston, SC. Anchor the content in current decision-making, not generic inspiration. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call."
+      },
+      {
+        "postId": "d16-seller-strategy-char",
+        "day": 16,
+        "contentType": "Single image",
+        "theme": "Seller strategy: Charleston, SC",
+        "caption": "If you want the local signal, start here. Day 16 focuses on seller strategy: charleston, sc in Charleston, SC. Translate the local market into a calm, trusted takeaway for buyers. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call."
+      },
+      {
+        "postId": "d17-relocation-guide-cha",
+        "day": 17,
+        "contentType": "Carousel",
+        "theme": "Relocation guide: Charleston, SC",
+        "caption": "Save this for the point when the search needs sharper strategy. Day 17 focuses on relocation guide: charleston, sc in Charleston, SC. Show behind-the-scenes expertise that reinforces advisory authority. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call."
+      },
+      {
+        "postId": "d18-lifestyle-cue-charle",
+        "day": 18,
+        "contentType": "Short-form video",
+        "theme": "Lifestyle cue: Charleston, SC",
+        "caption": "Stop scrolling if you want the clearer read on this market. Day 18 focuses on lifestyle cue: charleston, sc in Charleston, SC. Use neighborhood lifestyle cues to make the market feel tangible. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call."
+      },
+      {
+        "postId": "d19-pricing-perspective-",
+        "day": 19,
+        "contentType": "Single image",
+        "theme": "Pricing perspective: Charleston, SC",
+        "caption": "If you want the local signal, start here. Day 19 focuses on pricing perspective: charleston, sc in Charleston, SC. Turn a common client question into practical guidance with momentum. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call."
+      },
+      {
+        "postId": "d20-home-prep-tip-charle",
+        "day": 20,
+        "contentType": "Carousel",
+        "theme": "Home prep tip: Charleston, SC",
+        "caption": "Save this for the point when the search needs sharper strategy. Day 20 focuses on home prep tip: charleston, sc in Charleston, SC. Anchor the content in current decision-making, not generic inspiration. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call."
+      },
+      {
+        "postId": "d21-market-shift-insight",
+        "day": 21,
+        "contentType": "Short-form video",
+        "theme": "Market shift insight: Charleston, SC",
+        "caption": "Stop scrolling if you want the clearer read on this market. Day 21 focuses on market shift insight: charleston, sc in Charleston, SC. Translate the local market into a calm, trusted takeaway for buyers. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call."
+      },
+      {
+        "postId": "d22-client-win-charlesto",
+        "day": 22,
+        "contentType": "Single image",
+        "theme": "Client win: Charleston, SC",
+        "caption": "If you want the local signal, start here. Day 22 focuses on client win: charleston, sc in Charleston, SC. Show behind-the-scenes expertise that reinforces advisory authority. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call."
+      },
+      {
+        "postId": "d23-neighborhood-spotlig",
+        "day": 23,
+        "contentType": "Carousel",
+        "theme": "Neighborhood spotlight: Charleston, SC",
+        "caption": "Save this for the point when the search needs sharper strategy. Day 23 focuses on neighborhood spotlight: charleston, sc in Charleston, SC. Use neighborhood lifestyle cues to make the market feel tangible. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call."
+      },
+      {
+        "postId": "d24-listing-story-charle",
+        "day": 24,
+        "contentType": "Short-form video",
+        "theme": "Listing story: Charleston, SC",
+        "caption": "Stop scrolling if you want the clearer read on this market. Day 24 focuses on listing story: charleston, sc in Charleston, SC. Turn a common client question into practical guidance with momentum. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call."
+      },
+      {
+        "postId": "d25-buyer-myth-reset-cha",
+        "day": 25,
+        "contentType": "Single image",
+        "theme": "Buyer myth reset: Charleston, SC",
+        "caption": "If you want the local signal, start here. Day 25 focuses on buyer myth reset: charleston, sc in Charleston, SC. Anchor the content in current decision-making, not generic inspiration. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call."
+      },
+      {
+        "postId": "d26-seller-strategy-char",
+        "day": 26,
+        "contentType": "Carousel",
+        "theme": "Seller strategy: Charleston, SC",
+        "caption": "Save this for the point when the search needs sharper strategy. Day 26 focuses on seller strategy: charleston, sc in Charleston, SC. Translate the local market into a calm, trusted takeaway for buyers. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call."
+      },
+      {
+        "postId": "d27-relocation-guide-cha",
+        "day": 27,
+        "contentType": "Short-form video",
+        "theme": "Relocation guide: Charleston, SC",
+        "caption": "Stop scrolling if you want the clearer read on this market. Day 27 focuses on relocation guide: charleston, sc in Charleston, SC. Show behind-the-scenes expertise that reinforces advisory authority. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call."
+      },
+      {
+        "postId": "d28-lifestyle-cue-charle",
+        "day": 28,
+        "contentType": "Single image",
+        "theme": "Lifestyle cue: Charleston, SC",
+        "caption": "If you want the local signal, start here. Day 28 focuses on lifestyle cue: charleston, sc in Charleston, SC. Use neighborhood lifestyle cues to make the market feel tangible. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call."
+      },
+      {
+        "postId": "d29-pricing-perspective-",
+        "day": 29,
+        "contentType": "Carousel",
+        "theme": "Pricing perspective: Charleston, SC",
+        "caption": "Save this for the point when the search needs sharper strategy. Day 29 focuses on pricing perspective: charleston, sc in Charleston, SC. Turn a common client question into practical guidance with momentum. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call."
+      },
+      {
+        "postId": "d30-home-prep-tip-charle",
+        "day": 30,
+        "contentType": "Short-form video",
+        "theme": "Home prep tip: Charleston, SC",
+        "caption": "Stop scrolling if you want the clearer read on this market. Day 30 focuses on home prep tip: charleston, sc in Charleston, SC. Anchor the content in current decision-making, not generic inspiration. Keep the advice grounded in relocation clients and luxury coastal decisions for this market. I’m framing this for high-income professionals moving from the northeast, with clear next steps instead of generic market chatter. Buyer attention is leaning toward homes with waterfront homes, walkable historic neighborhoods, turnkey interiors. Book a relocation strategy call."
+      }
+    ],
+    "carouselText": [
+      {
+        "day": 2,
+        "title": "Client win: Charleston, SC Playbook",
+        "theme": "Client win: Charleston, SC",
+        "cta": "Book a relocation strategy call",
+        "slides": [
+          {
+            "slide": 1,
+            "title": "Why this matters now",
+            "body": "Charleston, SC clients are reacting to timing, confidence, and clarity more than noise."
+          },
+          {
+            "slide": 2,
+            "title": "What buyers are asking",
+            "body": "The dominant question is how relocation clients and luxury coastal homes decisions align with timing, location, and budget."
+          },
+          {
+            "slide": 3,
+            "title": "My client lens",
+            "body": "I frame this for high-income professionals moving from the northeast so the next move feels practical, not overwhelming."
+          },
+          {
+            "slide": 4,
+            "title": "Where the opportunity sits",
+            "body": "The strongest advantage is usually hiding in preparation, positioning, and neighborhood fit."
+          },
+          {
+            "slide": 5,
+            "title": "Action to take",
+            "body": "Use this angle to shortlist options, sharpen timing, and protect negotiation leverage."
+          },
+          {
+            "slide": 6,
+            "title": "Next step",
+            "body": "Book a relocation strategy call so we can turn the market read into a concrete plan."
+          }
+        ]
+      },
+      {
+        "day": 5,
+        "title": "Buyer myth reset: Charleston, SC Playbook",
+        "theme": "Buyer myth reset: Charleston, SC",
+        "cta": "Book a relocation strategy call",
+        "slides": [
+          {
+            "slide": 1,
+            "title": "Why this matters now",
+            "body": "Charleston, SC clients are reacting to timing, confidence, and clarity more than noise."
+          },
+          {
+            "slide": 2,
+            "title": "What buyers are asking",
+            "body": "The dominant question is how relocation clients and luxury coastal homes decisions align with timing, location, and budget."
+          },
+          {
+            "slide": 3,
+            "title": "My client lens",
+            "body": "I frame this for high-income professionals moving from the northeast so the next move feels practical, not overwhelming."
+          },
+          {
+            "slide": 4,
+            "title": "Where the opportunity sits",
+            "body": "The strongest advantage is usually hiding in preparation, positioning, and neighborhood fit."
+          },
+          {
+            "slide": 5,
+            "title": "Action to take",
+            "body": "Use this angle to shortlist options, sharpen timing, and protect negotiation leverage."
+          }
+        ]
+      },
+      {
+        "day": 8,
+        "title": "Lifestyle cue: Charleston, SC Playbook",
+        "theme": "Lifestyle cue: Charleston, SC",
+        "cta": "Book a relocation strategy call",
+        "slides": [
+          {
+            "slide": 1,
+            "title": "Why this matters now",
+            "body": "Charleston, SC clients are reacting to timing, confidence, and clarity more than noise."
+          },
+          {
+            "slide": 2,
+            "title": "What buyers are asking",
+            "body": "The dominant question is how relocation clients and luxury coastal homes decisions align with timing, location, and budget."
+          },
+          {
+            "slide": 3,
+            "title": "My client lens",
+            "body": "I frame this for high-income professionals moving from the northeast so the next move feels practical, not overwhelming."
+          },
+          {
+            "slide": 4,
+            "title": "Where the opportunity sits",
+            "body": "The strongest advantage is usually hiding in preparation, positioning, and neighborhood fit."
+          },
+          {
+            "slide": 5,
+            "title": "Action to take",
+            "body": "Use this angle to shortlist options, sharpen timing, and protect negotiation leverage."
+          },
+          {
+            "slide": 6,
+            "title": "Next step",
+            "body": "Book a relocation strategy call so we can turn the market read into a concrete plan."
+          }
+        ]
+      },
+      {
+        "day": 11,
+        "title": "Market shift insight: Charleston, SC Playbook",
+        "theme": "Market shift insight: Charleston, SC",
+        "cta": "Book a relocation strategy call",
+        "slides": [
+          {
+            "slide": 1,
+            "title": "Why this matters now",
+            "body": "Charleston, SC clients are reacting to timing, confidence, and clarity more than noise."
+          },
+          {
+            "slide": 2,
+            "title": "What buyers are asking",
+            "body": "The dominant question is how relocation clients and luxury coastal homes decisions align with timing, location, and budget."
+          },
+          {
+            "slide": 3,
+            "title": "My client lens",
+            "body": "I frame this for high-income professionals moving from the northeast so the next move feels practical, not overwhelming."
+          },
+          {
+            "slide": 4,
+            "title": "Where the opportunity sits",
+            "body": "The strongest advantage is usually hiding in preparation, positioning, and neighborhood fit."
+          },
+          {
+            "slide": 5,
+            "title": "Action to take",
+            "body": "Use this angle to shortlist options, sharpen timing, and protect negotiation leverage."
+          }
+        ]
+      },
+      {
+        "day": 14,
+        "title": "Listing story: Charleston, SC Playbook",
+        "theme": "Listing story: Charleston, SC",
+        "cta": "Book a relocation strategy call",
+        "slides": [
+          {
+            "slide": 1,
+            "title": "Why this matters now",
+            "body": "Charleston, SC clients are reacting to timing, confidence, and clarity more than noise."
+          },
+          {
+            "slide": 2,
+            "title": "What buyers are asking",
+            "body": "The dominant question is how relocation clients and luxury coastal homes decisions align with timing, location, and budget."
+          },
+          {
+            "slide": 3,
+            "title": "My client lens",
+            "body": "I frame this for high-income professionals moving from the northeast so the next move feels practical, not overwhelming."
+          },
+          {
+            "slide": 4,
+            "title": "Where the opportunity sits",
+            "body": "The strongest advantage is usually hiding in preparation, positioning, and neighborhood fit."
+          },
+          {
+            "slide": 5,
+            "title": "Action to take",
+            "body": "Use this angle to shortlist options, sharpen timing, and protect negotiation leverage."
+          },
+          {
+            "slide": 6,
+            "title": "Next step",
+            "body": "Book a relocation strategy call so we can turn the market read into a concrete plan."
+          }
+        ]
+      },
+      {
+        "day": 17,
+        "title": "Relocation guide: Charleston, SC Playbook",
+        "theme": "Relocation guide: Charleston, SC",
+        "cta": "Book a relocation strategy call",
+        "slides": [
+          {
+            "slide": 1,
+            "title": "Why this matters now",
+            "body": "Charleston, SC clients are reacting to timing, confidence, and clarity more than noise."
+          },
+          {
+            "slide": 2,
+            "title": "What buyers are asking",
+            "body": "The dominant question is how relocation clients and luxury coastal homes decisions align with timing, location, and budget."
+          },
+          {
+            "slide": 3,
+            "title": "My client lens",
+            "body": "I frame this for high-income professionals moving from the northeast so the next move feels practical, not overwhelming."
+          },
+          {
+            "slide": 4,
+            "title": "Where the opportunity sits",
+            "body": "The strongest advantage is usually hiding in preparation, positioning, and neighborhood fit."
+          },
+          {
+            "slide": 5,
+            "title": "Action to take",
+            "body": "Use this angle to shortlist options, sharpen timing, and protect negotiation leverage."
+          }
+        ]
+      },
+      {
+        "day": 20,
+        "title": "Home prep tip: Charleston, SC Playbook",
+        "theme": "Home prep tip: Charleston, SC",
+        "cta": "Book a relocation strategy call",
+        "slides": [
+          {
+            "slide": 1,
+            "title": "Why this matters now",
+            "body": "Charleston, SC clients are reacting to timing, confidence, and clarity more than noise."
+          },
+          {
+            "slide": 2,
+            "title": "What buyers are asking",
+            "body": "The dominant question is how relocation clients and luxury coastal homes decisions align with timing, location, and budget."
+          },
+          {
+            "slide": 3,
+            "title": "My client lens",
+            "body": "I frame this for high-income professionals moving from the northeast so the next move feels practical, not overwhelming."
+          },
+          {
+            "slide": 4,
+            "title": "Where the opportunity sits",
+            "body": "The strongest advantage is usually hiding in preparation, positioning, and neighborhood fit."
+          },
+          {
+            "slide": 5,
+            "title": "Action to take",
+            "body": "Use this angle to shortlist options, sharpen timing, and protect negotiation leverage."
+          },
+          {
+            "slide": 6,
+            "title": "Next step",
+            "body": "Book a relocation strategy call so we can turn the market read into a concrete plan."
+          }
+        ]
+      },
+      {
+        "day": 23,
+        "title": "Neighborhood spotlight: Charleston, SC Playbook",
+        "theme": "Neighborhood spotlight: Charleston, SC",
+        "cta": "Book a relocation strategy call",
+        "slides": [
+          {
+            "slide": 1,
+            "title": "Why this matters now",
+            "body": "Charleston, SC clients are reacting to timing, confidence, and clarity more than noise."
+          },
+          {
+            "slide": 2,
+            "title": "What buyers are asking",
+            "body": "The dominant question is how relocation clients and luxury coastal homes decisions align with timing, location, and budget."
+          },
+          {
+            "slide": 3,
+            "title": "My client lens",
+            "body": "I frame this for high-income professionals moving from the northeast so the next move feels practical, not overwhelming."
+          },
+          {
+            "slide": 4,
+            "title": "Where the opportunity sits",
+            "body": "The strongest advantage is usually hiding in preparation, positioning, and neighborhood fit."
+          },
+          {
+            "slide": 5,
+            "title": "Action to take",
+            "body": "Use this angle to shortlist options, sharpen timing, and protect negotiation leverage."
+          }
+        ]
+      },
+      {
+        "day": 26,
+        "title": "Seller strategy: Charleston, SC Playbook",
+        "theme": "Seller strategy: Charleston, SC",
+        "cta": "Book a relocation strategy call",
+        "slides": [
+          {
+            "slide": 1,
+            "title": "Why this matters now",
+            "body": "Charleston, SC clients are reacting to timing, confidence, and clarity more than noise."
+          },
+          {
+            "slide": 2,
+            "title": "What buyers are asking",
+            "body": "The dominant question is how relocation clients and luxury coastal homes decisions align with timing, location, and budget."
+          },
+          {
+            "slide": 3,
+            "title": "My client lens",
+            "body": "I frame this for high-income professionals moving from the northeast so the next move feels practical, not overwhelming."
+          },
+          {
+            "slide": 4,
+            "title": "Where the opportunity sits",
+            "body": "The strongest advantage is usually hiding in preparation, positioning, and neighborhood fit."
+          },
+          {
+            "slide": 5,
+            "title": "Action to take",
+            "body": "Use this angle to shortlist options, sharpen timing, and protect negotiation leverage."
+          },
+          {
+            "slide": 6,
+            "title": "Next step",
+            "body": "Book a relocation strategy call so we can turn the market read into a concrete plan."
+          }
+        ]
+      },
+      {
+        "day": 29,
+        "title": "Pricing perspective: Charleston, SC Playbook",
+        "theme": "Pricing perspective: Charleston, SC",
+        "cta": "Book a relocation strategy call",
+        "slides": [
+          {
+            "slide": 1,
+            "title": "Why this matters now",
+            "body": "Charleston, SC clients are reacting to timing, confidence, and clarity more than noise."
+          },
+          {
+            "slide": 2,
+            "title": "What buyers are asking",
+            "body": "The dominant question is how relocation clients and luxury coastal homes decisions align with timing, location, and budget."
+          },
+          {
+            "slide": 3,
+            "title": "My client lens",
+            "body": "I frame this for high-income professionals moving from the northeast so the next move feels practical, not overwhelming."
+          },
+          {
+            "slide": 4,
+            "title": "Where the opportunity sits",
+            "body": "The strongest advantage is usually hiding in preparation, positioning, and neighborhood fit."
+          },
+          {
+            "slide": 5,
+            "title": "Action to take",
+            "body": "Use this angle to shortlist options, sharpen timing, and protect negotiation leverage."
+          }
+        ]
+      }
+    ],
+    "videoScripts": [
+      {
+        "day": 3,
+        "title": "Neighborhood spotlight: Charleston, SC Reel",
+        "theme": "Neighborhood spotlight: Charleston, SC",
+        "hook": "Here’s the local signal I do not want high-income professionals moving from the northeast to miss this week.",
+        "body": [
+          "Start with what has changed in Charleston, SC and why it affects the pace of decision-making.",
+          "Show how relocation clients and luxury coastal homes clients can interpret that shift without overreacting.",
+          "Give one concrete next move that makes the next conversation or showing more productive."
+        ],
+        "cta": "Book a relocation strategy call"
+      },
+      {
+        "day": 6,
+        "title": "Seller strategy: Charleston, SC Reel",
+        "theme": "Seller strategy: Charleston, SC",
+        "hook": "Here’s the local signal I do not want high-income professionals moving from the northeast to miss this week.",
+        "body": [
+          "Start with what has changed in Charleston, SC and why it affects the pace of decision-making.",
+          "Show how relocation clients and luxury coastal homes clients can interpret that shift without overreacting.",
+          "Give one concrete next move that makes the next conversation or showing more productive."
+        ],
+        "cta": "Book a relocation strategy call"
+      },
+      {
+        "day": 9,
+        "title": "Pricing perspective: Charleston, SC Reel",
+        "theme": "Pricing perspective: Charleston, SC",
+        "hook": "Here’s the local signal I do not want high-income professionals moving from the northeast to miss this week.",
+        "body": [
+          "Start with what has changed in Charleston, SC and why it affects the pace of decision-making.",
+          "Show how relocation clients and luxury coastal homes clients can interpret that shift without overreacting.",
+          "Give one concrete next move that makes the next conversation or showing more productive."
+        ],
+        "cta": "Book a relocation strategy call"
+      },
+      {
+        "day": 12,
+        "title": "Client win: Charleston, SC Reel",
+        "theme": "Client win: Charleston, SC",
+        "hook": "Here’s the local signal I do not want high-income professionals moving from the northeast to miss this week.",
+        "body": [
+          "Start with what has changed in Charleston, SC and why it affects the pace of decision-making.",
+          "Show how relocation clients and luxury coastal homes clients can interpret that shift without overreacting.",
+          "Give one concrete next move that makes the next conversation or showing more productive."
+        ],
+        "cta": "Book a relocation strategy call"
+      },
+      {
+        "day": 15,
+        "title": "Buyer myth reset: Charleston, SC Reel",
+        "theme": "Buyer myth reset: Charleston, SC",
+        "hook": "Here’s the local signal I do not want high-income professionals moving from the northeast to miss this week.",
+        "body": [
+          "Start with what has changed in Charleston, SC and why it affects the pace of decision-making.",
+          "Show how relocation clients and luxury coastal homes clients can interpret that shift without overreacting.",
+          "Give one concrete next move that makes the next conversation or showing more productive."
+        ],
+        "cta": "Book a relocation strategy call"
+      },
+      {
+        "day": 18,
+        "title": "Lifestyle cue: Charleston, SC Reel",
+        "theme": "Lifestyle cue: Charleston, SC",
+        "hook": "Here’s the local signal I do not want high-income professionals moving from the northeast to miss this week.",
+        "body": [
+          "Start with what has changed in Charleston, SC and why it affects the pace of decision-making.",
+          "Show how relocation clients and luxury coastal homes clients can interpret that shift without overreacting.",
+          "Give one concrete next move that makes the next conversation or showing more productive."
+        ],
+        "cta": "Book a relocation strategy call"
+      },
+      {
+        "day": 21,
+        "title": "Market shift insight: Charleston, SC Reel",
+        "theme": "Market shift insight: Charleston, SC",
+        "hook": "Here’s the local signal I do not want high-income professionals moving from the northeast to miss this week.",
+        "body": [
+          "Start with what has changed in Charleston, SC and why it affects the pace of decision-making.",
+          "Show how relocation clients and luxury coastal homes clients can interpret that shift without overreacting.",
+          "Give one concrete next move that makes the next conversation or showing more productive."
+        ],
+        "cta": "Book a relocation strategy call"
+      },
+      {
+        "day": 24,
+        "title": "Listing story: Charleston, SC Reel",
+        "theme": "Listing story: Charleston, SC",
+        "hook": "Here’s the local signal I do not want high-income professionals moving from the northeast to miss this week.",
+        "body": [
+          "Start with what has changed in Charleston, SC and why it affects the pace of decision-making.",
+          "Show how relocation clients and luxury coastal homes clients can interpret that shift without overreacting.",
+          "Give one concrete next move that makes the next conversation or showing more productive."
+        ],
+        "cta": "Book a relocation strategy call"
+      },
+      {
+        "day": 27,
+        "title": "Relocation guide: Charleston, SC Reel",
+        "theme": "Relocation guide: Charleston, SC",
+        "hook": "Here’s the local signal I do not want high-income professionals moving from the northeast to miss this week.",
+        "body": [
+          "Start with what has changed in Charleston, SC and why it affects the pace of decision-making.",
+          "Show how relocation clients and luxury coastal homes clients can interpret that shift without overreacting.",
+          "Give one concrete next move that makes the next conversation or showing more productive."
+        ],
+        "cta": "Book a relocation strategy call"
+      },
+      {
+        "day": 30,
+        "title": "Home prep tip: Charleston, SC Reel",
+        "theme": "Home prep tip: Charleston, SC",
+        "hook": "Here’s the local signal I do not want high-income professionals moving from the northeast to miss this week.",
+        "body": [
+          "Start with what has changed in Charleston, SC and why it affects the pace of decision-making.",
+          "Show how relocation clients and luxury coastal homes clients can interpret that shift without overreacting.",
+          "Give one concrete next move that makes the next conversation or showing more productive."
+        ],
+        "cta": "Book a relocation strategy call"
+      }
+    ],
+    "hashtags": [
+      {
+        "postId": "d01-market-shift-insight",
+        "day": 1,
+        "theme": "Market shift insight: Charleston, SC",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day01Content"
+        ]
+      },
+      {
+        "postId": "d02-client-win-charlesto",
+        "day": 2,
+        "theme": "Client win: Charleston, SC",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day02Content"
+        ]
+      },
+      {
+        "postId": "d03-neighborhood-spotlig",
+        "day": 3,
+        "theme": "Neighborhood spotlight: Charleston, SC",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day03Content"
+        ]
+      },
+      {
+        "postId": "d04-listing-story-charle",
+        "day": 4,
+        "theme": "Listing story: Charleston, SC",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day04Content"
+        ]
+      },
+      {
+        "postId": "d05-buyer-myth-reset-cha",
+        "day": 5,
+        "theme": "Buyer myth reset: Charleston, SC",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day05Content"
+        ]
+      },
+      {
+        "postId": "d06-seller-strategy-char",
+        "day": 6,
+        "theme": "Seller strategy: Charleston, SC",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day06Content"
+        ]
+      },
+      {
+        "postId": "d07-relocation-guide-cha",
+        "day": 7,
+        "theme": "Relocation guide: Charleston, SC",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day07Content"
+        ]
+      },
+      {
+        "postId": "d08-lifestyle-cue-charle",
+        "day": 8,
+        "theme": "Lifestyle cue: Charleston, SC",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day08Content"
+        ]
+      },
+      {
+        "postId": "d09-pricing-perspective-",
+        "day": 9,
+        "theme": "Pricing perspective: Charleston, SC",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day09Content"
+        ]
+      },
+      {
+        "postId": "d10-home-prep-tip-charle",
+        "day": 10,
+        "theme": "Home prep tip: Charleston, SC",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day10Content"
+        ]
+      },
+      {
+        "postId": "d11-market-shift-insight",
+        "day": 11,
+        "theme": "Market shift insight: Charleston, SC",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day11Content"
+        ]
+      },
+      {
+        "postId": "d12-client-win-charlesto",
+        "day": 12,
+        "theme": "Client win: Charleston, SC",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day12Content"
+        ]
+      },
+      {
+        "postId": "d13-neighborhood-spotlig",
+        "day": 13,
+        "theme": "Neighborhood spotlight: Charleston, SC",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day13Content"
+        ]
+      },
+      {
+        "postId": "d14-listing-story-charle",
+        "day": 14,
+        "theme": "Listing story: Charleston, SC",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day14Content"
+        ]
+      },
+      {
+        "postId": "d15-buyer-myth-reset-cha",
+        "day": 15,
+        "theme": "Buyer myth reset: Charleston, SC",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day15Content"
+        ]
+      },
+      {
+        "postId": "d16-seller-strategy-char",
+        "day": 16,
+        "theme": "Seller strategy: Charleston, SC",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day16Content"
+        ]
+      },
+      {
+        "postId": "d17-relocation-guide-cha",
+        "day": 17,
+        "theme": "Relocation guide: Charleston, SC",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day17Content"
+        ]
+      },
+      {
+        "postId": "d18-lifestyle-cue-charle",
+        "day": 18,
+        "theme": "Lifestyle cue: Charleston, SC",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day18Content"
+        ]
+      },
+      {
+        "postId": "d19-pricing-perspective-",
+        "day": 19,
+        "theme": "Pricing perspective: Charleston, SC",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day19Content"
+        ]
+      },
+      {
+        "postId": "d20-home-prep-tip-charle",
+        "day": 20,
+        "theme": "Home prep tip: Charleston, SC",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day20Content"
+        ]
+      },
+      {
+        "postId": "d21-market-shift-insight",
+        "day": 21,
+        "theme": "Market shift insight: Charleston, SC",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day21Content"
+        ]
+      },
+      {
+        "postId": "d22-client-win-charlesto",
+        "day": 22,
+        "theme": "Client win: Charleston, SC",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day22Content"
+        ]
+      },
+      {
+        "postId": "d23-neighborhood-spotlig",
+        "day": 23,
+        "theme": "Neighborhood spotlight: Charleston, SC",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day23Content"
+        ]
+      },
+      {
+        "postId": "d24-listing-story-charle",
+        "day": 24,
+        "theme": "Listing story: Charleston, SC",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day24Content"
+        ]
+      },
+      {
+        "postId": "d25-buyer-myth-reset-cha",
+        "day": 25,
+        "theme": "Buyer myth reset: Charleston, SC",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day25Content"
+        ]
+      },
+      {
+        "postId": "d26-seller-strategy-char",
+        "day": 26,
+        "theme": "Seller strategy: Charleston, SC",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day26Content"
+        ]
+      },
+      {
+        "postId": "d27-relocation-guide-cha",
+        "day": 27,
+        "theme": "Relocation guide: Charleston, SC",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day27Content"
+        ]
+      },
+      {
+        "postId": "d28-lifestyle-cue-charle",
+        "day": 28,
+        "theme": "Lifestyle cue: Charleston, SC",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day28Content"
+        ]
+      },
+      {
+        "postId": "d29-pricing-perspective-",
+        "day": 29,
+        "theme": "Pricing perspective: Charleston, SC",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day29Content"
+        ]
+      },
+      {
+        "postId": "d30-home-prep-tip-charle",
+        "day": 30,
+        "theme": "Home prep tip: Charleston, SC",
+        "hashtags": [
+          "#CharlestonRealEstate",
+          "#RelocationHomes",
+          "#AgentMarketing",
+          "#HomeSearchTips",
+          "#MoveWithConfidence",
+          "#AveryAdvises",
+          "#Day30Content"
+        ]
+      }
+    ],
+    "imagePrompts": [
+      {
+        "postId": "d01-market-shift-insight",
+        "day": 1,
+        "theme": "Market shift insight: Charleston, SC",
+        "prompt": "Market shift insight: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; high-end property marketing still, natural textures, tasteful composition; tone is luxury editorial with warm concierge energy; subtle cues for high-income…"
+      },
+      {
+        "postId": "d02-client-win-charlesto",
+        "day": 2,
+        "theme": "Client win: Charleston, SC",
+        "prompt": "Client win: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; editorial social carousel, refined grid layout, muted luxury palette; tone is luxury editorial with warm concierge energy; subtle cues for high-income professionals …"
+      },
+      {
+        "postId": "d03-neighborhood-spotlig",
+        "day": 3,
+        "theme": "Neighborhood spotlight: Charleston, SC",
+        "prompt": "Neighborhood spotlight: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; vertical video storyboard frame, cinematic natural light, polished real estate branding; tone is luxury editorial with warm concierge energy; subtle cues…"
+      },
+      {
+        "postId": "d04-listing-story-charle",
+        "day": 4,
+        "theme": "Listing story: Charleston, SC",
+        "prompt": "Listing story: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; high-end property marketing still, natural textures, tasteful composition; tone is luxury editorial with warm concierge energy; subtle cues for high-income profes…"
+      },
+      {
+        "postId": "d05-buyer-myth-reset-cha",
+        "day": 5,
+        "theme": "Buyer myth reset: Charleston, SC",
+        "prompt": "Buyer myth reset: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; editorial social carousel, refined grid layout, muted luxury palette; tone is luxury editorial with warm concierge energy; subtle cues for high-income professi…"
+      },
+      {
+        "postId": "d06-seller-strategy-char",
+        "day": 6,
+        "theme": "Seller strategy: Charleston, SC",
+        "prompt": "Seller strategy: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; vertical video storyboard frame, cinematic natural light, polished real estate branding; tone is luxury editorial with warm concierge energy; subtle cues for hi…"
+      },
+      {
+        "postId": "d07-relocation-guide-cha",
+        "day": 7,
+        "theme": "Relocation guide: Charleston, SC",
+        "prompt": "Relocation guide: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; high-end property marketing still, natural textures, tasteful composition; tone is luxury editorial with warm concierge energy; subtle cues for high-income pro…"
+      },
+      {
+        "postId": "d08-lifestyle-cue-charle",
+        "day": 8,
+        "theme": "Lifestyle cue: Charleston, SC",
+        "prompt": "Lifestyle cue: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; editorial social carousel, refined grid layout, muted luxury palette; tone is luxury editorial with warm concierge energy; subtle cues for high-income professiona…"
+      },
+      {
+        "postId": "d09-pricing-perspective-",
+        "day": 9,
+        "theme": "Pricing perspective: Charleston, SC",
+        "prompt": "Pricing perspective: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; vertical video storyboard frame, cinematic natural light, polished real estate branding; tone is luxury editorial with warm concierge energy; subtle cues fo…"
+      },
+      {
+        "postId": "d10-home-prep-tip-charle",
+        "day": 10,
+        "theme": "Home prep tip: Charleston, SC",
+        "prompt": "Home prep tip: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; high-end property marketing still, natural textures, tasteful composition; tone is luxury editorial with warm concierge energy; subtle cues for high-income profes…"
+      },
+      {
+        "postId": "d11-market-shift-insight",
+        "day": 11,
+        "theme": "Market shift insight: Charleston, SC",
+        "prompt": "Market shift insight: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; editorial social carousel, refined grid layout, muted luxury palette; tone is luxury editorial with warm concierge energy; subtle cues for high-income prof…"
+      },
+      {
+        "postId": "d12-client-win-charlesto",
+        "day": 12,
+        "theme": "Client win: Charleston, SC",
+        "prompt": "Client win: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; vertical video storyboard frame, cinematic natural light, polished real estate branding; tone is luxury editorial with warm concierge energy; subtle cues for high-in…"
+      },
+      {
+        "postId": "d13-neighborhood-spotlig",
+        "day": 13,
+        "theme": "Neighborhood spotlight: Charleston, SC",
+        "prompt": "Neighborhood spotlight: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; high-end property marketing still, natural textures, tasteful composition; tone is luxury editorial with warm concierge energy; subtle cues for high-inco…"
+      },
+      {
+        "postId": "d14-listing-story-charle",
+        "day": 14,
+        "theme": "Listing story: Charleston, SC",
+        "prompt": "Listing story: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; editorial social carousel, refined grid layout, muted luxury palette; tone is luxury editorial with warm concierge energy; subtle cues for high-income professiona…"
+      },
+      {
+        "postId": "d15-buyer-myth-reset-cha",
+        "day": 15,
+        "theme": "Buyer myth reset: Charleston, SC",
+        "prompt": "Buyer myth reset: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; vertical video storyboard frame, cinematic natural light, polished real estate branding; tone is luxury editorial with warm concierge energy; subtle cues for h…"
+      },
+      {
+        "postId": "d16-seller-strategy-char",
+        "day": 16,
+        "theme": "Seller strategy: Charleston, SC",
+        "prompt": "Seller strategy: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; high-end property marketing still, natural textures, tasteful composition; tone is luxury editorial with warm concierge energy; subtle cues for high-income prof…"
+      },
+      {
+        "postId": "d17-relocation-guide-cha",
+        "day": 17,
+        "theme": "Relocation guide: Charleston, SC",
+        "prompt": "Relocation guide: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; editorial social carousel, refined grid layout, muted luxury palette; tone is luxury editorial with warm concierge energy; subtle cues for high-income professi…"
+      },
+      {
+        "postId": "d18-lifestyle-cue-charle",
+        "day": 18,
+        "theme": "Lifestyle cue: Charleston, SC",
+        "prompt": "Lifestyle cue: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; vertical video storyboard frame, cinematic natural light, polished real estate branding; tone is luxury editorial with warm concierge energy; subtle cues for high…"
+      },
+      {
+        "postId": "d19-pricing-perspective-",
+        "day": 19,
+        "theme": "Pricing perspective: Charleston, SC",
+        "prompt": "Pricing perspective: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; high-end property marketing still, natural textures, tasteful composition; tone is luxury editorial with warm concierge energy; subtle cues for high-income …"
+      },
+      {
+        "postId": "d20-home-prep-tip-charle",
+        "day": 20,
+        "theme": "Home prep tip: Charleston, SC",
+        "prompt": "Home prep tip: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; editorial social carousel, refined grid layout, muted luxury palette; tone is luxury editorial with warm concierge energy; subtle cues for high-income professiona…"
+      },
+      {
+        "postId": "d21-market-shift-insight",
+        "day": 21,
+        "theme": "Market shift insight: Charleston, SC",
+        "prompt": "Market shift insight: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; vertical video storyboard frame, cinematic natural light, polished real estate branding; tone is luxury editorial with warm concierge energy; subtle cues f…"
+      },
+      {
+        "postId": "d22-client-win-charlesto",
+        "day": 22,
+        "theme": "Client win: Charleston, SC",
+        "prompt": "Client win: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; high-end property marketing still, natural textures, tasteful composition; tone is luxury editorial with warm concierge energy; subtle cues for high-income professio…"
+      },
+      {
+        "postId": "d23-neighborhood-spotlig",
+        "day": 23,
+        "theme": "Neighborhood spotlight: Charleston, SC",
+        "prompt": "Neighborhood spotlight: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; editorial social carousel, refined grid layout, muted luxury palette; tone is luxury editorial with warm concierge energy; subtle cues for high-income pr…"
+      },
+      {
+        "postId": "d24-listing-story-charle",
+        "day": 24,
+        "theme": "Listing story: Charleston, SC",
+        "prompt": "Listing story: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; vertical video storyboard frame, cinematic natural light, polished real estate branding; tone is luxury editorial with warm concierge energy; subtle cues for high…"
+      },
+      {
+        "postId": "d25-buyer-myth-reset-cha",
+        "day": 25,
+        "theme": "Buyer myth reset: Charleston, SC",
+        "prompt": "Buyer myth reset: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; high-end property marketing still, natural textures, tasteful composition; tone is luxury editorial with warm concierge energy; subtle cues for high-income pro…"
+      },
+      {
+        "postId": "d26-seller-strategy-char",
+        "day": 26,
+        "theme": "Seller strategy: Charleston, SC",
+        "prompt": "Seller strategy: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; editorial social carousel, refined grid layout, muted luxury palette; tone is luxury editorial with warm concierge energy; subtle cues for high-income professio…"
+      },
+      {
+        "postId": "d27-relocation-guide-cha",
+        "day": 27,
+        "theme": "Relocation guide: Charleston, SC",
+        "prompt": "Relocation guide: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; vertical video storyboard frame, cinematic natural light, polished real estate branding; tone is luxury editorial with warm concierge energy; subtle cues for h…"
+      },
+      {
+        "postId": "d28-lifestyle-cue-charle",
+        "day": 28,
+        "theme": "Lifestyle cue: Charleston, SC",
+        "prompt": "Lifestyle cue: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; high-end property marketing still, natural textures, tasteful composition; tone is luxury editorial with warm concierge energy; subtle cues for high-income profes…"
+      },
+      {
+        "postId": "d29-pricing-perspective-",
+        "day": 29,
+        "theme": "Pricing perspective: Charleston, SC",
+        "prompt": "Pricing perspective: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; editorial social carousel, refined grid layout, muted luxury palette; tone is luxury editorial with warm concierge energy; subtle cues for high-income profe…"
+      },
+      {
+        "postId": "d30-home-prep-tip-charle",
+        "day": 30,
+        "theme": "Home prep tip: Charleston, SC",
+        "prompt": "Home prep tip: Charleston, SC for a relocation clients and luxury coastal homes real estate brand in Charleston, SC; vertical video storyboard frame, cinematic natural light, polished real estate branding; tone is luxury editorial with warm concierge energy; subtle cues for high…"
+      }
+    ]
+  }
+}

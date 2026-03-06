@@ -1,36 +1,200 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI Real Estate Content Engine
 
-## Getting Started
+A portfolio-grade AI automation app that turns a short real estate agent brief into a full 30-day social media campaign, then packages the result into clean review and export workflows.
 
-First, run the development server:
+Built to be easy to demo and credible under inspection, the project combines a polished Next.js frontend with typed AI orchestration, schema-validated structured output, local run persistence, and multi-format exports.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## What It Does
+
+From a compact input form, the app generates:
+
+- A 30-day content calendar
+- 30 post captions
+- 10 carousel outlines with slide-by-slide text
+- 10 short-form video scripts with hook, body, and CTA
+- Hashtags for each post
+- Optional image prompts for design generation
+- Downloadable markdown, JSON, HTML, and print-friendly report outputs
+
+## Why This Matters
+
+This project demonstrates a practical AI workflow instead of a thin prompt wrapper:
+
+- It reduces manual content planning from hours to minutes
+- It keeps audience, niche, tone, and CTA visible across the full workflow
+- It produces reviewable and exportable deliverables, not just raw model text
+- It shows real automation system design: provider abstraction, prompt isolation, formatting, persistence, and delivery
+
+## Feature Highlights
+
+- Premium SaaS-style dashboard and generation workflow
+- Demo mode that works without external API keys
+- Claude-ready provider integration behind a service layer
+- Prompt logic separated from route handlers
+- Strict Zod schemas for inputs and generated outputs
+- Results workspace with tabs, filters, and copy-to-clipboard actions
+- Local history page powered by saved JSON runs
+- Architecture page that explains the workflow in business language
+- Export support for markdown, JSON, HTML, and browser PDF via print view
+
+## Architecture Overview
+
+The system is intentionally easy to explain in a portfolio review:
+
+```mermaid
+flowchart LR
+    A["Input Form"] --> B["AI Orchestration"]
+    B --> C["Structured Content Generation"]
+    C --> D["Formatting Engine"]
+    D --> E["Saved Run + Export Deliverables"]
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Implementation layers:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- `app/api/generate` validates the request and triggers generation
+- `lib/ai` selects demo mode or Claude
+- `lib/prompts` stores reusable prompt instructions outside route handlers
+- `lib/formatting/plan.ts` converts raw output into polished deliverables
+- `lib/storage/runs.ts` persists completed runs locally
+- `lib/export` turns saved plans into markdown, JSON, HTML, and print-ready output
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Portfolio Highlights
 
-## Learn More
+- Strong end-to-end demo story: input, generation, review, history, export
+- Clear evidence of automation design, not just UI polish
+- Safe demo mode for recruiters or client walkthroughs with no API dependency
+- Business-facing deliverables that are easy to screenshot and explain
+- Structured codebase with reusable TypeScript types and utilities
 
-To learn more about Next.js, take a look at the following resources:
+## Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Next.js 16 App Router
+- React 19
+- TypeScript
+- Tailwind CSS 4
+- Zod
+- Anthropic SDK
+- Local filesystem JSON persistence
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Project Structure
 
-## Deploy on Vercel
+```text
+app/          Pages and API routes
+components/   UI primitives, form flows, results views
+lib/          AI providers, prompts, formatting, storage, exports, types
+data/         Sample brief, sample generated run, local run storage
+docs/         Portfolio notes, demo script, screenshot checklist, case-study assets
+scripts/      Demo data generation utilities
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Local Setup
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Prerequisites
+
+- Node.js 20+
+- npm 10+
+
+### Install and Run
+
+```bash
+git clone https://github.com/DevCalebR/ai-real-estate-content-engine.git
+cd ai-real-estate-content-engine
+npm install
+cp .env.example .env.local
+npm run seed:sample
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000).
+
+Recommended first demo path:
+
+1. Open `/generate`
+2. Click `Load Sample Brief`
+3. Generate the monthly plan
+4. Review the results tabs
+5. Open the Exports tab or Print View
+
+## Environment Setup
+
+The app reads these variables from [.env.example](./.env.example):
+
+```env
+AI_PROVIDER=demo
+CLAUDE_API_KEY=
+CLAUDE_MODEL=
+```
+
+## Demo Mode vs Claude Mode
+
+### Demo Mode
+
+`AI_PROVIDER=demo`
+
+- Default mode
+- No external credentials required
+- Uses a local generator that still returns the same structured content contract
+- Exercises the same formatting, storage, and export pipeline as live mode
+
+Included sample assets:
+
+- [data/sample-brief.json](./data/sample-brief.json)
+- [data/sample-demo-run.json](./data/sample-demo-run.json)
+
+### Claude Mode
+
+`AI_PROVIDER=claude`
+
+Required variables:
+
+- `CLAUDE_API_KEY`
+- `CLAUDE_MODEL`
+
+How it works:
+
+- The request flows through [lib/ai/providers/claude.ts](./lib/ai/providers/claude.ts)
+- Prompt instructions live in [lib/prompts/content-plan.ts](./lib/prompts/content-plan.ts)
+- Raw AI output is parsed into strict JSON and normalized by the formatting layer
+
+If Claude mode is selected but the configuration is incomplete, the UI surfaces the issue clearly and generation fails safely.
+
+## Export Features
+
+Each completed run can be exported as:
+
+- Markdown for readable documentation and internal handoff
+- JSON for structured reuse or downstream automation
+- HTML report for polished presentation
+- Print-friendly view for browser PDF export
+
+Export builders:
+
+- [lib/export/markdown.ts](./lib/export/markdown.ts)
+- [lib/export/html.ts](./lib/export/html.ts)
+
+## Documentation Assets
+
+- [docs/PORTFOLIO_NOTES.md](./docs/PORTFOLIO_NOTES.md)
+- [docs/DEMO_SCRIPT.md](./docs/DEMO_SCRIPT.md)
+- [docs/SCREENSHOT_CHECKLIST.md](./docs/SCREENSHOT_CHECKLIST.md)
+- [docs/SHIP_READINESS_REPORT.md](./docs/SHIP_READINESS_REPORT.md)
+- [docs/CASE_STUDY_BLURB.md](./docs/CASE_STUDY_BLURB.md)
+
+## Future Enhancements
+
+- Regenerate a single post without rebuilding the full month
+- Editable output fields before export
+- Reusable saved client profiles
+- Stronger platform-specific formatting variants
+- Database-backed multi-client storage
+- Server-side PDF generation
+
+## Verification
+
+Verified locally with:
+
+```bash
+npm run lint
+npm run seed:sample
+npm run build
+```
