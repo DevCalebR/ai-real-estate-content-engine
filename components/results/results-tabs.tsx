@@ -281,8 +281,11 @@ export function ResultsTabs({
               <div>
                 <h4 className="font-semibold text-[var(--ink)]">Body</h4>
                 <ul className="mt-2 space-y-2 text-sm leading-7 text-[var(--ink-soft)]">
-                  {script.body.map((beat) => (
-                    <li key={beat} className="rounded-[18px] bg-white/70 px-4 py-3">
+                  {script.body.map((beat, index) => (
+                    <li
+                      key={`${script.day}-video-${index}`}
+                      className="rounded-[18px] bg-white/70 px-4 py-3"
+                    >
                       {beat}
                     </li>
                   ))}
@@ -315,8 +318,11 @@ export function ResultsTabs({
               <div>
                 <h4 className="font-semibold text-[var(--ink)]">Body</h4>
                 <ul className="mt-2 space-y-2 text-sm leading-7 text-[var(--ink-soft)]">
-                  {script.body.map((beat) => (
-                    <li key={beat} className="rounded-[18px] bg-white/70 px-4 py-3">
+                  {script.body.map((beat, index) => (
+                    <li
+                      key={`${script.day}-marketing-${index}`}
+                      className="rounded-[18px] bg-white/70 px-4 py-3"
+                    >
                       {beat}
                     </li>
                   ))}

@@ -36,6 +36,10 @@ const emptyValues: GenerationInput = {
   platforms: ["LinkedIn", "Instagram"],
 };
 
+function uniqueStrings(values: readonly string[]) {
+  return Array.from(new Set(values));
+}
+
 export function GenerationForm({
   runtimeLabel,
   runtimeTone,
@@ -50,6 +54,12 @@ export function GenerationForm({
   const [isPending, startTransition] = useTransition();
   const preview = useDeferredValue(values);
   const selectedPreset = getContentPreset(values.preset);
+  const goalSuggestions = uniqueStrings(selectedPreset.goalSuggestions);
+  const themeSuggestions = uniqueStrings(selectedPreset.themeSuggestions);
+  const toneSuggestions = uniqueStrings([
+    ...selectedPreset.toneSuggestions,
+    ...tonePresets,
+  ]).slice(0, 5);
 
   function updateField<Key extends keyof GenerationInput>(
     field: Key,
@@ -263,7 +273,7 @@ export function GenerationForm({
           placeholder="Drive qualified website traffic, increase discovery calls, and build authority around the offer"
           helper={
             <div className="mt-2 flex flex-wrap gap-2">
-              {selectedPreset.goalSuggestions.map((goal) => (
+              {goalSuggestions.map((goal) => (
                 <button
                   key={goal}
                   type="button"
@@ -286,7 +296,7 @@ export function GenerationForm({
           placeholder="Sharp, modern, and commercially useful"
           helper={
             <div className="mt-2 flex flex-wrap gap-2">
-              {[...selectedPreset.toneSuggestions, ...tonePresets].slice(0, 5).map((preset) => (
+              {toneSuggestions.map((preset) => (
                 <button
                   key={preset}
                   type="button"
@@ -308,7 +318,7 @@ export function GenerationForm({
           placeholder="Use cases, customer outcomes, workflow demos, objections, traffic-driving hooks"
           helper={
             <div className="mt-2 flex flex-wrap gap-2">
-              {selectedPreset.themeSuggestions.map((theme) => (
+              {themeSuggestions.map((theme) => (
                 <button
                   key={theme}
                   type="button"
