@@ -1,5 +1,7 @@
 import { google, type docs_v1 } from "googleapis";
 
+import { productByline, productName } from "@/lib/brand";
+import { getContentPreset } from "@/lib/content-presets";
 import {
   createConnectedGoogleOAuthClient,
   getGoogleOAuthConfigError,
@@ -143,7 +145,7 @@ export async function getGoogleDocsIntegrationStatus(): Promise<GoogleDocsIntegr
 }
 
 function createDocumentTitle(plan: GeneratedContentPlan) {
-  return `Content Plan - ${plan.input.agentName} - ${plan.createdAt.slice(0, 10)}`;
+  return `${productName} - ${plan.input.businessName} - ${plan.createdAt.slice(0, 10)}`;
 }
 
 function appendParagraph(
@@ -173,8 +175,10 @@ function buildGoogleDocBody(plan: GeneratedContentPlan) {
   const buffer: string[] = [];
   const styles: StyledParagraph[] = [];
   const title = createDocumentTitle(plan);
+  const preset = getContentPreset(plan.input.preset);
 
   appendParagraph(buffer, styles, title, "TITLE");
+  appendParagraph(buffer, styles, `${productName} • ${productByline}`, "SUBTITLE");
   appendParagraph(
     buffer,
     styles,
@@ -184,14 +188,17 @@ function buildGoogleDocBody(plan: GeneratedContentPlan) {
   appendBlankLine(buffer);
 
   appendParagraph(buffer, styles, "Project Summary / Brief", "HEADING_1");
-  appendParagraph(buffer, styles, `Agent / business: ${plan.input.agentName}`);
-  appendParagraph(buffer, styles, `Market: ${plan.input.city}`);
+  appendParagraph(buffer, styles, `Business / brand: ${plan.input.businessName}`);
+  appendParagraph(buffer, styles, `Preset: ${preset.label}`);
   appendParagraph(buffer, styles, `Niche: ${plan.input.niche}`);
   appendParagraph(buffer, styles, `Target audience: ${plan.input.targetAudience}`);
+  appendParagraph(buffer, styles, `Offer: ${plan.input.offer}`);
+  appendParagraph(buffer, styles, `Goals: ${plan.input.goals}`);
   appendParagraph(buffer, styles, `Tone / voice: ${plan.input.tone}`);
   appendParagraph(buffer, styles, `Primary CTA: ${plan.input.primaryCta}`);
-  if (plan.input.listingHighlights) {
-    appendParagraph(buffer, styles, `Listing highlights: ${plan.input.listingHighlights}`);
+  appendParagraph(buffer, styles, `Key themes: ${plan.input.keyThemes}`);
+  if (plan.input.extraContext) {
+    appendParagraph(buffer, styles, `Extra context: ${plan.input.extraContext}`);
   }
   appendBlankLine(buffer);
   appendParagraph(buffer, styles, `Campaign title: ${plan.summary.campaignTitle}`);
@@ -260,6 +267,25 @@ function buildGoogleDocBody(plan: GeneratedContentPlan) {
       `Day ${String(script.day).padStart(2, "0")} • ${script.title}`,
       "HEADING_2",
     );
+    appendParagraph(buffer, styles, `Hook: ${script.hook}`);
+    appendParagraph(buffer, styles, "Body:");
+    for (const beat of script.body) {
+      appendParagraph(buffer, styles, `• ${beat}`);
+    }
+    appendParagraph(buffer, styles, `CTA: ${script.cta}`);
+    appendBlankLine(buffer);
+  }
+  appendBlankLine(buffer);
+
+  appendParagraph(buffer, styles, "Marketing Scripts", "HEADING_1");
+  for (const script of plan.deliverables.marketingScripts) {
+    appendParagraph(
+      buffer,
+      styles,
+      `Day ${String(script.day).padStart(2, "0")} • ${script.title}`,
+      "HEADING_2",
+    );
+    appendParagraph(buffer, styles, `Format: ${script.format}`);
     appendParagraph(buffer, styles, `Hook: ${script.hook}`);
     appendParagraph(buffer, styles, "Body:");
     for (const beat of script.body) {

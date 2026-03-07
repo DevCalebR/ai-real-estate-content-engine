@@ -2,10 +2,11 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Building2 } from "lucide-react";
+import { Layers3 } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { buttonStyles } from "@/components/ui/button";
+import { productByline, productName } from "@/lib/brand";
 import { cn } from "@/lib/utils";
 
 const links = [
@@ -29,13 +30,11 @@ export function SiteHeader({
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-4 sm:px-8">
         <Link href="/" className="flex items-center gap-3">
           <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[linear-gradient(135deg,var(--ink),var(--brand))] text-white shadow-[0_12px_30px_rgba(24,32,51,0.18)]">
-            <Building2 className="h-5 w-5" />
+            <Layers3 className="h-5 w-5" />
           </div>
           <div>
-            <div className="font-display text-2xl leading-none text-[var(--ink)]">
-              AI Real Estate
-            </div>
-            <div className="text-sm text-[var(--ink-soft)]">Content Engine</div>
+            <div className="font-display text-2xl leading-none text-[var(--ink)]">{productName}</div>
+            <div className="text-sm text-[var(--ink-soft)]">{productByline}</div>
           </div>
         </Link>
 

@@ -15,7 +15,7 @@ export async function GET(
   }
 
   const format = new URL(request.url).searchParams.get("format") ?? "markdown";
-  const baseName = buildDownloadBaseName(plan.input.agentName, plan.createdAt);
+  const baseName = buildDownloadBaseName(plan.input.businessName, plan.createdAt);
 
   if (format === "json") {
     return new Response(JSON.stringify(plan, null, 2), {

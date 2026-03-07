@@ -2,14 +2,19 @@
 
 This project exports a generated content plan into a new Google Doc in the connected user's Drive.
 
+Brand context:
+
+- Monthly AI Content Engine
+- Product by RelayWorks
+
 ## Auth Model
 
-This build uses Google OAuth for a single-user local workflow.
+This build uses Google OAuth for a single-user workflow.
 
-- The app opens a Google consent flow
+- the app opens a Google consent flow
 - Google redirects back to the local callback route
 - OAuth tokens are stored locally in `data/integrations/google-oauth.json`
-- The stored token file is ignored by git
+- the stored token file is ignored by git
 
 ## Exact Callback URI
 
@@ -25,13 +30,13 @@ Use `localhost`, not `127.0.0.1`, unless you also change the env var and the OAu
 
 ## Google Cloud Console Clicks
 
-Use your existing project:
+Use the Google Cloud project tied to this app. If you want brand consistency, name it something like:
 
-- Project: `AI Real Estate Content Engine`
+- `Monthly AI Content Engine`
 
 Then click:
 
-1. `Google Cloud Console` → project picker → select `AI Real Estate Content Engine`
+1. `Google Cloud Console` → project picker → select your project
 2. `APIs & Services` → `Enabled APIs & services` → `+ ENABLE APIS AND SERVICES`
 3. Search `Google Docs API` → open it → click `Enable`
 4. Go back to `+ ENABLE APIS AND SERVICES`
@@ -44,7 +49,7 @@ Then click:
 11. `Google Auth Platform` → `Clients`
 12. `Create client`
 13. Application type: `Web application`
-14. Name: `AI Real Estate Content Engine Local`
+14. Name: `Monthly AI Content Engine Local`
 15. Authorized JavaScript origins: `http://localhost:3000`
 16. Authorized redirect URIs: `http://localhost:3000/api/auth/google/callback`
 17. Click `Create`
@@ -60,8 +65,6 @@ If you want to run the app on another port later, add a second origin and redire
 
 ## `.env.local` Values
 
-Copy these values into `.env.local`:
-
 ```env
 GOOGLE_DOCS_SHARE_MODE=anyone_with_link
 GOOGLE_DOCS_SHARE_EMAIL=
@@ -73,8 +76,8 @@ GOOGLE_OAUTH_REDIRECT_URI=http://localhost:3000/api/auth/google/callback
 Notes:
 
 - `GOOGLE_DOCS_SHARE_MODE=anyone_with_link` is the easiest demo setup
-- Leave `GOOGLE_DOCS_SHARE_EMAIL` empty unless you want `share_with_email`
-- Old service-account variables are not used by the OAuth flow
+- leave `GOOGLE_DOCS_SHARE_EMAIL` empty unless you want `share_with_email`
+- the service-account setup is no longer used for personal Drive export
 
 ## Local Test Flow
 
@@ -89,7 +92,8 @@ Notes:
 
 ## Troubleshooting
 
-- If Google says `redirect_uri_mismatch`, the redirect URI in the OAuth client does not exactly match `.env.local`
-- If the consent screen blocks the login, add your Google account as a test user in the same project
-- If Google says an API is disabled, enable both `Google Docs API` and `Google Drive API` in the same project as the OAuth client
-- If the app says the Google connection is no longer valid, reconnect through `Connect Google`
+- if Google says `redirect_uri_mismatch`, the redirect URI in the OAuth client does not exactly match `.env.local`
+- if the consent screen blocks the login, add your Google account as a test user in the same project
+- if Google says an API is disabled, enable both `Google Docs API` and `Google Drive API` in the same project as the OAuth client
+- if the app says the Google connection is no longer valid, reconnect through `Connect Google`
+- if you later deploy to Vercel, move token storage out of the local filesystem

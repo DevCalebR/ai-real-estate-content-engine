@@ -1,0 +1,106 @@
+{
+  "real-estate": {
+    "preset": "real-estate",
+    "businessName": "Avery Nolan Properties",
+    "niche": "Luxury coastal real estate and relocation support",
+    "targetAudience": "Affluent buyers relocating to Charleston who want a polished local advisor with strong negotiation instincts",
+    "offer": "Relocation strategy, home search guidance, and luxury listing representation",
+    "goals": "Increase consultation requests, build trust before the first call, and turn market expertise into consistent inbound interest",
+    "tone": "Luxury editorial with calm concierge confidence",
+    "primaryCta": "Book a relocation strategy call",
+    "keyThemes": "Market clarity, relocation planning, neighborhood fit, luxury property positioning, client wins",
+    "extraContext": "Primary market is Charleston, SC. Relevant details include waterfront homes, walkable historic neighborhoods, turnkey interiors, and private outdoor space.",
+    "platforms": [
+      "Instagram",
+      "LinkedIn",
+      "Facebook"
+    ]
+  },
+  "coach-consultant": {
+    "preset": "coach-consultant",
+    "businessName": "Northline Advisory",
+    "niche": "Revenue strategy consulting for founder-led service firms",
+    "targetAudience": "Founders doing 500k to 3M in annual revenue who need stronger positioning and a more repeatable sales motion",
+    "offer": "Fractional growth strategy and sales-system advisory",
+    "goals": "Generate discovery calls, strengthen authority on LinkedIn, and turn strategic insight into trust-building content",
+    "tone": "Direct, strategic, and reassuring",
+    "primaryCta": "Book a growth audit",
+    "keyThemes": "Positioning clarity, offer packaging, sales process gaps, founder bottlenecks, high-leverage growth moves",
+    "extraContext": "Primary channels are LinkedIn and Instagram. The offer is premium and consultative, so content should feel thoughtful instead of loud.",
+    "platforms": [
+      "LinkedIn",
+      "Instagram",
+      "X / Twitter"
+    ]
+  },
+  "saas-productized-service": {
+    "preset": "saas-productized-service",
+    "businessName": "RelayWorks Studio",
+    "niche": "AI automation systems and productized implementation support",
+    "targetAudience": "Lean teams, founders, and operators who want more leverage from automation without hiring a large internal systems team",
+    "offer": "Automation design, implementation sprints, and ongoing system optimization",
+    "goals": "Drive traffic to the website, generate discovery calls, and turn social content into proof of capability for productized services and SaaS offers",
+    "tone": "Sharp, modern, and commercially useful",
+    "primaryCta": "Visit the site to book a systems call",
+    "keyThemes": "Automation workflows, before-and-after efficiency gains, service proof, product walkthroughs, traffic-driving hooks",
+    "extraContext": "This preset should work well later for RelayWorks-style products and services. Prioritize content that can move someone from social into a website visit or demo request.",
+    "platforms": [
+      "LinkedIn",
+      "Instagram",
+      "X / Twitter",
+      "TikTok"
+    ]
+  },
+  "e-commerce": {
+    "preset": "e-commerce",
+    "businessName": "Harbor & Pine",
+    "niche": "Premium home fragrance and candle brand",
+    "targetAudience": "Design-conscious shoppers who want elevated home rituals and giftable products that feel intentional",
+    "offer": "Seasonal candle collections and home scent bundles",
+    "goals": "Increase product page traffic, support collection launches, and turn social into stronger repeat-purchase demand",
+    "tone": "Clean, elevated, and sensory",
+    "primaryCta": "Shop the latest collection",
+    "keyThemes": "Product rituals, scent storytelling, seasonal drops, customer proof, gifting moments",
+    "extraContext": "Brand visuals should feel premium and tactile. Seasonal launches and bundle promotions matter.",
+    "platforms": [
+      "Instagram",
+      "TikTok",
+      "Facebook"
+    ]
+  },
+  "local-business": {
+    "preset": "local-business",
+    "businessName": "Elm Street Wellness",
+    "niche": "Boutique wellness studio and recovery services",
+    "targetAudience": "Busy professionals and active adults who want premium local wellness support with a calm, trustworthy brand",
+    "offer": "Membership-based recovery sessions, infrared sauna, and mobility support",
+    "goals": "Increase studio visits, strengthen local awareness, and make recurring services easier to understand and book",
+    "tone": "Warm, grounded, and premium",
+    "primaryCta": "Book your first session",
+    "keyThemes": "Service experience, customer wins, wellness education, community relevance, offer clarity",
+    "extraContext": "Business is location-based and thrives on repeat visits, referrals, and stronger understanding of service benefits.",
+    "platforms": [
+      "Instagram",
+      "Facebook",
+      "TikTok"
+    ]
+  },
+  "creator-brand": {
+    "preset": "creator-brand",
+    "businessName": "Nia Rowe",
+    "niche": "Creator brand focused on creative systems and sustainable online growth",
+    "targetAudience": "Solo creators and online educators who want better content systems without losing originality",
+    "offer": "Workshops, templates, and audience-growth education",
+    "goals": "Grow engaged followers, increase workshop sales, and turn social content into stronger trust and repeat audience touchpoints",
+    "tone": "Distinctive, thoughtful, and direct",
+    "primaryCta": "Join the next workshop",
+    "keyThemes": "Creative systems, audience growth, process transparency, point of view, product education",
+    "extraContext": "The brand should feel personal, smart, and useful rather than highly corporate.",
+    "platforms": [
+      "Instagram",
+      "LinkedIn",
+      "X / Twitter",
+      "TikTok"
+    ]
+  }
+}

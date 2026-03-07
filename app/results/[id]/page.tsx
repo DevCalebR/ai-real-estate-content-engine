@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -5,12 +6,28 @@ import { ResultsTabs } from "@/components/results/results-tabs";
 import { Badge } from "@/components/ui/badge";
 import { buttonStyles } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { productDescription } from "@/lib/brand";
+import { getContentPreset } from "@/lib/content-presets";
 import { getGoogleDocsIntegrationStatus } from "@/lib/integrations/google-docs";
 import { getContentPlan } from "@/lib/storage/runs";
 import type { GoogleAuthNotice } from "@/lib/types/integrations";
 import { formatDateTime } from "@/lib/utils";
 
 export const dynamic = "force-dynamic";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const { id } = await params;
+  const plan = await getContentPlan(id);
+
+  return {
+    title: plan ? `${plan.input.businessName} Results` : "Results",
+    description: productDescription,
+  };
+}
 
 export default async function ResultsPage({
   params,
@@ -51,6 +68,8 @@ export default async function ResultsPage({
     notFound();
   }
 
+  const preset = getContentPreset(plan.input.preset);
+
   return (
     <div className="space-y-8 pb-12">
       <section className="grid gap-6 xl:grid-cols-[1.1fr_0.9fr]">
@@ -78,22 +97,24 @@ export default async function ResultsPage({
             <Metric label="Calendar Days" value={String(plan.stats.totalPosts)} />
             <Metric label="Carousel Outlines" value={String(plan.stats.carouselCount)} />
             <Metric label="Video Scripts" value={String(plan.stats.videoCount)} />
-            <Metric label="Primary Platforms" value={String(plan.stats.primaryPlatforms.length)} />
+            <Metric
+              label="Marketing Scripts"
+              value={String(plan.stats.marketingScriptCount)}
+            />
           </div>
         </Card>
 
         <Card className="space-y-4">
           <p className="eyebrow">Campaign Snapshot</p>
           <p className="text-sm leading-7 text-[var(--ink-soft)]">
-            This panel keeps the original brief visible so a reviewer can quickly verify that
-            the output matches the agent, market, audience, and CTA.
+            This panel keeps the original brief visible so a reviewer can quickly verify that the output matches the preset, offer, audience, goals, and CTA.
           </p>
           <div className="grid gap-3 text-sm leading-7 text-[var(--ink-soft)]">
             <div>
-              <strong className="text-[var(--ink)]">Agent:</strong> {plan.input.agentName}
+              <strong className="text-[var(--ink)]">Business:</strong> {plan.input.businessName}
             </div>
             <div>
-              <strong className="text-[var(--ink)]">Market:</strong> {plan.input.city}
+              <strong className="text-[var(--ink)]">Preset:</strong> {preset.label}
             </div>
             <div>
               <strong className="text-[var(--ink)]">Niche:</strong> {plan.input.niche}
@@ -103,15 +124,23 @@ export default async function ResultsPage({
               {plan.input.targetAudience}
             </div>
             <div>
+              <strong className="text-[var(--ink)]">Offer:</strong> {plan.input.offer}
+            </div>
+            <div>
+              <strong className="text-[var(--ink)]">Goals:</strong> {plan.input.goals}
+            </div>
+            <div>
               <strong className="text-[var(--ink)]">Tone:</strong> {plan.input.tone}
             </div>
             <div>
               <strong className="text-[var(--ink)]">CTA:</strong> {plan.input.primaryCta}
             </div>
-            {plan.input.listingHighlights ? (
+            <div>
+              <strong className="text-[var(--ink)]">Key themes:</strong> {plan.input.keyThemes}
+            </div>
+            {plan.input.extraContext ? (
               <div>
-                <strong className="text-[var(--ink)]">Listing highlights:</strong>{" "}
-                {plan.input.listingHighlights}
+                <strong className="text-[var(--ink)]">Extra context:</strong> {plan.input.extraContext}
               </div>
             ) : null}
           </div>

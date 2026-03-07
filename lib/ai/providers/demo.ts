@@ -1,4 +1,6 @@
+import { getContentPreset } from "@/lib/content-presets";
 import {
+  marketingScriptFormatOptions,
   rawGenerationOutputSchema,
   type ContentType,
   type GenerationInput,
@@ -6,6 +8,7 @@ import {
   type RawCalendarPost,
   type RawCarousel,
   type RawGenerationOutput,
+  type RawMarketingScript,
   type RawVideoScript,
 } from "@/lib/types/content";
 import { clampText } from "@/lib/utils";
@@ -16,27 +19,6 @@ const contentTypeSequence: ContentType[] = [
   "Short-form video",
 ];
 
-const angleTemplates = [
-  "Translate the local market into a calm, trusted takeaway for buyers.",
-  "Show behind-the-scenes expertise that reinforces advisory authority.",
-  "Use neighborhood lifestyle cues to make the market feel tangible.",
-  "Turn a common client question into practical guidance with momentum.",
-  "Anchor the content in current decision-making, not generic inspiration.",
-] as const;
-
-const themeTemplates = [
-  "Market shift insight",
-  "Client win",
-  "Neighborhood spotlight",
-  "Listing story",
-  "Buyer myth reset",
-  "Seller strategy",
-  "Relocation guide",
-  "Lifestyle cue",
-  "Pricing perspective",
-  "Home prep tip",
-] as const;
-
 function compactPhrase(value: string, maxWords: number) {
   return value
     .split(/[\s,;/]+/)
@@ -45,18 +27,46 @@ function compactPhrase(value: string, maxWords: number) {
     .join(" ");
 }
 
-function summarizeAudience(value: string) {
-  const trimmed = value.toLowerCase().split(/\bwho\b|\bthat\b/)[0]?.trim() ?? value.toLowerCase();
-  return compactPhrase(trimmed, 8);
+function splitPhrases(value: string) {
+  return value
+    .split(/[,|\n]+/)
+    .map((entry) => entry.trim())
+    .filter(Boolean);
 }
 
-function summarizeHighlights(value: string) {
-  return value
-    .split(",")
-    .map((entry) => entry.trim().toLowerCase())
-    .filter(Boolean)
-    .slice(0, 3)
-    .join(", ");
+function summarizeAudience(value: string) {
+  const trimmed = value.toLowerCase().split(/\bwho\b|\bthat\b/)[0]?.trim() ?? value.toLowerCase();
+  return compactPhrase(trimmed, 9);
+}
+
+function summarizeGoals(value: string) {
+  return compactPhrase(value.toLowerCase(), 5);
+}
+
+function summarizeThemes(value: string) {
+  const phrases = splitPhrases(value.toLowerCase()).slice(0, 2);
+  return phrases.join(", ") || compactPhrase(value.toLowerCase(), 5);
+}
+
+function summarizeOffer(value: string) {
+  return compactPhrase(value.toLowerCase(), 8);
+}
+
+function uniqueHashtags(input: GenerationInput, day: number) {
+  const preset = getContentPreset(input.preset);
+  const brandToken = input.businessName.split(" ")[0]?.replace(/[^a-zA-Z0-9]/g, "") || "Brand";
+  const nicheToken = input.niche.split(" ")[0]?.replace(/[^a-zA-Z0-9]/g, "") || "Niche";
+  const offerToken = input.offer.split(" ")[0]?.replace(/[^a-zA-Z0-9]/g, "") || "Offer";
+
+  return [
+    `#${brandToken}Content`,
+    `#${nicheToken}Marketing`,
+    `#${offerToken}Growth`,
+    `#${preset.hashtagSeeds[0]}`,
+    `#${preset.hashtagSeeds[1]}`,
+    `#${preset.hashtagSeeds[2]}`,
+    `#Day${String(day).padStart(2, "0")}Plan`,
+  ];
 }
 
 function rotatePlatforms(platforms: Platform[], index: number) {
@@ -66,19 +76,23 @@ function rotatePlatforms(platforms: Platform[], index: number) {
     .slice(0, Math.min(2, platforms.length));
 }
 
-function uniqueHashtags(input: GenerationInput, day: number) {
-  const cityToken = input.city.split(",")[0].replace(/[^a-zA-Z0-9]/g, "");
-  const nicheToken = input.niche.split(" ")[0].replace(/[^a-zA-Z0-9]/g, "");
+function buildTheme(input: GenerationInput, dayIndex: number) {
+  const preset = getContentPreset(input.preset);
+  const themeFocus = splitPhrases(input.keyThemes);
+  const focus = themeFocus[dayIndex % Math.max(themeFocus.length, 1)] ?? input.offer;
 
-  return [
-    `#${cityToken}RealEstate`,
-    `#${nicheToken || "Local"}Homes`,
-    "#AgentMarketing",
-    "#HomeSearchTips",
-    "#MoveWithConfidence",
-    `#${input.agentName.split(" ")[0].replace(/[^a-zA-Z0-9]/g, "")}Advises`,
-    `#Day${String(day).padStart(2, "0")}Content`,
-  ];
+  return `${preset.themePool[dayIndex % preset.themePool.length]} · ${focus}`;
+}
+
+function buildAngle(input: GenerationInput, dayIndex: number) {
+  const preset = getContentPreset(input.preset);
+  const campaignGoal = summarizeGoals(input.goals);
+  const focus = summarizeThemes(input.keyThemes);
+
+  return clampText(
+    `${preset.anglePool[dayIndex % preset.anglePool.length]} Keep it anchored in ${focus} and move the audience toward ${campaignGoal}.`,
+    220,
+  );
 }
 
 function buildCaption(
@@ -89,37 +103,35 @@ function buildCaption(
   contentType: ContentType,
 ) {
   const audienceHandle = summarizeAudience(input.targetAudience);
-  const listingHandle = input.listingHighlights
-    ? summarizeHighlights(input.listingHighlights)
-    : "";
+  const goalHandle = summarizeGoals(input.goals);
+  const focusHandle = summarizeThemes(input.keyThemes);
 
   const hook =
     contentType === "Short-form video"
-      ? "Stop scrolling if you want the clearer read on this market."
+      ? "Here is the social angle that can turn attention into intent."
       : contentType === "Carousel"
-        ? "Save this for the point when the search needs sharper strategy."
-        : "If you want the local signal, start here.";
+        ? "Save this if you want a clearer content-to-conversion play."
+        : "This is the kind of post that makes the offer easier to understand fast.";
 
-  const listingLine = listingHandle
-    ? ` Buyer attention is leaning toward homes with ${listingHandle}.`
-    : "";
-
-  return `${hook} Day ${day} focuses on ${theme.toLowerCase()} in ${input.city}. ${angle} I’m framing this for ${audienceHandle}, with clear next steps instead of generic market chatter.${listingLine} ${input.primaryCta}.`;
+  return clampText(
+    `${hook} Day ${day} focuses on ${theme.toLowerCase()}. Show how ${summarizeOffer(input.offer)} helps ${audienceHandle}. Keep the message anchored in ${focusHandle}, make the next step obvious, and use the post to support ${goalHandle}. ${input.primaryCta}.`,
+    1200,
+  );
 }
 
 function buildImagePrompt(input: GenerationInput, theme: string, contentType: ContentType) {
+  const preset = getContentPreset(input.preset);
   const audienceHandle = summarizeAudience(input.targetAudience);
-  const nicheHandle = compactPhrase(input.niche.toLowerCase(), 6);
   const artDirection =
     contentType === "Carousel"
-      ? "editorial social carousel, refined grid layout, muted luxury palette"
+      ? "social carousel layout, premium editorial grid, layered typography, polished storytelling sequence"
       : contentType === "Short-form video"
-        ? "vertical video storyboard frame, cinematic natural light, polished real estate branding"
-        : "high-end property marketing still, natural textures, tasteful composition";
+        ? "vertical video storyboard frame, motion-ready composition, social-first pacing, branded visual hook"
+        : "hero social visual, clean composition, premium branded still, campaign-ready framing";
 
   return clampText(
-    `${theme} for a ${nicheHandle} real estate brand in ${input.city}; ${artDirection}; tone is ${input.tone.toLowerCase()}; subtle cues for ${audienceHandle}.`,
-    280,
+    `${theme} for ${input.businessName}, a ${input.niche.toLowerCase()} brand. Show ${summarizeOffer(input.offer)} with ${preset.imageStyle}; ${artDirection}; tone is ${input.tone.toLowerCase()}; cues for ${audienceHandle}.`,
+    320,
   );
 }
 
@@ -127,12 +139,8 @@ function buildCalendar(input: GenerationInput): RawCalendarPost[] {
   return Array.from({ length: 30 }, (_, index) => {
     const day = index + 1;
     const contentType = contentTypeSequence[index % contentTypeSequence.length];
-    const theme = `${themeTemplates[index % themeTemplates.length]}: ${input.city}`;
-    const nicheHandle = compactPhrase(input.niche.toLowerCase(), 5);
-    const angle = clampText(
-      `${angleTemplates[index % angleTemplates.length]} Keep the advice grounded in ${nicheHandle} decisions for this market.`,
-      180,
-    );
+    const theme = buildTheme(input, index);
+    const angle = buildAngle(input, index);
 
     return {
       day,
@@ -160,32 +168,32 @@ function buildCarousels(calendar: RawCalendarPost[], input: GenerationInput): Ra
         {
           slide: 1,
           title: "Why this matters now",
-          body: `${input.city} clients are reacting to timing, confidence, and clarity more than noise.`,
+          body: `${input.businessName} is using this angle to support ${summarizeGoals(input.goals)}.`,
         },
         {
           slide: 2,
-          title: "What buyers are asking",
-          body: `The dominant question is how ${compactPhrase(input.niche.toLowerCase(), 6)} decisions align with timing, location, and budget.`,
+          title: "What the audience needs",
+          body: `${summarizeAudience(input.targetAudience)} want a faster path from awareness to confidence.`,
         },
         {
           slide: 3,
-          title: "My client lens",
-          body: `I frame this for ${summarizeAudience(input.targetAudience)} so the next move feels practical, not overwhelming.`,
+          title: "What the offer solves",
+          body: `${input.offer} becomes easier to understand when the value is shown through specific use cases.`,
         },
         {
           slide: 4,
-          title: "Where the opportunity sits",
-          body: "The strongest advantage is usually hiding in preparation, positioning, and neighborhood fit.",
+          title: "Where the content should go",
+          body: `Use ${summarizeThemes(input.keyThemes)} to keep the message focused and repeatable.`,
         },
         {
           slide: 5,
-          title: "Action to take",
-          body: "Use this angle to shortlist options, sharpen timing, and protect negotiation leverage.",
+          title: "How to turn interest into action",
+          body: `Make the CTA direct, useful, and consistent with the next commercial step.`,
         },
         {
           slide: 6,
           title: "Next step",
-          body: `${input.primaryCta} so we can turn the market read into a concrete plan.`,
+          body: input.primaryCta,
         },
       ].slice(0, index % 2 === 0 ? 6 : 5),
     }));
@@ -196,36 +204,64 @@ function buildVideoScripts(calendar: RawCalendarPost[], input: GenerationInput):
     .filter((entry) => entry.contentType === "Short-form video")
     .map((entry) => ({
       day: entry.day,
-      title: `${entry.theme} Reel`,
+      title: `${entry.theme} Video`,
       theme: entry.theme,
-      hook: `Here’s the local signal I do not want ${summarizeAudience(input.targetAudience)} to miss this week.`,
+      hook: `If you want social content that actually moves people toward ${input.offer.toLowerCase()}, start here.`,
       body: [
-        `Start with what has changed in ${input.city} and why it affects the pace of decision-making.`,
-        `Show how ${compactPhrase(input.niche.toLowerCase(), 6)} clients can interpret that shift without overreacting.`,
-        "Give one concrete next move that makes the next conversation or showing more productive.",
+        `Open with the pressure point the audience already feels around ${compactPhrase(input.niche.toLowerCase(), 7)}.`,
+        `Show how ${input.businessName} approaches it differently through ${summarizeThemes(input.keyThemes)}.`,
+        `End with one concrete next move that supports ${summarizeGoals(input.goals)}.`,
       ],
       cta: input.primaryCta,
     }));
 }
 
+function buildMarketingScripts(calendar: RawCalendarPost[], input: GenerationInput): RawMarketingScript[] {
+  return calendar
+    .filter((_, index) => index % 3 === 0)
+    .slice(0, 10)
+    .map((entry, index) => {
+      const format = marketingScriptFormatOptions[index % marketingScriptFormatOptions.length];
+
+      return {
+        day: entry.day,
+        title: `${entry.theme} ${format}`,
+        theme: entry.theme,
+        format,
+        hook: `This is the message that connects ${input.offer.toLowerCase()} to a real audience need in one pass.`,
+        body: [
+          `Lead with the friction or missed opportunity around ${compactPhrase(input.niche.toLowerCase(), 7)}.`,
+          `Translate the offer into a concrete outcome for ${summarizeAudience(input.targetAudience)}.`,
+          `Use proof, specificity, or workflow detail so the message feels commercially real.`,
+          `Point the audience toward the website, signup, consultation, or next action tied to the goal.`,
+        ].slice(0, format === "Customer story" ? 4 : 3),
+        cta: input.primaryCta,
+      };
+    });
+}
+
 export async function generateDemoContentPlan(
   input: GenerationInput,
 ): Promise<RawGenerationOutput> {
+  const preset = getContentPreset(input.preset);
   const monthlyCalendar = buildCalendar(input);
-  const nicheHandle = compactPhrase(input.niche.toLowerCase(), 5);
-  const audienceHandle = summarizeAudience(input.targetAudience);
+  const nicheHandle = compactPhrase(input.niche.toLowerCase(), 6);
 
   return rawGenerationOutputSchema.parse({
     strategySummary: {
-      campaignTitle: `${input.agentName} Monthly Growth Engine`,
+      campaignTitle: `${input.businessName} Monthly Social Engine`,
       positioning: clampText(
-        `${input.agentName} is positioned as the ${input.city} advisor who turns ${nicheHandle} questions into clear next steps for ${audienceHandle}.`,
-        220,
+        `${input.businessName} is positioned as the ${nicheHandle} brand for ${summarizeAudience(input.targetAudience)}, using ${summarizeOffer(input.offer)} and focused social content to support ${summarizeGoals(input.goals)}.`,
+        240,
       ),
-      narrative: `The month balances trust-building education, local market fluency, and polished lifestyle storytelling so every post reinforces ${input.tone.toLowerCase()} while moving prospects toward "${input.primaryCta}".`,
+      narrative: clampText(
+        `This month balances authority, education, offer clarity, and conversion-focused storytelling so every post reinforces ${input.tone.toLowerCase()} while building momentum around ${summarizeThemes(input.keyThemes)}. The preset bias stays tuned to ${preset.label.toLowerCase()} content patterns without locking the output into a single industry voice.`,
+        340,
+      ),
     },
     monthlyCalendar,
     carousels: buildCarousels(monthlyCalendar, input),
     videoScripts: buildVideoScripts(monthlyCalendar, input),
+    marketingScripts: buildMarketingScripts(monthlyCalendar, input),
   });
 }

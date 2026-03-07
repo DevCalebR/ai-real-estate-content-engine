@@ -1,3 +1,5 @@
+import { productByline, productName } from "@/lib/brand";
+import { getContentPreset } from "@/lib/content-presets";
 import type { GeneratedContentPlan } from "@/lib/types/content";
 import { formatDate } from "@/lib/utils";
 
@@ -11,6 +13,7 @@ function escapeHtml(value: string) {
 }
 
 export function buildHtmlReport(plan: GeneratedContentPlan) {
+  const preset = getContentPreset(plan.input.preset);
   const calendarCards = plan.deliverables.monthlyContentCalendar
     .map(
       (entry) => `
@@ -65,6 +68,20 @@ export function buildHtmlReport(plan: GeneratedContentPlan) {
       (script) => `
         <article class="card compact">
           <div class="eyebrow">Video · Day ${script.day}</div>
+          <h3>${escapeHtml(script.title)}</h3>
+          <p><strong>Hook:</strong> ${escapeHtml(script.hook)}</p>
+          <ul>${script.body.map((beat) => `<li>${escapeHtml(beat)}</li>`).join("")}</ul>
+          <p><strong>CTA:</strong> ${escapeHtml(script.cta)}</p>
+        </article>
+      `,
+    )
+    .join("");
+
+  const marketingCards = plan.deliverables.marketingScripts
+    .map(
+      (script) => `
+        <article class="card compact">
+          <div class="eyebrow">${escapeHtml(script.format)} · Day ${script.day}</div>
           <h3>${escapeHtml(script.title)}</h3>
           <p><strong>Hook:</strong> ${escapeHtml(script.hook)}</p>
           <ul>${script.body.map((beat) => `<li>${escapeHtml(beat)}</li>`).join("")}</ul>
@@ -166,6 +183,12 @@ export function buildHtmlReport(plan: GeneratedContentPlan) {
         padding-top: 16px;
         border-top: 1px solid var(--line);
       }
+      .brand-line {
+        color: rgba(255,255,255,0.78);
+        font-size: 13px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
       @media print {
         body { background: white; }
         header { break-inside: avoid; }
@@ -181,7 +204,8 @@ export function buildHtmlReport(plan: GeneratedContentPlan) {
   <body>
     <main>
       <header>
-        <div class="eyebrow">AI Real Estate Content Engine</div>
+        <div class="eyebrow">${escapeHtml(productName)}</div>
+        <div class="brand-line">${escapeHtml(productByline)}</div>
         <h1>${escapeHtml(plan.summary.campaignTitle)}</h1>
         <p>${escapeHtml(plan.summary.positioning)}</p>
         <p>${escapeHtml(plan.summary.narrative)}</p>
@@ -189,15 +213,17 @@ export function buildHtmlReport(plan: GeneratedContentPlan) {
           <div class="metric"><strong>${plan.stats.totalPosts}</strong><span>Total posts</span></div>
           <div class="metric"><strong>${plan.stats.carouselCount}</strong><span>Carousel outlines</span></div>
           <div class="metric"><strong>${plan.stats.videoCount}</strong><span>Video scripts</span></div>
-          <div class="metric"><strong>${escapeHtml(plan.modeUsed)}</strong><span>Generation mode</span></div>
+          <div class="metric"><strong>${plan.stats.marketingScriptCount}</strong><span>Marketing scripts</span></div>
         </div>
       </header>
       <section>
-        <div class="eyebrow">Client brief</div>
+        <div class="eyebrow">Campaign brief</div>
         <div class="grid">
-          <article class="card"><strong>Agent</strong><p>${escapeHtml(plan.input.agentName)}</p></article>
-          <article class="card"><strong>Market</strong><p>${escapeHtml(plan.input.city)}</p></article>
+          <article class="card"><strong>Business</strong><p>${escapeHtml(plan.input.businessName)}</p></article>
+          <article class="card"><strong>Preset</strong><p>${escapeHtml(preset.label)}</p></article>
           <article class="card"><strong>Niche</strong><p>${escapeHtml(plan.input.niche)}</p></article>
+          <article class="card"><strong>Offer</strong><p>${escapeHtml(plan.input.offer)}</p></article>
+          <article class="card"><strong>Goals</strong><p>${escapeHtml(plan.input.goals)}</p></article>
           <article class="card"><strong>CTA</strong><p>${escapeHtml(plan.input.primaryCta)}</p></article>
         </div>
       </section>
@@ -206,12 +232,16 @@ export function buildHtmlReport(plan: GeneratedContentPlan) {
         <div class="grid">${calendarCards}</div>
       </section>
       <section>
-        <div class="eyebrow">Carousel text</div>
+        <div class="eyebrow">Carousel outlines</div>
         <div class="grid">${carouselCards}</div>
       </section>
       <section>
         <div class="eyebrow">Video scripts</div>
         <div class="grid">${videoCards}</div>
+      </section>
+      <section>
+        <div class="eyebrow">Marketing scripts</div>
+        <div class="grid">${marketingCards}</div>
       </section>
     </main>
   </body>

@@ -3,6 +3,7 @@ import { Cormorant_Garamond, Manrope } from "next/font/google";
 
 import { SiteHeader } from "@/components/site-header";
 import { getAiRuntimeStatus } from "@/lib/ai/config";
+import { productByline, productDescription, productName } from "@/lib/brand";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -17,9 +18,11 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "AI Real Estate Content Engine",
-  description:
-    "Production-ready portfolio project that generates a month of polished real estate social content with demo mode and Claude-ready architecture.",
+  title: {
+    default: `${productName} | ${productByline}`,
+    template: `%s | ${productName}`,
+  },
+  description: productDescription,
 };
 
 export default function RootLayout({
@@ -50,8 +53,8 @@ export default function RootLayout({
           {children}
         </main>
         <footer className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-8 text-sm text-[var(--ink-soft)] sm:px-8">
-          <p>Built for portfolio demos, local persistence, and Claude-ready orchestration.</p>
-          <p>Next.js · TypeScript · Tailwind</p>
+          <p>{productName} · {productByline}</p>
+          <p>Next.js · TypeScript · Tailwind · OAuth Google Docs export</p>
         </footer>
       </body>
     </html>

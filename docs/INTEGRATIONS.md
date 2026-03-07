@@ -1,55 +1,69 @@
 # Integrations
 
-This project keeps third-party integrations isolated so the application stays easy to demo, reason about, and extend.
+## Overview
+
+Monthly AI Content Engine uses lightweight integrations that strengthen the product story without overcomplicating the architecture.
+
+Current integrations:
+
+- Claude for live AI generation
+- Google OAuth for account connection
+- Google Docs and Google Drive for direct document export and sharing
 
 ## Claude
 
 Purpose:
 
-- Live model generation for content plans
+- live monthly content generation through a provider abstraction layer
 
-Where it lives:
+Files:
 
+- `lib/ai/index.ts`
 - `lib/ai/providers/claude.ts`
 - `lib/prompts/content-plan.ts`
 
 Notes:
 
-- Claude is optional
-- The app defaults to demo mode when no Claude configuration is present
+- demo mode remains the default safe fallback
+- Claude can be swapped without changing the rest of the app contract
+
+## Google OAuth
+
+Purpose:
+
+- connect a Google account so the app can create Google Docs inside that user’s Drive
+
+Files:
+
+- `app/api/auth/google/start/route.ts`
+- `app/api/auth/google/callback/route.ts`
+- `lib/integrations/google-oauth.ts`
+- `lib/storage/google-oauth.ts`
+
+Notes:
+
+- OAuth tokens are stored locally in `data/integrations/google-oauth.json`
+- local token storage is good for portfolio/demo use but should move to durable storage for production hosting
 
 ## Google Docs
 
 Purpose:
 
-- Export a generated run into a newly created Google Doc and return an openable URL
+- export a saved content plan into a newly created Google Doc with clean section formatting
 
-Where it lives:
+Files:
 
-- `lib/integrations/google-docs.ts`
 - `app/api/runs/[id]/export/google-docs/route.ts`
-
-Notes:
-
-- Google Docs export is optional
-- The UI stays safe when credentials are missing
-- The integration uses a single-user OAuth web flow for personal Drive exports
-- OAuth tokens are stored locally in `data/integrations/google-oauth.json`
-- Google Drive is used only for sharing/link access behavior
-
-## Export Stack
-
-Purpose:
-
-- Turn saved runs into reusable handoff formats
-
-Where it lives:
-
-- `lib/export/markdown.ts`
-- `lib/export/html.ts`
 - `lib/integrations/google-docs.ts`
 
-Notes:
+Behavior:
 
-- Markdown, JSON, HTML, and print exports work without Google configuration
-- Google Docs adds one cloud-based export path without changing the underlying content plan structure
+- creates a new Google Doc in the connected user’s Drive
+- applies anyone-with-link, private, or share-with-email behavior based on env configuration
+- returns the created document URL to the UI
+
+## Why These Integrations Matter
+
+- Claude makes the app useful beyond demo mode
+- Google Docs makes delivery more practical for real clients or operators
+- The architecture keeps integrations isolated, so the core product stays understandable and maintainable

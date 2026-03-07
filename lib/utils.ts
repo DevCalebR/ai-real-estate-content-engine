@@ -37,9 +37,9 @@ export function slugify(value: string) {
     .slice(0, 48);
 }
 
-export function buildDownloadBaseName(agentName: string, createdAt: string) {
+export function buildDownloadBaseName(businessName: string, createdAt: string) {
   const date = new Date(createdAt).toISOString().slice(0, 10);
-  return `${slugify(agentName) || "content-plan"}-${date}`;
+  return `${slugify(businessName) || "content-plan"}-${date}`;
 }
 
 export function extractJsonObject(payload: string) {

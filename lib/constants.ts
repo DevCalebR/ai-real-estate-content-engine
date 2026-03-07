@@ -1,42 +1,43 @@
-import type { GenerationInput } from "@/lib/types/content";
+import { contentPresets } from "@/lib/content-presets";
+import type { ContentPresetKey, GenerationInput } from "@/lib/types/content";
 
 export const tonePresets = [
-  "Confident local advisor",
-  "Luxury editorial",
-  "Warm first-time buyer coach",
-  "Investor-focused and data-driven",
-  "Relocation concierge",
+  "Smart operator energy with commercial clarity",
+  "Warm authority with sharp clarity",
+  "Modern, polished, and direct",
+  "Helpful educator with calm confidence",
+  "Bold brand voice with practical substance",
 ] as const;
 
 export const nicheSuggestions = [
-  "Luxury homes",
-  "First-time buyers",
-  "Relocation clients",
-  "Investors",
-  "Downsizers",
-  "New construction",
+  "AI automation systems",
+  "Revenue strategy consulting",
+  "Luxury coastal real estate",
+  "E-commerce product launches",
+  "Local wellness services",
+  "Creator education products",
 ] as const;
 
 export const productFeatures = [
   {
-    title: "Month-long campaign output",
+    title: "Full-month strategic output",
     description:
-      "Turn a compact agent brief into a full calendar of posts, scripts, outlines, and creative prompts.",
+      "Turn one structured brief into a calendar, captions, carousels, short-form videos, marketing scripts, hashtags, and image prompts.",
   },
   {
-    title: "Credible AI systems design",
+    title: "Preset-aware content planning",
     description:
-      "Provider abstraction, prompt modules, schema validation, and formatting layers keep the project legible and production-minded.",
+      "Real Estate, Coach / Consultant, SaaS / Productized Service, E-commerce, Local Business, and Creator Brand presets keep the workflow reusable across niches.",
   },
   {
-    title: "Demo-safe without shortcuts",
+    title: "Automation architecture you can explain",
     description:
-      "The included demo mode still exercises the same orchestration, storage, and export pipeline, so the walkthrough feels real.",
+      "Provider abstraction, prompt modules, schema validation, formatting layers, and exports make the product credible as an AI automation system.",
   },
   {
-    title: "Client-ready handoff",
+    title: "Client-ready delivery",
     description:
-      "Download markdown, JSON, and a polished HTML report, or open a clean print view for browser PDF export.",
+      "Download markdown, JSON, HTML, and print-friendly reports, or export directly into Google Docs through the verified OAuth flow.",
   },
 ] as const;
 
@@ -44,41 +45,34 @@ export const architectureSteps = [
   {
     title: "Input Form",
     description:
-      "Capture the agent brief, market, audience, tone, CTA, and platforms in one clean intake step.",
+      "Capture the business context, preset, offer, audience, goals, brand voice, platforms, and campaign themes in one structured intake.",
   },
   {
     title: "AI Orchestration",
     description:
-      "Route the same brief through demo mode or Claude without changing the rest of the application.",
+      "Route the same brief through demo mode or Claude behind a shared service layer so the product contract stays stable.",
   },
   {
     title: "Structured Content Generation",
     description:
-      "Generate a strict JSON content package instead of loose paragraphs so the output can be trusted and reused.",
+      "Generate a strict JSON content package for the calendar, captions, carousels, videos, marketing scripts, hashtags, and image prompts.",
   },
   {
     title: "Formatting Engine",
     description:
-      "Normalize the raw output into polished day-by-day deliverables with dates, captions, hashtags, and prompts.",
+      "Normalize the raw output into day-by-day deliverables with publish dates, grouped assets, and consistent metadata for review and export.",
   },
   {
     title: "Export Deliverables",
     description:
-      "Package the final plan into handoff files a client, recruiter, or internal team can understand immediately.",
+      "Package the final plan into markdown, JSON, HTML, print, and Google Docs handoff formats without changing the saved run structure.",
   },
 ] as const;
 
-export const demoBrief: GenerationInput = {
-  agentName: "Avery Nolan Properties",
-  city: "Charleston, SC",
-  niche: "Relocation clients and luxury coastal homes",
-  targetAudience:
-    "High-income professionals moving from the Northeast who want a polished local expert",
-  tone: "Luxury editorial with warm concierge energy",
-  primaryCta: "Book a relocation strategy call",
-  listingHighlights:
-    "Waterfront homes, walkable historic neighborhoods, turnkey interiors, private outdoor space",
-  platforms: ["Instagram", "LinkedIn", "Facebook"],
-};
+export const sampleBriefs: Record<ContentPresetKey, GenerationInput> = Object.fromEntries(
+  Object.entries(contentPresets).map(([key, preset]) => [key, preset.sample]),
+) as Record<ContentPresetKey, GenerationInput>;
+
+export const demoBrief = sampleBriefs["saas-productized-service"];
 
 export const sampleBriefJson = JSON.stringify(demoBrief, null, 2);

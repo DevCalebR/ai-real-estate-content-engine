@@ -1,15 +1,11 @@
-# 60-Second Demo Script
+# Demo Script
 
-## Demo Script
+## 60-Second Walkthrough
 
-"This is AI Real Estate Content Engine, a portfolio project built to generate a full month of social media content for a real estate agent from a compact client brief.
+"This is Monthly AI Content Engine, a product by RelayWorks. It takes one structured business brief and turns it into a full month of strategic social content instead of just giving back a few prompt responses.
 
-On the generate page, I can either fill the form manually or load a sample brief. The inputs cover the agent name, market, niche, target audience, tone, CTA, listing highlights, and preferred platforms.
+On the generate page, I pick a preset like SaaS / Productized Service, load a sample brief, and the app uses that context to create a 30-day content calendar, captions, carousel outlines, short-form video scripts, marketing scripts, hashtags, and image prompts.
 
-When I click Generate Monthly Content, the app runs the request through a service layer that can use either a local demo generator or Claude. The response is forced into structured JSON, then a formatting engine turns it into deliverables.
+Every run is saved locally, so I can reopen it on the results page, filter the calendar, review the scripts, and export everything as markdown, JSON, HTML, print-ready view, or directly into Google Docs through the OAuth integration.
 
-On the results page, you can see the 30-day content calendar, captions, carousel outlines, video scripts, hashtags, and image prompts, all grouped by day and ready to copy or export.
-
-Every run is stored locally, so the history page works without a database for demos, and I can export the plan as markdown, JSON, HTML, or a print-friendly PDF through the browser.
-
-The architecture page makes the workflow explicit so this reads as a real automation system, not just a prompt wrapper." 
+The important part is the system design behind the UI: prompt modules, provider abstraction, typed schemas, formatting, persistence, and export delivery all stay visible, which makes it feel like a real AI automation product rather than a one-off text generator."

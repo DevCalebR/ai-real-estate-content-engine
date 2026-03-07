@@ -1,6 +1,14 @@
+import type { Metadata } from "next";
+
 import { ArchitectureFlow } from "@/components/sections/architecture-flow";
 import { Card } from "@/components/ui/card";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { productDescription } from "@/lib/brand";
+
+export const metadata: Metadata = {
+  title: "Architecture",
+  description: productDescription,
+};
 
 const pillars = [
   {
@@ -9,7 +17,7 @@ const pillars = [
   },
   {
     title: "Structured output, not loose text",
-    body: "The system expects JSON, validates it, and then formats it into calendar entries, captions, video scripts, carousel copy, hashtags, and exportable deliverables.",
+    body: "The system expects JSON, validates it, and then formats it into calendar entries, captions, video scripts, marketing scripts, carousel copy, hashtags, and exportable deliverables.",
   },
   {
     title: "Local persistence for demos",
@@ -27,26 +35,23 @@ export default function ArchitecturePage() {
       <SectionHeading
         eyebrow="Architecture"
         title="A visible pipeline from brief to deliverable"
-        description="This page explains the workflow in plain language first, then shows the implementation choices that make the product credible as an AI automation system."
+        description="This page explains the workflow in plain language first, then shows the implementation choices that make Monthly AI Content Engine feel credible as an AI automation system."
       />
 
       <section className="grid gap-4 lg:grid-cols-2">
         <Card className="space-y-4">
           <p className="eyebrow">In Plain English</p>
           <h2 className="text-3xl font-semibold text-[var(--ink)]">
-            A client fills out one brief and receives a full month of usable content
+            A user fills out one brief and receives a full month of usable social content
           </h2>
           <p className="text-sm leading-7 text-[var(--ink-soft)]">
-            The application collects a few business inputs, generates structured content,
-            formats it into a reviewable workspace, saves the run, and exports it into clean handoff files.
+            The application collects a few business inputs, generates structured content, formats it into a reviewable workspace, saves the run, and exports it into clean handoff files.
           </p>
         </Card>
         <Card className="space-y-4">
           <p className="eyebrow">Why This Feels Senior-Level</p>
           <p className="text-sm leading-7 text-[var(--ink-soft)]">
-            The project separates prompts from route handlers, separates provider calls from
-            formatting logic, validates schemas, persists results, and exposes its architecture
-            clearly enough for a reviewer to follow the system without reading the entire codebase.
+            The project separates prompts from route handlers, separates provider calls from formatting logic, validates schemas, persists results, and exposes its architecture clearly enough for a reviewer to follow the system without reading the entire codebase.
           </p>
         </Card>
       </section>

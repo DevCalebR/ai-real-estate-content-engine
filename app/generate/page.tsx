@@ -1,7 +1,15 @@
+import type { Metadata } from "next";
+
 import { GenerationForm } from "@/components/forms/generation-form";
 import { Card } from "@/components/ui/card";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { getAiRuntimeStatus } from "@/lib/ai/config";
+import { productDescription } from "@/lib/brand";
+
+export const metadata: Metadata = {
+  title: "Generate",
+  description: productDescription,
+};
 
 export default function GeneratePage() {
   const runtime = getAiRuntimeStatus();
@@ -18,7 +26,7 @@ export default function GeneratePage() {
         <SectionHeading
           eyebrow="Generate"
           title="Create a client-ready monthly content system"
-          description="The form feeds a typed orchestration pipeline that returns structured JSON, formats it into usable deliverables, stores the run locally, and makes exports immediately available."
+          description="The form feeds a typed orchestration pipeline that returns structured JSON, formats it into organized deliverables, stores the run locally, and makes exports immediately available."
         />
         {runtime.activeMode === "misconfigured" ? (
           <Card className="border-amber-200 bg-amber-50/90">

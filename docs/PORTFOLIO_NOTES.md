@@ -1,58 +1,56 @@
 # Portfolio Notes
 
-## What the System Does
+## Product
 
-AI Real Estate Content Engine turns a short client intake into a full month of social media content for a real estate business.
+Monthly AI Content Engine is a niche-agnostic social content automation platform.
 
-The user fills out:
+Brand presentation:
 
-- agent or business name
-- market/location
-- niche
-- target audience
-- tone / brand voice
-- primary CTA
-- listing highlights
-- preferred platforms
+- Monthly AI Content Engine
+- Product by RelayWorks
 
-The app returns:
+## What The System Does
+
+The app turns one structured business brief into a full month of social content. A user selects a preset, defines the business context, and receives:
 
 - a 30-day content calendar
-- 30 captions
-- 10 carousel outlines
-- 10 short-form video scripts
-- hashtags for every post
-- image prompts for design support
+- captions
+- carousel outlines
+- short-form video scripts
+- marketing scripts
+- hashtags
+- image prompts
+- export-ready deliverables
 
 ## Business Impact
 
-- Cuts manual content planning time from hours to minutes
-- Gives agents a reusable monthly campaign system instead of isolated posts
-- Makes brand voice, CTA, and market positioning more consistent across channels
-- Produces deliverables that can be handed directly to clients, coordinators, or designers
-- Demonstrates how AI can be embedded into a real workflow instead of exposed as a raw prompt field
+- reduces the manual planning time needed to build a monthly social strategy
+- keeps positioning, goals, tone, and CTA visible across the full workflow
+- makes AI output easier to review because the system generates structured assets instead of loose text
+- improves delivery quality through markdown, HTML, print, JSON, and Google Docs exports
 
-## Architecture
+## Architecture Summary
 
-The core system flow is:
+1. Input form collects preset, business context, offer, audience, goals, tone, CTA, themes, and platforms.
+2. AI orchestration routes the brief through demo mode or Claude.
+3. Structured generation returns typed JSON.
+4. Formatting builds saved day-by-day deliverables.
+5. Export builders package the same run into multiple handoff formats.
 
-Input Form -> AI Orchestration -> Structured Content Generation -> Formatting Engine -> Export Deliverables
+## Why This Is Strong For A Portfolio
 
-Implementation details:
+- It looks productized, not experimental.
+- It shows real AI systems thinking: schemas, prompts, providers, storage, exports, and integrations.
+- It supports multiple niches instead of one hardcoded vertical.
+- It can be demoed safely without live model credentials.
+- The Google Docs OAuth export makes the delivery story feel practical and client-ready.
 
-- `app/api/generate` validates the brief and triggers generation
-- `lib/ai` abstracts provider selection
-- `lib/prompts` keeps generation instructions out of route handlers
-- `lib/formatting/plan.ts` transforms raw model output into presentation-ready deliverables
-- `lib/storage/runs.ts` persists runs to local JSON for demo history
-- `lib/export` produces markdown, JSON, and HTML handoff files
+## Good Screenshots
 
-## What to Screenshot
-
-- Home dashboard hero with architecture/feature cards visible
-- Generate page with the sample brief loaded
-- Results page on the Calendar tab
-- Results page on the Exports tab
-- History page showing multiple generated runs
-- Architecture page showing the workflow cards
-- Print view or downloaded HTML report open in a browser
+- homepage hero with product branding
+- preset selection on the generate page
+- SaaS / Productized Service sample brief loaded
+- results view showing calendar plus marketing scripts
+- export panel with Google Docs connection/export
+- history page with multiple runs across presets
+- architecture page

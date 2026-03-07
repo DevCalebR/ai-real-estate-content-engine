@@ -1,0 +1,17 @@
+{
+  "preset": "coach-consultant",
+  "businessName": "Northline Advisory",
+  "niche": "Revenue strategy consulting for founder-led service firms",
+  "targetAudience": "Founders doing 500k to 3M in annual revenue who need stronger positioning and a more repeatable sales motion",
+  "offer": "Fractional growth strategy and sales-system advisory",
+  "goals": "Generate discovery calls, strengthen authority on LinkedIn, and turn strategic insight into trust-building content",
+  "tone": "Direct, strategic, and reassuring",
+  "primaryCta": "Book a growth audit",
+  "keyThemes": "Positioning clarity, offer packaging, sales process gaps, founder bottlenecks, high-leverage growth moves",
+  "extraContext": "Primary channels are LinkedIn and Instagram. The offer is premium and consultative, so content should feel thoughtful instead of loud.",
+  "platforms": [
+    "LinkedIn",
+    "Instagram",
+    "X / Twitter"
+  ]
+}

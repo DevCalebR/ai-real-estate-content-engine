@@ -1,0 +1,17 @@
+{
+  "preset": "local-business",
+  "businessName": "Elm Street Wellness",
+  "niche": "Boutique wellness studio and recovery services",
+  "targetAudience": "Busy professionals and active adults who want premium local wellness support with a calm, trustworthy brand",
+  "offer": "Membership-based recovery sessions, infrared sauna, and mobility support",
+  "goals": "Increase studio visits, strengthen local awareness, and make recurring services easier to understand and book",
+  "tone": "Warm, grounded, and premium",
+  "primaryCta": "Book your first session",
+  "keyThemes": "Service experience, customer wins, wellness education, community relevance, offer clarity",
+  "extraContext": "Business is location-based and thrives on repeat visits, referrals, and stronger understanding of service benefits.",
+  "platforms": [
+    "Instagram",
+    "Facebook",
+    "TikTok"
+  ]
+}

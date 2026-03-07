@@ -14,6 +14,23 @@ async function ensureRunsDirectory() {
   await fs.mkdir(runsDirectory, { recursive: true });
 }
 
+async function readPlanFile(filePath: string) {
+  try {
+    const contents = await fs.readFile(filePath, "utf8");
+    return generatedContentPlanSchema.parse(JSON.parse(contents));
+  } catch (error) {
+    if (
+      error instanceof Error &&
+      ("code" in error ? error.code === "ENOENT" : false)
+    ) {
+      return null;
+    }
+
+    // Skip old or invalid local run files instead of breaking history.
+    return null;
+  }
+}
+
 export async function saveContentPlan(plan: GeneratedContentPlan) {
   await ensureRunsDirectory();
   const filePath = path.join(runsDirectory, `${plan.id}.json`);
@@ -21,17 +38,8 @@ export async function saveContentPlan(plan: GeneratedContentPlan) {
 }
 
 export async function getContentPlan(id: string) {
-  try {
-    const filePath = path.join(runsDirectory, `${id}.json`);
-    const contents = await fs.readFile(filePath, "utf8");
-    return generatedContentPlanSchema.parse(JSON.parse(contents));
-  } catch (error) {
-    if (error instanceof Error && "code" in error && error.code === "ENOENT") {
-      return null;
-    }
-
-    throw error;
-  }
+  const filePath = path.join(runsDirectory, `${id}.json`);
+  return readPlanFile(filePath);
 }
 
 export async function listContentPlans(): Promise<GeneratedContentPlan[]> {
@@ -41,13 +49,12 @@ export async function listContentPlans(): Promise<GeneratedContentPlan[]> {
   const plans = await Promise.all(
     files
       .filter((file) => file.endsWith(".json"))
-      .map(async (file) => {
-        const contents = await fs.readFile(path.join(runsDirectory, file), "utf8");
-        return generatedContentPlanSchema.parse(JSON.parse(contents));
-      }),
+      .map((file) => readPlanFile(path.join(runsDirectory, file))),
   );
 
-  return plans.sort((left, right) => right.createdAt.localeCompare(left.createdAt));
+  return plans
+    .filter((plan): plan is GeneratedContentPlan => plan !== null)
+    .sort((left, right) => right.createdAt.localeCompare(left.createdAt));
 }
 
 export async function listRunSummaries(): Promise<RunSummary[]> {

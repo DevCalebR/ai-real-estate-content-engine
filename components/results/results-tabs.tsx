@@ -17,6 +17,7 @@ const tabs = [
   { key: "captions", label: "Captions" },
   { key: "carousels", label: "Carousels" },
   { key: "videos", label: "Video Scripts" },
+  { key: "marketing", label: "Marketing Scripts" },
   { key: "hashtags", label: "Hashtags" },
   { key: "images", label: "Image Prompts" },
   { key: "exports", label: "Exports" },
@@ -47,6 +48,7 @@ export function ResultsTabs({
     captions: plan.deliverables.captions.length,
     carousels: plan.deliverables.carouselText.length,
     videos: plan.deliverables.videoScripts.length,
+    marketing: plan.deliverables.marketingScripts.length,
     hashtags: plan.deliverables.hashtags.length,
     images: plan.deliverables.imagePrompts.length,
     exports: 5,
@@ -66,8 +68,7 @@ export function ResultsTabs({
               Review the plan by deliverable type, then export the final handoff
             </h2>
             <p className="mt-3 max-w-3xl text-sm leading-7 text-[var(--ink-soft)]">
-              The calendar is optimized for day-by-day review, while the other tabs break
-              the same run into captions, carousel copy, video scripts, hashtags, and image prompts.
+              The calendar is optimized for day-by-day review, while the other tabs break the same run into captions, carousel copy, video scripts, marketing scripts, hashtags, and image prompts.
             </p>
           </div>
           <div className="grid min-w-[220px] gap-3 rounded-[24px] bg-white/80 p-4 text-sm text-[var(--ink-soft)]">
@@ -84,6 +85,12 @@ export function ResultsTabs({
               <div className="mt-1 font-medium text-[var(--ink)]">
                 {plan.stats.primaryPlatforms.join(", ")}
               </div>
+            </div>
+            <div>
+              <div className="text-xs uppercase tracking-[0.14em] text-[var(--brand-strong)]">
+                Offer
+              </div>
+              <div className="mt-1 font-medium text-[var(--ink)]">{plan.input.offer}</div>
             </div>
           </div>
         </div>
@@ -287,6 +294,40 @@ export function ResultsTabs({
         </section>
       ) : null}
 
+      {activeTab === "marketing" ? (
+        <section className="grid gap-4 xl:grid-cols-2">
+          {plan.deliverables.marketingScripts.map((script) => (
+            <Card key={`${script.day}-${script.title}`} className="space-y-4">
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <p className="eyebrow">Day {script.day} · {script.format}</p>
+                  <h3 className="text-2xl font-semibold text-[var(--ink)]">{script.title}</h3>
+                </div>
+                <CopyButton
+                  value={[script.hook, ...script.body, script.cta].join("\n")}
+                  label="Copy script"
+                />
+              </div>
+              <div>
+                <h4 className="font-semibold text-[var(--ink)]">Hook</h4>
+                <p className="mt-2 text-sm leading-7 text-[var(--ink-soft)]">{script.hook}</p>
+              </div>
+              <div>
+                <h4 className="font-semibold text-[var(--ink)]">Body</h4>
+                <ul className="mt-2 space-y-2 text-sm leading-7 text-[var(--ink-soft)]">
+                  {script.body.map((beat) => (
+                    <li key={beat} className="rounded-[18px] bg-white/70 px-4 py-3">
+                      {beat}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <p className="text-sm font-semibold text-[var(--ink)]">CTA: {script.cta}</p>
+            </Card>
+          ))}
+        </section>
+      ) : null}
+
       {activeTab === "hashtags" ? (
         <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
           {plan.deliverables.hashtags.map((entry) => (
@@ -329,8 +370,7 @@ export function ResultsTabs({
               Download clean handoff files or open the print-ready client report
             </h3>
             <p className="text-sm leading-7 text-[var(--ink-soft)]">
-              Use markdown for documentation, JSON for structured reuse, HTML for a polished
-              standalone report, and the print view when you want to save a browser PDF during a demo.
+              Use markdown for documentation, JSON for structured reuse, HTML for a polished standalone report, Google Docs for collaborative delivery, and the print view when you want to save a browser PDF during a demo.
             </p>
           </Card>
           <ExportButtons

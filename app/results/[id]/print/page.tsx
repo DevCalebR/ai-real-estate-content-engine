@@ -1,13 +1,29 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { PrintButton } from "@/components/results/print-button";
 import { buttonStyles } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { productByline, productDescription, productName } from "@/lib/brand";
 import { getContentPlan } from "@/lib/storage/runs";
 import { formatDate, formatDateTime } from "@/lib/utils";
 
 export const dynamic = "force-dynamic";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const { id } = await params;
+  const plan = await getContentPlan(id);
+
+  return {
+    title: plan ? `${plan.input.businessName} Print Report` : "Print Report",
+    description: productDescription,
+  };
+}
 
 export default async function PrintPage({
   params,
@@ -32,7 +48,8 @@ export default async function PrintPage({
 
       <section className="rounded-[32px] border border-[var(--line)] bg-white px-6 py-8 shadow-[0_18px_40px_rgba(24,32,51,0.06)]">
         <div className="space-y-4">
-          <p className="eyebrow">Print-ready report</p>
+          <p className="eyebrow">{productName}</p>
+          <p className="text-sm text-[var(--ink-soft)]">{productByline}</p>
           <h1 className="font-display text-5xl leading-none text-[var(--ink)]">
             {plan.summary.campaignTitle}
           </h1>
@@ -41,6 +58,9 @@ export default async function PrintPage({
           </p>
           <p className="text-sm text-[var(--ink-soft)]">
             Generated {formatDateTime(plan.createdAt)} in {plan.modeUsed} mode
+          </p>
+          <p className="text-sm text-[var(--ink-soft)]">
+            {plan.input.businessName} · {plan.input.niche} · {plan.input.offer}
           </p>
         </div>
 

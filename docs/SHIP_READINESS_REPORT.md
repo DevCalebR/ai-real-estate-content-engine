@@ -6,44 +6,43 @@ Ready to publish as a portfolio repository.
 
 ## Why This Project Is Strong
 
-- Clear business use case with immediate value: monthly content generation for real estate agents
-- Strong end-to-end workflow: input, generation, review, history, export
-- Demo mode makes the project reliable in interviews and client calls
-- Architecture is visible and explainable, which makes the project feel more senior-level
-- Codebase separates prompts, providers, formatting, persistence, and presentation cleanly
-- Structured output and local persistence make it read like a real application rather than a one-page AI toy
+- Clear product use case with direct business value: monthly social content generation across multiple niches
+- Structured AI workflow from intake to export, not a one-screen prompt demo
+- Preset-aware generation makes the app feel reusable and commercially realistic
+- Demo mode keeps the product easy to show without sacrificing the real workflow
+- OAuth Google Docs export adds a practical delivery layer beyond downloadable files
 
 ## Portfolio Strengths
 
-- Visually polished enough to attract attention quickly
-- Practical enough for clients to understand in under a minute
-- Technically credible enough for engineers and recruiters to inspect
-- Includes supporting docs for screenshots, demos, and case study reuse
+- Product branding is consistent: Monthly AI Content Engine, Product by RelayWorks
+- The app now reads as a SaaS product rather than a single-vertical tool
+- The SaaS / Productized Service preset makes the system relevant to future RelayWorks marketing use
+- Multiple sample briefs make the product easier to demo for clients, recruiters, and Upwork listings
 
 ## Repo Hygiene Review
 
 - `.env.example` is safe and contains no secrets
-- Runtime `.env*` files are ignored, while `.env.example` remains commit-safe
-- Local generated run artifacts in `data/runs/` are ignored
-- Included demo assets are intentional and safe to version
-- Removed starter assets that did not support the project story
+- runtime `.env*` files are ignored, while `.env.example` remains commit-safe
+- local generated runs in `data/runs/` are ignored
+- local OAuth token files in `data/integrations/` are ignored
+- tracked sample data is intentional, readable, and useful for demos
 
 ## Verification Completed
 
-- `npm run lint`
 - `npm run seed:sample`
+- `npm run lint`
 - `npm run build`
+- demo generation tested with the preset-aware sample flow
 
 ## Live Integration Note
 
-- Google Docs export now uses a local OAuth connection flow designed for personal Drive exports
-- The app stores OAuth tokens locally for demo use and keeps them out of git
-- The UI cleanly separates `Connect Google` from `Export to Google Docs`, which makes setup state obvious during demos
-- The OAuth export flow was live-tested successfully on March 7, 2026 against a personal Drive account with `GOOGLE_DOCS_SHARE_MODE=anyone_with_link`
-- The returned Google Docs URL resolved correctly, and the document text was readable through the public export endpoint
+- Google Docs export uses OAuth for personal Drive export
+- Google OAuth tokens are stored locally and kept out of git
+- The Google Docs export path was previously verified live against a connected Drive account
+- The app still degrades safely when Google OAuth is not configured
 
 ## Remaining Non-Blocking Considerations
 
-- Browser PDF export currently relies on the print view instead of server-side PDF generation
-- Demo mode is deterministic in structure, but real Claude output quality will still depend on model behavior and prompt adherence
-- Local filesystem storage is intentionally lightweight and suited to portfolio/demo use, not multi-user production deployment
+- Browser PDF export still relies on the print view rather than server-side PDF generation
+- Demo/local storage is intentionally lightweight and not intended for multi-user production deployment
+- Vercel deployment will need durable token storage if Google Docs export should persist across serverless executions
