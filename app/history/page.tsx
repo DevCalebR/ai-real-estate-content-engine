@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import { DemoWorkspaceButton } from "@/components/demo-workspace-button";
 import { Badge } from "@/components/ui/badge";
 import { buttonStyles } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -139,9 +140,12 @@ export default async function HistoryPage() {
           <p className="max-w-2xl text-sm leading-7 text-[var(--ink-soft)]">
             History populates automatically after the first generation run. Use a preset sample on the generate page for a fast end-to-end walkthrough, then return here to show persistence and export continuity.
           </p>
-          <Link href="/generate" className={buttonStyles({ variant: "primary" })}>
-            Generate a run
-          </Link>
+          <div className="flex flex-wrap gap-3">
+            <Link href="/generate" className={buttonStyles({ variant: "primary" })}>
+              Generate a run
+            </Link>
+            <DemoWorkspaceButton size="md" />
+          </div>
         </Card>
       )}
     </div>
