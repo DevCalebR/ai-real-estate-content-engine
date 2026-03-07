@@ -7,6 +7,9 @@ export const googleDocsShareModes = [
 export type GoogleDocsShareMode = (typeof googleDocsShareModes)[number];
 
 export type GoogleDocsIntegrationStatus = {
+  canConnect: boolean;
+  connected: boolean;
+  connectedEmail: string | null;
   configured: boolean;
   shareMode: GoogleDocsShareMode;
   shareEmailConfigured: boolean;
@@ -20,4 +23,9 @@ export type GoogleDocsExportResult = {
   documentUrl: string;
   title: string;
   shareMode: GoogleDocsShareMode;
+};
+
+export type GoogleAuthNotice = {
+  tone: "success" | "error";
+  message: string;
 };

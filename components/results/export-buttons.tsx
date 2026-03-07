@@ -7,6 +7,7 @@ import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { buttonStyles } from "@/components/ui/button";
 import type {
+  GoogleAuthNotice,
   GoogleDocsExportResult,
   GoogleDocsIntegrationStatus,
 } from "@/lib/types/integrations";
@@ -41,9 +42,11 @@ const exportOptions = [
 export function ExportButtons({
   id,
   googleDocsStatus,
+  googleAuthNotice,
 }: {
   id: string;
   googleDocsStatus: GoogleDocsIntegrationStatus;
+  googleAuthNotice: GoogleAuthNotice | null;
 }) {
   const [isExportingGoogleDoc, setIsExportingGoogleDoc] = useState(false);
   const [googleDocsError, setGoogleDocsError] = useState<string | null>(null);
@@ -124,6 +127,11 @@ export function ExportButtons({
 
         <div className="rounded-[22px] bg-white/80 p-4 text-sm leading-7 text-[var(--ink-soft)]">
           <p>{googleDocsStatus.message}</p>
+          {googleDocsStatus.connected && googleDocsStatus.connectedEmail ? (
+            <p className="mt-3 rounded-2xl border border-emerald-200 bg-emerald-50 px-3 py-2 text-xs leading-6 text-emerald-900">
+              Connected account: {googleDocsStatus.connectedEmail}
+            </p>
+          ) : null}
           {!googleDocsStatus.configured && googleDocsStatus.reason ? (
             <p className="mt-3 rounded-2xl border border-amber-200 bg-amber-50 px-3 py-2 text-xs leading-6 text-amber-900">
               Configuration detail: {googleDocsStatus.reason}
@@ -131,24 +139,45 @@ export function ExportButtons({
           ) : null}
         </div>
 
-        <button
-          type="button"
-          onClick={handleGoogleDocsExport}
-          disabled={!googleDocsStatus.configured || isExportingGoogleDoc}
-          className={buttonStyles({
-            variant: googleDocsStatus.configured ? "primary" : "secondary",
-            className: "w-full disabled:opacity-60",
-          })}
-        >
-          {isExportingGoogleDoc ? (
-            <>
-              <LoaderCircle className="mr-2 h-4 w-4 animate-spin" />
-              Creating Google Doc
-            </>
-          ) : (
-            "Export to Google Docs"
-          )}
-        </button>
+        {googleAuthNotice ? (
+          <div
+            className={
+              googleAuthNotice.tone === "success"
+                ? "rounded-[22px] border border-emerald-200 bg-emerald-50 p-4 text-sm text-emerald-900"
+                : "rounded-[22px] border border-red-200 bg-red-50 p-4 text-sm text-red-700"
+            }
+          >
+            {googleAuthNotice.message}
+          </div>
+        ) : null}
+
+        {!googleDocsStatus.connected && googleDocsStatus.canConnect ? (
+          <Link
+            href={`/api/auth/google/start?returnTo=${encodeURIComponent(`/results/${id}`)}`}
+            className={buttonStyles({ variant: "primary", className: "w-full" })}
+          >
+            Connect Google
+          </Link>
+        ) : (
+          <button
+            type="button"
+            onClick={handleGoogleDocsExport}
+            disabled={!googleDocsStatus.configured || isExportingGoogleDoc}
+            className={buttonStyles({
+              variant: googleDocsStatus.configured ? "primary" : "secondary",
+              className: "w-full disabled:opacity-60",
+            })}
+          >
+            {isExportingGoogleDoc ? (
+              <>
+                <LoaderCircle className="mr-2 h-4 w-4 animate-spin" />
+                Creating Google Doc
+              </>
+            ) : (
+              "Export to Google Docs"
+            )}
+          </button>
+        )}
 
         {googleDocsResult ? (
           <div className="space-y-3 rounded-[22px] border border-emerald-200 bg-emerald-50 p-4 text-sm text-emerald-900">

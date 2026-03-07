@@ -43,3 +43,6 @@ next-env.d.ts
 
 # local generated runs
 data/runs/*.json
+
+# local integration tokens
+data/integrations/*.json

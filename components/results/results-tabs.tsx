@@ -6,7 +6,10 @@ import { CopyButton } from "@/components/ui/copy-button";
 import { Card } from "@/components/ui/card";
 import { ExportButtons } from "@/components/results/export-buttons";
 import type { ContentType, GeneratedContentPlan } from "@/lib/types/content";
-import type { GoogleDocsIntegrationStatus } from "@/lib/types/integrations";
+import type {
+  GoogleAuthNotice,
+  GoogleDocsIntegrationStatus,
+} from "@/lib/types/integrations";
 import { cn, formatDate } from "@/lib/utils";
 
 const tabs = [
@@ -31,9 +34,11 @@ type TabKey = (typeof tabs)[number]["key"];
 export function ResultsTabs({
   plan,
   googleDocsStatus,
+  googleAuthNotice,
 }: {
   plan: GeneratedContentPlan;
   googleDocsStatus: GoogleDocsIntegrationStatus;
+  googleAuthNotice: GoogleAuthNotice | null;
 }) {
   const [activeTab, setActiveTab] = useState<TabKey>("calendar");
   const [calendarFilter, setCalendarFilter] = useState<ContentType | "All">("All");
@@ -44,7 +49,7 @@ export function ResultsTabs({
     videos: plan.deliverables.videoScripts.length,
     hashtags: plan.deliverables.hashtags.length,
     images: plan.deliverables.imagePrompts.length,
-    exports: 4,
+    exports: 5,
   };
 
   const filteredCalendar = plan.deliverables.monthlyContentCalendar.filter((entry) =>
@@ -328,7 +333,11 @@ export function ResultsTabs({
               standalone report, and the print view when you want to save a browser PDF during a demo.
             </p>
           </Card>
-          <ExportButtons id={plan.id} googleDocsStatus={googleDocsStatus} />
+          <ExportButtons
+            id={plan.id}
+            googleDocsStatus={googleDocsStatus}
+            googleAuthNotice={googleAuthNotice}
+          />
         </section>
       ) : null}
     </div>

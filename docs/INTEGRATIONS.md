@@ -33,8 +33,8 @@ Notes:
 
 - Google Docs export is optional
 - The UI stays safe when credentials are missing
-- The integration validates service-account credentials before enabling export
-- Service-account auth needs shared-drive or delegated Workspace access to create files successfully
+- The integration uses a single-user OAuth web flow for personal Drive exports
+- OAuth tokens are stored locally in `data/integrations/google-oauth.json`
 - Google Drive is used only for sharing/link access behavior
 
 ## Export Stack

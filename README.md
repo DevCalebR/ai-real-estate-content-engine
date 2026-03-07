@@ -125,8 +125,9 @@ CLAUDE_API_KEY=
 CLAUDE_MODEL=
 GOOGLE_DOCS_SHARE_MODE=anyone_with_link
 GOOGLE_DOCS_SHARE_EMAIL=
-GOOGLE_DOCS_CLIENT_EMAIL=
-GOOGLE_DOCS_PRIVATE_KEY=
+GOOGLE_OAUTH_CLIENT_ID=
+GOOGLE_OAUTH_CLIENT_SECRET=
+GOOGLE_OAUTH_REDIRECT_URI=http://localhost:3000/api/auth/google/callback
 ```
 
 ## Demo Mode vs Claude Mode
@@ -180,28 +181,28 @@ Required setup:
 
 - Enable the Google Docs API
 - Enable the Google Drive API
-- Create a service account
-- Add the service account email and private key to `.env.local`
+- Create a Google OAuth client for a web application
+- Add the client ID, client secret, and redirect URI to `.env.local`
 - Choose a share mode
 
 Configuration notes:
 
-- The app validates the service-account email and private key before enabling export
-- Quoted keys with escaped `\n` newlines are supported
-- Use the full `private_key` value from the Google JSON key file, not `private_key_id`
-- Service-account auth is best for shared-drive or delegated Workspace setups
-- For a personal Google Drive export, Google requires user OAuth rather than a standalone service account
+- The exact callback path is `/api/auth/google/callback`
+- The full local redirect URI should be `http://localhost:3000/api/auth/google/callback`
+- The app stores OAuth tokens locally for demo use in `data/integrations/google-oauth.json`
+- Local token files are gitignored and never committed
 
 Recommended demo setup:
 
 - `GOOGLE_DOCS_SHARE_MODE=anyone_with_link` for the fastest open-link demo
 - `GOOGLE_DOCS_SHARE_MODE=share_with_email` plus `GOOGLE_DOCS_SHARE_EMAIL=you@example.com` if you want the created doc shared directly to one account
+- The OAuth personal-Drive flow has been verified locally on `http://localhost:3000` with the exact callback `http://localhost:3000/api/auth/google/callback`
 
 Fallback behavior:
 
-- If Google credentials are not configured, the Google Docs export button stays disabled and explains why
-- If the private key is malformed or truncated, the app treats Google Docs export as unavailable and shows the configuration issue directly in the UI
-- If Google returns a Drive permission error, the UI explains that a personal Drive export needs either shared-drive access or user OAuth credentials
+- If Google OAuth is not configured, the Google Docs export button stays disabled and explains why
+- If no Google account is connected yet, the UI shows a `Connect Google` action first
+- If the Google project is missing required APIs, the export route returns the Google API message directly so setup issues are obvious
 - Markdown, HTML, JSON, and print exports still work normally
 
 ## Export Features

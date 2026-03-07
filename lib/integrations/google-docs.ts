@@ -1,7 +1,10 @@
-import { createPrivateKey } from "node:crypto";
-
 import { google, type docs_v1 } from "googleapis";
 
+import {
+  createConnectedGoogleOAuthClient,
+  getGoogleOAuthConfigError,
+} from "@/lib/integrations/google-oauth";
+import { getGoogleOAuthSession } from "@/lib/storage/google-oauth";
 import type { GeneratedContentPlan } from "@/lib/types/content";
 import {
   googleDocsShareModes,
@@ -10,8 +13,6 @@ import {
   type GoogleDocsShareMode,
 } from "@/lib/types/integrations";
 import { formatDate, formatDateTime } from "@/lib/utils";
-
-const DRIVE_SCOPE = "https://www.googleapis.com/auth/drive";
 
 type StyledParagraph = {
   start: number;
@@ -34,49 +35,8 @@ function normalizeEnvValue(value?: string | null) {
     : raw;
 }
 
-function parsePrivateKey() {
-  const normalized = normalizeEnvValue(process.env.GOOGLE_DOCS_PRIVATE_KEY);
-
-  if (!normalized) {
-    return "";
-  }
-
-  return normalized.replace(/\r\n/g, "\n").replace(/\\n/g, "\n").trim();
-}
-
-function parseClientEmail() {
-  return normalizeEnvValue(process.env.GOOGLE_DOCS_CLIENT_EMAIL);
-}
-
 function parseShareEmail() {
   return normalizeEnvValue(process.env.GOOGLE_DOCS_SHARE_EMAIL);
-}
-
-function getPrivateKeyValidationError(privateKey: string) {
-  if (!privateKey) {
-    return "GOOGLE_DOCS_PRIVATE_KEY is missing.";
-  }
-
-  if (
-    !privateKey.startsWith("-----BEGIN PRIVATE KEY-----") ||
-    !privateKey.endsWith("-----END PRIVATE KEY-----")
-  ) {
-    return "GOOGLE_DOCS_PRIVATE_KEY must include a full PEM private key block.";
-  }
-
-  try {
-    createPrivateKey({
-      key: privateKey,
-      format: "pem",
-    });
-    return null;
-  } catch {
-    return "GOOGLE_DOCS_PRIVATE_KEY could not be parsed. Check that the full service-account private key was copied into .env.local.";
-  }
-}
-
-function isServiceAccountEmail(value: string) {
-  return /@.+\.iam\.gserviceaccount\.com$/i.test(value);
 }
 
 function parseShareMode(): GoogleDocsShareMode {
@@ -87,68 +47,59 @@ function parseShareMode(): GoogleDocsShareMode {
     : "anyone_with_link";
 }
 
-function createGoogleAuth() {
-  const status = getGoogleDocsIntegrationStatus();
+async function createGoogleAuth() {
+  const status = await getGoogleDocsIntegrationStatus();
 
   if (!status.configured) {
     throw new Error(status.reason ?? "Google Docs export is not configured.");
   }
 
-  return new google.auth.JWT({
-    email: parseClientEmail(),
-    key: parsePrivateKey(),
-    scopes: [DRIVE_SCOPE],
-  });
+  const { oauthClient } = await createConnectedGoogleOAuthClient();
+  return oauthClient;
 }
 
-export function getGoogleDocsIntegrationStatus(): GoogleDocsIntegrationStatus {
-  const clientEmail = parseClientEmail();
-  const privateKey = parsePrivateKey();
+export async function getGoogleDocsIntegrationStatus(): Promise<GoogleDocsIntegrationStatus> {
   const shareMode = parseShareMode();
   const shareEmail = parseShareEmail();
+  const oauthConfigError = getGoogleOAuthConfigError();
+  const session = oauthConfigError ? null : await getGoogleOAuthSession();
+  const connected = Boolean(session?.tokens.refresh_token);
 
-  if (!clientEmail || !privateKey) {
+  if (oauthConfigError) {
     return {
+      canConnect: false,
+      connected: false,
+      connectedEmail: null,
       configured: false,
       shareMode,
       shareEmailConfigured: Boolean(shareEmail),
       canOpenCreatedDocs: false,
-      reason:
-        "Google Docs export is not configured. Add GOOGLE_DOCS_CLIENT_EMAIL and GOOGLE_DOCS_PRIVATE_KEY to enable it.",
+      reason: oauthConfigError,
       message:
-        "Google Docs export is not configured in this environment. Markdown, HTML, and JSON exports still work normally.",
+        "Google OAuth is not configured in this environment. Markdown, HTML, and JSON exports still work normally.",
     };
   }
 
-  if (!isServiceAccountEmail(clientEmail)) {
+  if (!connected) {
     return {
+      canConnect: true,
+      connected: false,
+      connectedEmail: session?.connectedEmail ?? null,
       configured: false,
       shareMode,
       shareEmailConfigured: Boolean(shareEmail),
       canOpenCreatedDocs: false,
-      reason:
-        "GOOGLE_DOCS_CLIENT_EMAIL must be a Google service account email ending in .iam.gserviceaccount.com.",
+      reason: "Connect Google to create documents in your Drive.",
       message:
-        "Google Docs export is not configured correctly. Use the service-account client email from your Google Cloud key file.",
-    };
-  }
-
-  const privateKeyError = getPrivateKeyValidationError(privateKey);
-
-  if (privateKeyError) {
-    return {
-      configured: false,
-      shareMode,
-      shareEmailConfigured: Boolean(shareEmail),
-      canOpenCreatedDocs: false,
-      reason: privateKeyError,
-      message:
-        "Google Docs export is not configured correctly. The private key could not be validated, so markdown, HTML, and JSON exports remain the safe fallback.",
+        "Google OAuth is configured. Connect your Google account once, then export this run directly into your Drive.",
     };
   }
 
   if (shareMode === "share_with_email" && !shareEmail) {
     return {
+      canConnect: true,
+      connected: true,
+      connectedEmail: session?.connectedEmail ?? null,
       configured: false,
       shareMode,
       shareEmailConfigured: false,
@@ -162,17 +113,23 @@ export function getGoogleDocsIntegrationStatus(): GoogleDocsIntegrationStatus {
 
   if (shareMode === "private") {
     return {
+      canConnect: true,
+      connected: true,
+      connectedEmail: session?.connectedEmail ?? null,
       configured: true,
       shareMode,
       shareEmailConfigured: Boolean(shareEmail),
       canOpenCreatedDocs: false,
       reason: null,
       message:
-        "Google Docs export is configured, but documents will stay in the service account Drive unless you change the share mode.",
+        `Connected${session?.connectedEmail ? ` as ${session.connectedEmail}` : ""}. New documents will stay private in your Drive unless you change the share mode.`,
     };
   }
 
   return {
+    canConnect: true,
+    connected: true,
+    connectedEmail: session?.connectedEmail ?? null,
     configured: true,
     shareMode,
     shareEmailConfigured: Boolean(shareEmail),
@@ -180,8 +137,8 @@ export function getGoogleDocsIntegrationStatus(): GoogleDocsIntegrationStatus {
     reason: null,
     message:
       shareMode === "share_with_email"
-        ? "Google Docs export is configured and new documents will be shared to the configured email."
-        : "Google Docs export is configured and new documents will be available via an anyone-with-link URL.",
+        ? `Connected${session?.connectedEmail ? ` as ${session.connectedEmail}` : ""}. New documents will be shared to the configured email.`
+        : `Connected${session?.connectedEmail ? ` as ${session.connectedEmail}` : ""}. New documents will be available via an anyone-with-link URL.`,
   };
 }
 
@@ -363,7 +320,13 @@ function buildStyleRequests(styles: StyledParagraph[]): docs_v1.Schema$Request[]
 function normalizeGoogleDocsExportError(error: unknown) {
   if (error instanceof Error && /The caller does not have permission/i.test(error.message)) {
     return new Error(
-      "Google Docs authenticated successfully, but this service account cannot create files in a personal Drive. Use a shared drive or OAuth 2.0 user credentials to complete the export.",
+      "Google authenticated successfully, but the current account does not have permission to create the document or apply the selected sharing settings.",
+    );
+  }
+
+  if (error instanceof Error && /invalid_grant/i.test(error.message)) {
+    return new Error(
+      "Your Google connection is no longer valid. Connect Google again, then retry the export.",
     );
   }
 
@@ -375,7 +338,7 @@ async function applySharing(documentId: string, status: GoogleDocsIntegrationSta
     return;
   }
 
-  const auth = createGoogleAuth();
+  const auth = await createGoogleAuth();
   const drive = google.drive({ version: "v3", auth });
 
   if (status.shareMode === "share_with_email") {
@@ -403,13 +366,13 @@ async function applySharing(documentId: string, status: GoogleDocsIntegrationSta
 export async function exportContentPlanToGoogleDocs(
   plan: GeneratedContentPlan,
 ): Promise<GoogleDocsExportResult> {
-  const status = getGoogleDocsIntegrationStatus();
+  const status = await getGoogleDocsIntegrationStatus();
 
   if (!status.configured) {
     throw new Error(status.reason ?? "Google Docs export is not configured.");
   }
 
-  const auth = createGoogleAuth();
+  const auth = await createGoogleAuth();
   const docs = google.docs({ version: "v1", auth });
   const body = buildGoogleDocBody(plan);
 

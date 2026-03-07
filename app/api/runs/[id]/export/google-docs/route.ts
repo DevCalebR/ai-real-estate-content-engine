@@ -12,7 +12,7 @@ export async function POST(
     return Response.json({ error: "Run not found." }, { status: 404 });
   }
 
-  const status = getGoogleDocsIntegrationStatus();
+  const status = await getGoogleDocsIntegrationStatus();
 
   if (!status.configured) {
     return Response.json(

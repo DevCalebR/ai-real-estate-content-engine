@@ -36,9 +36,11 @@ Ready to publish as a portfolio repository.
 
 ## Live Integration Note
 
-- Google Docs export now performs configuration preflight checks before the button becomes active
-- In a live local test, the route correctly detected malformed service-account key material and fell back safely without affecting markdown, JSON, HTML, or print exports
-- A follow-up live test with a valid service-account key reached Google successfully, then returned the expected Drive permission error for a personal Drive setup; the app now explains that shared-drive access or user OAuth is required
+- Google Docs export now uses a local OAuth connection flow designed for personal Drive exports
+- The app stores OAuth tokens locally for demo use and keeps them out of git
+- The UI cleanly separates `Connect Google` from `Export to Google Docs`, which makes setup state obvious during demos
+- The OAuth export flow was live-tested successfully on March 7, 2026 against a personal Drive account with `GOOGLE_DOCS_SHARE_MODE=anyone_with_link`
+- The returned Google Docs URL resolved correctly, and the document text was readable through the public export endpoint
 
 ## Remaining Non-Blocking Considerations
 

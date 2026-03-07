@@ -7,20 +7,45 @@ import { buttonStyles } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { getGoogleDocsIntegrationStatus } from "@/lib/integrations/google-docs";
 import { getContentPlan } from "@/lib/storage/runs";
+import type { GoogleAuthNotice } from "@/lib/types/integrations";
 import { formatDateTime } from "@/lib/utils";
 
 export const dynamic = "force-dynamic";
 
 export default async function ResultsPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ id: string }>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
   const { id } = await params;
+  const resolvedSearchParams = await searchParams;
   const [plan, googleDocsStatus] = await Promise.all([
     getContentPlan(id),
     getGoogleDocsIntegrationStatus(),
   ]);
+  const googleOauthState =
+    typeof resolvedSearchParams.google_oauth === "string"
+      ? resolvedSearchParams.google_oauth
+      : null;
+  const googleOauthMessage =
+    typeof resolvedSearchParams.google_oauth_message === "string"
+      ? resolvedSearchParams.google_oauth_message
+      : null;
+  const googleAuthNotice: GoogleAuthNotice | null =
+    googleOauthState === "connected"
+      ? {
+          tone: "success",
+          message:
+            googleOauthMessage ?? "Google account connected. You can now export this run.",
+        }
+      : googleOauthState === "error"
+        ? {
+            tone: "error",
+            message: googleOauthMessage ?? "Google could not be connected.",
+          }
+        : null;
 
   if (!plan) {
     notFound();
@@ -101,7 +126,11 @@ export default async function ResultsPage({
         </Card>
       </section>
 
-      <ResultsTabs plan={plan} googleDocsStatus={googleDocsStatus} />
+      <ResultsTabs
+        plan={plan}
+        googleDocsStatus={googleDocsStatus}
+        googleAuthNotice={googleAuthNotice}
+      />
     </div>
   );
 }
