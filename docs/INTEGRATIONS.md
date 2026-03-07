@@ -33,6 +33,7 @@ Notes:
 
 - Google Docs export is optional
 - The UI stays safe when credentials are missing
+- The integration validates service-account credentials before enabling export
 - Google Drive is used only for sharing/link access behavior
 
 ## Export Stack

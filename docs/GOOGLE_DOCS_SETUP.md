@@ -19,6 +19,7 @@ Use a Google Cloud service account. This keeps the integration lightweight and d
 4. Create a service account.
 5. Generate a JSON key for that service account.
 6. Copy the service account email and private key into `.env.local`.
+7. Keep the private key as the full PEM block from the JSON file. Do not use `private_key_id`.
 
 ## Required Environment Variables
 
@@ -28,6 +29,12 @@ GOOGLE_DOCS_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-
 GOOGLE_DOCS_SHARE_MODE=anyone_with_link
 GOOGLE_DOCS_SHARE_EMAIL=
 ```
+
+Notes:
+
+- Quoted keys with escaped `\n` line breaks are supported
+- The app validates the private key before enabling export
+- A real service-account private key is much longer than a few hundred characters
 
 ## Share Modes
 
@@ -56,6 +63,18 @@ If Google credentials are not configured:
 - the Google Docs button stays disabled
 - the UI explains that the integration is not configured
 - markdown, JSON, HTML, and print exports still work
+
+If credentials are present but invalid:
+
+- the Google Docs button stays disabled
+- the UI shows the configuration problem directly
+- the export route returns a safe configuration error instead of a low-level crypto failure
+
+## Troubleshooting
+
+- If the UI says the private key could not be parsed, re-copy the full `private_key` value from the downloaded service-account JSON file.
+- If the UI says the client email is invalid, use the `client_email` value from the same JSON file.
+- If you want the returned URL to open immediately during a demo, keep `GOOGLE_DOCS_SHARE_MODE=anyone_with_link`.
 
 ## Notes For Demos
 

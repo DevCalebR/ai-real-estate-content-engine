@@ -1,3 +1,5 @@
+import { createPrivateKey } from "node:crypto";
+
 import { google, type docs_v1 } from "googleapis";
 
 import type { GeneratedContentPlan } from "@/lib/types/content";
@@ -17,12 +19,68 @@ type StyledParagraph = {
   style: "TITLE" | "SUBTITLE" | "HEADING_1" | "HEADING_2";
 };
 
+function normalizeEnvValue(value?: string | null) {
+  const raw = value?.trim() ?? "";
+
+  if (!raw) {
+    return "";
+  }
+
+  return (
+    (raw.startsWith('"') && raw.endsWith('"')) ||
+    (raw.startsWith("'") && raw.endsWith("'"))
+  )
+    ? raw.slice(1, -1)
+    : raw;
+}
+
 function parsePrivateKey() {
-  return process.env.GOOGLE_DOCS_PRIVATE_KEY?.replace(/\\n/g, "\n").trim() ?? "";
+  const normalized = normalizeEnvValue(process.env.GOOGLE_DOCS_PRIVATE_KEY);
+
+  if (!normalized) {
+    return "";
+  }
+
+  return normalized.replace(/\r\n/g, "\n").replace(/\\n/g, "\n").trim();
+}
+
+function parseClientEmail() {
+  return normalizeEnvValue(process.env.GOOGLE_DOCS_CLIENT_EMAIL);
+}
+
+function parseShareEmail() {
+  return normalizeEnvValue(process.env.GOOGLE_DOCS_SHARE_EMAIL);
+}
+
+function getPrivateKeyValidationError(privateKey: string) {
+  if (!privateKey) {
+    return "GOOGLE_DOCS_PRIVATE_KEY is missing.";
+  }
+
+  if (
+    !privateKey.startsWith("-----BEGIN PRIVATE KEY-----") ||
+    !privateKey.endsWith("-----END PRIVATE KEY-----")
+  ) {
+    return "GOOGLE_DOCS_PRIVATE_KEY must include a full PEM private key block.";
+  }
+
+  try {
+    createPrivateKey({
+      key: privateKey,
+      format: "pem",
+    });
+    return null;
+  } catch {
+    return "GOOGLE_DOCS_PRIVATE_KEY could not be parsed. Check that the full service-account private key was copied into .env.local.";
+  }
+}
+
+function isServiceAccountEmail(value: string) {
+  return /@.+\.iam\.gserviceaccount\.com$/i.test(value);
 }
 
 function parseShareMode(): GoogleDocsShareMode {
-  const value = process.env.GOOGLE_DOCS_SHARE_MODE?.trim() ?? "anyone_with_link";
+  const value = normalizeEnvValue(process.env.GOOGLE_DOCS_SHARE_MODE) || "anyone_with_link";
 
   return googleDocsShareModes.includes(value as GoogleDocsShareMode)
     ? (value as GoogleDocsShareMode)
@@ -37,17 +95,17 @@ function createGoogleAuth() {
   }
 
   return new google.auth.JWT({
-    email: process.env.GOOGLE_DOCS_CLIENT_EMAIL?.trim(),
+    email: parseClientEmail(),
     key: parsePrivateKey(),
     scopes: [DRIVE_SCOPE],
   });
 }
 
 export function getGoogleDocsIntegrationStatus(): GoogleDocsIntegrationStatus {
-  const clientEmail = process.env.GOOGLE_DOCS_CLIENT_EMAIL?.trim() ?? "";
+  const clientEmail = parseClientEmail();
   const privateKey = parsePrivateKey();
   const shareMode = parseShareMode();
-  const shareEmail = process.env.GOOGLE_DOCS_SHARE_EMAIL?.trim() ?? "";
+  const shareEmail = parseShareEmail();
 
   if (!clientEmail || !privateKey) {
     return {
@@ -59,6 +117,33 @@ export function getGoogleDocsIntegrationStatus(): GoogleDocsIntegrationStatus {
         "Google Docs export is not configured. Add GOOGLE_DOCS_CLIENT_EMAIL and GOOGLE_DOCS_PRIVATE_KEY to enable it.",
       message:
         "Google Docs export is not configured in this environment. Markdown, HTML, and JSON exports still work normally.",
+    };
+  }
+
+  if (!isServiceAccountEmail(clientEmail)) {
+    return {
+      configured: false,
+      shareMode,
+      shareEmailConfigured: Boolean(shareEmail),
+      canOpenCreatedDocs: false,
+      reason:
+        "GOOGLE_DOCS_CLIENT_EMAIL must be a Google service account email ending in .iam.gserviceaccount.com.",
+      message:
+        "Google Docs export is not configured correctly. Use the service-account client email from your Google Cloud key file.",
+    };
+  }
+
+  const privateKeyError = getPrivateKeyValidationError(privateKey);
+
+  if (privateKeyError) {
+    return {
+      configured: false,
+      shareMode,
+      shareEmailConfigured: Boolean(shareEmail),
+      canOpenCreatedDocs: false,
+      reason: privateKeyError,
+      message:
+        "Google Docs export is not configured correctly. The private key could not be validated, so markdown, HTML, and JSON exports remain the safe fallback.",
     };
   }
 

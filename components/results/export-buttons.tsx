@@ -124,6 +124,11 @@ export function ExportButtons({
 
         <div className="rounded-[22px] bg-white/80 p-4 text-sm leading-7 text-[var(--ink-soft)]">
           <p>{googleDocsStatus.message}</p>
+          {!googleDocsStatus.configured && googleDocsStatus.reason ? (
+            <p className="mt-3 rounded-2xl border border-amber-200 bg-amber-50 px-3 py-2 text-xs leading-6 text-amber-900">
+              Configuration detail: {googleDocsStatus.reason}
+            </p>
+          ) : null}
         </div>
 
         <button

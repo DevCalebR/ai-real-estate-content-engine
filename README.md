@@ -184,6 +184,12 @@ Required setup:
 - Add the service account email and private key to `.env.local`
 - Choose a share mode
 
+Configuration notes:
+
+- The app validates the service-account email and private key before enabling export
+- Quoted keys with escaped `\n` newlines are supported
+- Use the full `private_key` value from the Google JSON key file, not `private_key_id`
+
 Recommended demo setup:
 
 - `GOOGLE_DOCS_SHARE_MODE=anyone_with_link` for the fastest open-link demo
@@ -192,6 +198,7 @@ Recommended demo setup:
 Fallback behavior:
 
 - If Google credentials are not configured, the Google Docs export button stays disabled and explains why
+- If the private key is malformed or truncated, the app treats Google Docs export as unavailable and shows the configuration issue directly in the UI
 - Markdown, HTML, JSON, and print exports still work normally
 
 ## Export Features

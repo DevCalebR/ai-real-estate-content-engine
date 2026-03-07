@@ -34,6 +34,11 @@ Ready to publish as a portfolio repository.
 - `npm run seed:sample`
 - `npm run build`
 
+## Live Integration Note
+
+- Google Docs export now performs configuration preflight checks before the button becomes active
+- In a live local test, the route correctly detected malformed service-account key material and fell back safely without affecting markdown, JSON, HTML, or print exports
+
 ## Remaining Non-Blocking Considerations
 
 - Browser PDF export currently relies on the print view instead of server-side PDF generation
