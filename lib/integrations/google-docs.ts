@@ -360,6 +360,16 @@ function buildStyleRequests(styles: StyledParagraph[]): docs_v1.Schema$Request[]
   }));
 }
 
+function normalizeGoogleDocsExportError(error: unknown) {
+  if (error instanceof Error && /The caller does not have permission/i.test(error.message)) {
+    return new Error(
+      "Google Docs authenticated successfully, but this service account cannot create files in a personal Drive. Use a shared drive or OAuth 2.0 user credentials to complete the export.",
+    );
+  }
+
+  return error instanceof Error ? error : new Error("Google Docs export failed.");
+}
+
 async function applySharing(documentId: string, status: GoogleDocsIntegrationStatus) {
   if (status.shareMode === "private") {
     return;
@@ -375,7 +385,7 @@ async function applySharing(documentId: string, status: GoogleDocsIntegrationSta
       requestBody: {
         type: "user",
         role: "writer",
-        emailAddress: process.env.GOOGLE_DOCS_SHARE_EMAIL?.trim(),
+        emailAddress: parseShareEmail(),
       },
     });
     return;
@@ -403,41 +413,45 @@ export async function exportContentPlanToGoogleDocs(
   const docs = google.docs({ version: "v1", auth });
   const body = buildGoogleDocBody(plan);
 
-  const createResponse = await docs.documents.create({
-    requestBody: {
-      title: body.title,
-    },
-  });
+  try {
+    const createResponse = await docs.documents.create({
+      requestBody: {
+        title: body.title,
+      },
+    });
 
-  const documentId = createResponse.data.documentId;
+    const documentId = createResponse.data.documentId;
 
-  if (!documentId) {
-    throw new Error("Google Docs did not return a document ID.");
-  }
+    if (!documentId) {
+      throw new Error("Google Docs did not return a document ID.");
+    }
 
-  await docs.documents.batchUpdate({
-    documentId,
-    requestBody: {
-      requests: [
-        {
-          insertText: {
-            location: {
-              index: 1,
+    await docs.documents.batchUpdate({
+      documentId,
+      requestBody: {
+        requests: [
+          {
+            insertText: {
+              location: {
+                index: 1,
+              },
+              text: body.text,
             },
-            text: body.text,
           },
-        },
-        ...buildStyleRequests(body.styles),
-      ],
-    },
-  });
+          ...buildStyleRequests(body.styles),
+        ],
+      },
+    });
 
-  await applySharing(documentId, status);
+    await applySharing(documentId, status);
 
-  return {
-    documentId,
-    documentUrl: `https://docs.google.com/document/d/${documentId}/edit`,
-    title: body.title,
-    shareMode: status.shareMode,
-  };
+    return {
+      documentId,
+      documentUrl: `https://docs.google.com/document/d/${documentId}/edit`,
+      title: body.title,
+      shareMode: status.shareMode,
+    };
+  } catch (error) {
+    throw normalizeGoogleDocsExportError(error);
+  }
 }

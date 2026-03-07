@@ -34,6 +34,7 @@ Notes:
 - Google Docs export is optional
 - The UI stays safe when credentials are missing
 - The integration validates service-account credentials before enabling export
+- Service-account auth needs shared-drive or delegated Workspace access to create files successfully
 - Google Drive is used only for sharing/link access behavior
 
 ## Export Stack

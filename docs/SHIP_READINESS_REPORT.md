@@ -38,6 +38,7 @@ Ready to publish as a portfolio repository.
 
 - Google Docs export now performs configuration preflight checks before the button becomes active
 - In a live local test, the route correctly detected malformed service-account key material and fell back safely without affecting markdown, JSON, HTML, or print exports
+- A follow-up live test with a valid service-account key reached Google successfully, then returned the expected Drive permission error for a personal Drive setup; the app now explains that shared-drive access or user OAuth is required
 
 ## Remaining Non-Blocking Considerations
 

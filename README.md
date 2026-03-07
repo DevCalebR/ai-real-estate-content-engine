@@ -189,6 +189,8 @@ Configuration notes:
 - The app validates the service-account email and private key before enabling export
 - Quoted keys with escaped `\n` newlines are supported
 - Use the full `private_key` value from the Google JSON key file, not `private_key_id`
+- Service-account auth is best for shared-drive or delegated Workspace setups
+- For a personal Google Drive export, Google requires user OAuth rather than a standalone service account
 
 Recommended demo setup:
 
@@ -199,6 +201,7 @@ Fallback behavior:
 
 - If Google credentials are not configured, the Google Docs export button stays disabled and explains why
 - If the private key is malformed or truncated, the app treats Google Docs export as unavailable and shows the configuration issue directly in the UI
+- If Google returns a Drive permission error, the UI explains that a personal Drive export needs either shared-drive access or user OAuth credentials
 - Markdown, HTML, JSON, and print exports still work normally
 
 ## Export Features

@@ -9,7 +9,7 @@ This project supports exporting a generated content plan into a newly created Go
 
 ## Recommended Auth Model
 
-Use a Google Cloud service account. This keeps the integration lightweight and demo-friendly for a single-user portfolio project.
+Use a Google Cloud service account only when the export target is a shared drive or a delegated Google Workspace user. For a personal Google Drive export, the correct auth model is user OAuth.
 
 ## Setup Steps
 
@@ -20,6 +20,12 @@ Use a Google Cloud service account. This keeps the integration lightweight and d
 5. Generate a JSON key for that service account.
 6. Copy the service account email and private key into `.env.local`.
 7. Keep the private key as the full PEM block from the JSON file. Do not use `private_key_id`.
+
+Important:
+
+- A standalone service account cannot create files in a personal My Drive
+- If you want to keep the current service-account setup, put the service account on a shared drive it can write into
+- If you want the Google Doc created in your own My Drive, switch to a user OAuth credential flow
 
 ## Required Environment Variables
 
@@ -69,6 +75,12 @@ If credentials are present but invalid:
 - the Google Docs button stays disabled
 - the UI shows the configuration problem directly
 - the export route returns a safe configuration error instead of a low-level crypto failure
+
+If credentials are valid but Google still returns a permission error:
+
+- the app now surfaces an actionable message instead of raw Google API wording
+- that usually means the service account authenticated correctly but does not have a Drive location where it can create files
+- the fix is to use a shared drive or move to a user OAuth auth model
 
 ## Troubleshooting
 
