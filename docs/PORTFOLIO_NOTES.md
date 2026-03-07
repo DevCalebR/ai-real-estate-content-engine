@@ -22,6 +22,8 @@ The app turns one structured business brief into a full month of social content.
 - image prompts
 - export-ready deliverables
 
+The repo also supports a one-click sample workspace path so the strongest demo flow can be shown without filling the form first.
+
 ## Business Impact
 
 - reduces the manual planning time needed to build a monthly social strategy
@@ -48,6 +50,7 @@ The app turns one structured business brief into a full month of social content.
 ## Good Screenshots
 
 - homepage hero with product branding
+- one-click sample workspace CTA visible on the dashboard
 - preset selection on the generate page
 - SaaS / Productized Service sample brief loaded
 - results view showing calendar plus marketing scripts

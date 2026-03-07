@@ -3,7 +3,7 @@
 Capture these screens for Upwork, portfolio pages, and case studies:
 
 1. Homepage hero
-- Show the Monthly AI Content Engine hero, Product by RelayWorks branding, and SaaS-style product positioning.
+- Show the Monthly AI Content Engine hero, Product by RelayWorks branding, and the `Open sample workspace` CTA.
 
 2. Generate page with preset cards
 - Capture the preset selector with SaaS / Productized Service visible and the structured brief form below it.
@@ -27,10 +27,12 @@ Capture these screens for Upwork, portfolio pages, and case studies:
 - Capture the export panel after a successful doc creation with the Open Doc button visible.
 
 9. History page
-- Show multiple saved runs across different presets so the niche-agnostic positioning is obvious.
+- Show multiple saved runs across different presets so the niche-agnostic positioning is obvious. Include the demo workspace if it helps anchor the walkthrough.
 
 10. Architecture page
 - Capture the Input Form → AI Orchestration → Structured Content Generation → Formatting Engine → Export Deliverables flow.
 
 11. Google Doc itself
 - Capture the created Google Doc header and a few formatted sections to show real delivery output.
+
+Generated screenshot assets for this repo live in `docs/portfolio-assets/`.

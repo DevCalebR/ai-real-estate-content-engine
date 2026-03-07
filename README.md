@@ -2,99 +2,34 @@
 
 Product by RelayWorks
 
-Monthly AI Content Engine is a niche-agnostic social content automation platform that turns one structured business brief into a full month of strategic social content. It generates a 30-day content calendar, captions, carousel outlines, short-form video scripts, marketing scripts, hashtags, image prompts, and client-ready exports from one reusable workflow.
+Monthly AI Content Engine is a niche-agnostic social content automation product that turns one structured business brief into a full month of organized social deliverables. It generates a 30-day content calendar, captions, carousel outlines, short-form video scripts, marketing scripts, hashtags, image prompts, and export-ready handoff files through one reusable workflow.
 
-The product is designed to feel like a polished SaaS application rather than a prompt wrapper. It includes preset-aware generation, local run history, export delivery, Claude-ready model abstraction, demo-safe mode, and a working Google Docs OAuth export flow.
+The project is designed to read like a productized SaaS app rather than a prompt demo. It includes preset-aware generation, a demo-safe mode that works without AI credentials, local run history, export workflows, and a Google OAuth to Google Docs delivery path.
 
-## What It Does
+## Key Features
 
-- Collects a structured monthly content brief for any niche or business type
-- Uses a preset-aware generation pipeline to create a full month of social content
-- Saves each run locally so results can be reopened, compared, and exported later
-- Exports every plan as markdown, JSON, HTML, print-friendly report, and Google Docs
-- Supports demo mode with no external AI key required
-- Supports live Claude generation through an interchangeable provider layer
+- Preset-based content generation for Real Estate, Coach / Consultant, SaaS / Productized Service, E-commerce, Local Business, and Creator Brand workflows
+- Full-month structured output: calendar, captions, carousels, short-form videos, marketing scripts, hashtags, and image prompts
+- Demo-safe generation mode that uses the real orchestration, formatting, history, and export pipeline
+- One-click sample workspace path for portfolio walkthroughs
+- Local history for reopening and comparing saved runs
+- Markdown, JSON, HTML, print-friendly, and Google Docs export options
+- Claude-ready provider abstraction without hardcoding prompts in route handlers
 
-## Supported Niches
+## Who It Is For
 
-The current preset system supports:
+- Founders, marketers, agencies, and operators who want a faster monthly social planning workflow
+- Recruiters or clients reviewing a polished AI automation portfolio piece
+- Teams that need reusable content planning logic across multiple niches instead of one hardcoded vertical
 
-- Real Estate
-- Coach / Consultant
-- SaaS / Productized Service
-- E-commerce
-- Local Business
-- Creator Brand
+## Fastest Demo Path
 
-The SaaS / Productized Service preset is intentionally strong for:
+1. Start the app in demo mode.
+2. Open the dashboard at `http://localhost:3000`.
+3. Click `Open sample workspace` for a one-click walkthrough.
+4. Review the saved results workspace, history page, and exports.
 
-- SaaS products
-- Automation tools
-- Agencies
-- Productized services
-- Startups
-- Online tools
-
-It is tuned for traffic generation, product education, offer clarity, signups, demos, and website clicks across Instagram, LinkedIn, TikTok, Facebook, and X / Twitter.
-
-## Core Features
-
-- 30-day monthly content calendar with day-by-day post strategy
-- 30 captions grouped by post
-- 10 carousel outlines with slide-by-slide text
-- 10 short-form video scripts with hook, body, and CTA
-- 10 marketing scripts for traffic-driving and offer-focused social promotion
-- Hashtag recommendations for every post
-- Image prompts for design generation
-- Preset-based workflow for multiple industries
-- Demo mode and Claude mode behind the same app contract
-- Local history of previous runs
-- Markdown, JSON, HTML, print, and Google Docs exports
-- Google OAuth connection flow for personal Drive export
-
-## Product Architecture
-
-Visible workflow inside the app:
-
-1. Input Form
-2. AI Orchestration
-3. Structured Content Generation
-4. Formatting Engine
-5. Export Deliverables
-
-Implementation notes:
-
-- `app/` holds pages, route handlers, and export endpoints
-- `components/` contains the UI shell, form, tabs, and reusable view components
-- `lib/ai/` abstracts provider selection and model calls
-- `lib/prompts/` keeps prompt logic out of route handlers
-- `lib/formatting/` converts raw model output into saved deliverables
-- `lib/export/` builds markdown and HTML reports
-- `lib/integrations/` contains Google Docs and Google OAuth logic
-- `lib/storage/` stores runs and OAuth tokens locally for portfolio/demo use
-
-## How Presets Work
-
-Each preset contributes:
-
-- positioning guidance
-- demo-generation theme banks
-- preset-specific copy angles
-- sample briefs
-- platform-aware content bias
-
-The preset shapes the generation behavior without changing the rest of the app. That keeps the workflow reusable across industries while still producing more believable demo and live outputs.
-
-## Stack
-
-- Next.js App Router
-- TypeScript
-- Tailwind CSS
-- Zod
-- Anthropic Claude API
-- Google Docs API
-- Google Drive API
-- Local JSON storage for demo-friendly persistence
+If you want to show the full intake flow instead, go to `/generate`, select a preset, click the matching `Load sample` button, and then generate the run.
 
 ## Local Setup
 
@@ -106,9 +41,7 @@ cp .env.example .env.local
 npm run dev
 ```
 
-Open:
-
-`http://localhost:3000`
+Open `http://localhost:3000`.
 
 ## Environment Variables
 
@@ -124,136 +57,94 @@ GOOGLE_OAUTH_CLIENT_SECRET=
 GOOGLE_OAUTH_REDIRECT_URI=http://localhost:3000/api/auth/google/callback
 ```
 
-## Demo Mode vs Live AI Mode
+## Demo Mode
 
-### Demo Mode
+Set `AI_PROVIDER=demo`.
 
-Use:
+What is real in demo mode:
 
-`AI_PROVIDER=demo`
+- the full form and preset flow
+- prompt selection and formatting logic
+- structured content plan generation
+- local history persistence
+- markdown, JSON, HTML, and print exports
+- the Google OAuth and Google Docs UI path
 
-Behavior:
+What is simulated in demo mode:
 
-- no external AI key required
-- returns believable preset-aware structured content
-- still exercises the real formatting, storage, history, and export pipeline
+- the actual model response is generated by the local demo provider instead of a live Claude API call
 
-### Claude Mode
+## Live Claude Mode
 
-Use:
+Set:
 
-`AI_PROVIDER=claude`
-
-Required:
-
+- `AI_PROVIDER=claude`
 - `CLAUDE_API_KEY`
 - `CLAUDE_MODEL`
 
-Behavior:
+The Claude integration uses the same generation contract as demo mode. This repo does not claim unattended production readiness for live AI mode. It is a portfolio-quality local application with a clean provider boundary that can be extended further.
 
-- runs the same workflow through the Claude provider
-- uses the same prompt module and output schema
-- fails safely if Claude env vars are incomplete
+## Google Docs Export
 
-## Export Features
+The app supports OAuth-based Google account connection and can export a saved run into a newly created Google Doc in the connected user’s Drive.
 
-Every saved run can be exported as:
-
-- Markdown
-- JSON
-- HTML report
-- Print-friendly view for browser PDF export
-- Google Docs document in the connected user’s Drive
-
-## Google Docs Integration
-
-The Google Docs export creates a brand-new document in the connected user’s Drive and returns the document URL to the UI.
-
-Included sections:
+Included in the Google Doc:
 
 - project summary / brief
 - monthly content calendar
-- captions grouped by day and post
+- captions grouped by day
 - carousel outlines
-- video scripts
+- short-form video scripts
 - marketing scripts
 - hashtag recommendations
 - image prompts
 
-Auth model:
-
-- Google OAuth web flow
-- callback route: `/api/auth/google/callback`
-- local development redirect URI: `http://localhost:3000/api/auth/google/callback`
-- OAuth tokens stored locally in `data/integrations/google-oauth.json`
-- token file is ignored by git
-
-Fallback behavior:
-
-- if Google OAuth is not configured, the Google Docs button is disabled with a clear explanation
-- if no account is connected, the UI shows `Connect Google`
-- markdown, JSON, HTML, and print exports still work normally
-
-Detailed setup:
+Supporting docs:
 
 - [docs/GOOGLE_DOCS_SETUP.md](./docs/GOOGLE_DOCS_SETUP.md)
 - [docs/INTEGRATIONS.md](./docs/INTEGRATIONS.md)
 
-## Sample Data
+## Stack Overview
 
-Tracked sample data includes:
+- Next.js App Router
+- TypeScript
+- Tailwind CSS
+- Zod
+- Anthropic Claude API integration
+- Google OAuth, Google Docs API, and Google Drive API
+- Local JSON persistence for demo-friendly history and token storage
 
-- `data/sample-brief.json`
-- `data/sample-briefs.json`
-- `data/sample-brief-real-estate.json`
-- `data/sample-brief-coach-consultant.json`
-- `data/sample-brief-saas-productized-service.json`
-- `data/sample-brief-e-commerce.json`
-- `data/sample-brief-local-business.json`
-- `data/sample-brief-creator-brand.json`
-- `data/sample-demo-run.json`
+## Current Limitations
 
-Regenerate sample files:
-
-```bash
-npm run seed:sample
-```
-
-## Documentation
-
-- [docs/PORTFOLIO_NOTES.md](./docs/PORTFOLIO_NOTES.md)
-- [docs/DEMO_SCRIPT.md](./docs/DEMO_SCRIPT.md)
-- [docs/CASE_STUDY_BLURB.md](./docs/CASE_STUDY_BLURB.md)
-- [docs/SCREENSHOT_CHECKLIST.md](./docs/SCREENSHOT_CHECKLIST.md)
-- [docs/SHIP_READINESS_REPORT.md](./docs/SHIP_READINESS_REPORT.md)
-- [docs/INTEGRATIONS.md](./docs/INTEGRATIONS.md)
-- [docs/GOOGLE_DOCS_SETUP.md](./docs/GOOGLE_DOCS_SETUP.md)
-
-## Portfolio Highlights
-
-- Reads like a SaaS product, not a one-off prompt demo
-- Preserves a visible automation pipeline from intake to export
-- Uses typed schemas and modular AI/provider architecture
-- Includes preset-aware demo data for multiple industries
-- Has a working Google OAuth to Google Docs export path
-- Can be demoed safely without external AI keys
+- Local JSON storage is intentional for demo reliability and portfolio clarity, not multi-user production hosting.
+- Browser PDF export is handled through the print view rather than server-side PDF generation.
+- Google OAuth tokens are stored locally for this portfolio build; hosted production use should move them to durable storage.
+- There is no dedicated automated test suite yet, so validation currently relies on lint, typecheck, build, and smoke-test flows.
 
 ## Screenshots
 
-Add screenshots for:
+Generated portfolio assets live in [docs/portfolio-assets](./docs/portfolio-assets).
 
-- landing page hero
-- preset-aware generate page
-- results workspace
-- export panel with Google Docs success state
-- history page
-- architecture page
+Recommended showcase order:
 
-## Future Enhancements
+1. `docs/portfolio-assets/01-dashboard.png`
+2. `docs/portfolio-assets/02-generate-form.png`
+3. `docs/portfolio-assets/03-results-workspace.png`
+4. `docs/portfolio-assets/04-history.png`
+5. `docs/portfolio-assets/05-print-report.png`
 
-- editable output fields before export
-- regenerate a single post or asset
-- reusable saved client profiles
-- stronger per-platform formatting variants
-- durable token and run storage for cloud deployment
-- additional model providers beyond Claude
+## Portfolio Docs
+
+- [docs/PORTFOLIO_OVERVIEW.md](./docs/PORTFOLIO_OVERVIEW.md)
+- [docs/PORTFOLIO_READINESS_AUDIT.md](./docs/PORTFOLIO_READINESS_AUDIT.md)
+- [docs/PORTFOLIO_MANUAL_STEPS.md](./docs/PORTFOLIO_MANUAL_STEPS.md)
+- [docs/PORTFOLIO_VALIDATION_REPORT.md](./docs/PORTFOLIO_VALIDATION_REPORT.md)
+- [docs/UPWORK_PORTFOLIO_ENTRY.md](./docs/UPWORK_PORTFOLIO_ENTRY.md)
+- [docs/PORTFOLIO_SCREENSHOT_SHOTLIST.md](./docs/PORTFOLIO_SCREENSHOT_SHOTLIST.md)
+- [docs/SCREENSHOT_CHECKLIST.md](./docs/SCREENSHOT_CHECKLIST.md)
+- [docs/PORTFOLIO_NOTES.md](./docs/PORTFOLIO_NOTES.md)
+- [docs/SHIP_READINESS_REPORT.md](./docs/SHIP_READINESS_REPORT.md)
+
+## Validation
+
+Current validation details and command outputs are recorded in [docs/PORTFOLIO_VALIDATION_REPORT.md](./docs/PORTFOLIO_VALIDATION_REPORT.md).
