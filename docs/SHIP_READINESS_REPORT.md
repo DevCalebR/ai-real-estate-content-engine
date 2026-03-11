@@ -10,6 +10,7 @@ Ready to publish as a portfolio repository.
 - Structured AI workflow from intake to export, not a one-screen prompt demo
 - Preset-aware generation makes the app feel reusable and commercially realistic
 - Demo mode keeps the product easy to show without sacrificing the real workflow
+- One-click sample workspace makes the first-run walkthrough reliable for recruiters and clients
 - OAuth Google Docs export adds a practical delivery layer beyond downloadable files
 
 ## Portfolio Strengths
@@ -29,9 +30,12 @@ Ready to publish as a portfolio repository.
 
 ## Verification Completed
 
+- `npm install`
 - `npm run seed:sample`
 - `npm run lint`
+- `npm run typecheck`
 - `npm run build`
+- `POST /api/demo/seed`
 - demo generation tested with the preset-aware sample flow
 
 ## Live Integration Note

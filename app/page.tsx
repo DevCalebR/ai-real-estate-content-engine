@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight, Bot, FileOutput, Layers3, Sparkles, Workflow } from "lucide-react";
 
 import { ArchitectureFlow } from "@/components/sections/architecture-flow";
+import { DemoWorkspaceButton } from "@/components/demo-workspace-button";
 import { Badge } from "@/components/ui/badge";
 import { buttonStyles } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -61,6 +62,7 @@ export default async function HomePage() {
                 Build a monthly plan
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
+              <DemoWorkspaceButton />
               <Link href="/architecture" className={buttonStyles({ variant: "secondary", size: "lg" })}>
                 See the workflow
               </Link>
@@ -282,9 +284,12 @@ export default async function HomePage() {
             <p className="max-w-2xl text-sm leading-7 text-[var(--ink-soft)]">
               Create the first plan to populate the history view. The app stores each run locally so you can return to the same results during demos instead of starting over.
             </p>
-            <Link href="/generate" className={buttonStyles({ variant: "primary" })}>
-              Generate your first run
-            </Link>
+            <div className="flex flex-wrap gap-3">
+              <Link href="/generate" className={buttonStyles({ variant: "primary" })}>
+                Generate your first run
+              </Link>
+              <DemoWorkspaceButton size="md" />
+            </div>
           </Card>
         )}
       </section>

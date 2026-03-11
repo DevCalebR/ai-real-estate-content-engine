@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { DemoWorkspaceButton } from "@/components/demo-workspace-button";
 import { GenerationForm } from "@/components/forms/generation-form";
 import { Card } from "@/components/ui/card";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -37,6 +38,19 @@ export default function GeneratePage() {
             </p>
           </Card>
         ) : null}
+        <Card className="border-teal-200 bg-teal-50/80">
+          <div className="flex flex-wrap items-center justify-between gap-4">
+            <div className="max-w-3xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.14em] text-teal-800">
+                Fast portfolio walkthrough
+              </p>
+              <p className="mt-2 text-sm leading-7 text-teal-950">
+                Need to show the product value quickly? Open a seeded sample workspace that uses the real demo pipeline, saved history, and export-ready results without filling the form first.
+              </p>
+            </div>
+            <DemoWorkspaceButton variant="primary" size="md" />
+          </div>
+        </Card>
       </section>
 
       <GenerationForm
